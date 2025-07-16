@@ -1,6 +1,6 @@
 // Sólo peticiones fetch en este archivo
 
-const URL_API = "http://localhost:3000/butterfly";
+const URL_API = "http://localhost:3000/butterflies";
 
 // Método GET para el READ
 async function getAllButterflies() {
