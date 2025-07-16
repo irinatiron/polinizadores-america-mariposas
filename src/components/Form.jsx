@@ -31,8 +31,8 @@ const Form = () => {
         <label for="plants">Plantas visitadas:</label>
         <input type="text" id="input-plants" name="plants" placeholder="Plantas visitadas"></input><br></br>
 
-        <label for="cicle">Ciclo de vida:</label>
-        <input type="text" id="input-cicle" name="cicle" placeholder="Ciclo de vida"></input><br></br>
+        <label for="cycle">Ciclo de vida:</label>
+        <input type="text" id="input-cycle" name="cycle" placeholder="Ciclo de vida"></input><br></br>
 
         <label for="img">Imagen:</label>
         <input type="url" id="input-img" name="img" placeholder="Imagen"></input><br></br>
