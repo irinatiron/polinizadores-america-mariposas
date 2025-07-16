@@ -1,3 +1,19 @@
 {
-    "butterfly": []
+    "butterflies": [
+        {
+            "id" : "1",
+            "name" : "mariposa prueba",
+            "order" : "lepideptira", 
+            "family" : "Nymphalydae", 
+            "color" : "Blue wings and white body",
+            "size" : "2 cm",
+            "origin" : "Yosemite", 
+            "location" : "América del Norte", 
+            "habitat" : "Yellowstone",
+            "visited-plants" : "Cirsium, Carlina, Galactites, Cheirolophus o Carduus",
+            "vital-cycle" : "5 meses. De verano a primavera",
+            "butterfly-image" : "http://localhost:3000/images/butterflies",
+            "fenology" : "Marzo-Octubre"
+        }
+    ]
 }
