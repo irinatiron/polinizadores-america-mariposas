@@ -1,7 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
+form {
+    margin: 50px auto;
+}
+label {
+    margin: 5px 10px 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="url"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px; 
+    font-size: 1em;
+}
+button[type="submit"] {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 50px;
 }
