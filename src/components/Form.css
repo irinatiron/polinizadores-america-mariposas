@@ -5,12 +5,13 @@ label {
     margin: 5px 10px 5px;
     font-weight: bold;
 }
-input[type="text"],
-input[type="url"] {
+input {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px; 
     font-size: 1em;
+    display: block;
+    margin-bottom: 10px;
 }
 button[type="submit"] {
     padding: 10px 15px;
