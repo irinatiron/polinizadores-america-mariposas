@@ -1,4 +1,67 @@
 :root {
+  --color-dark-olive-green:#565939;
+  --color-ivory: #f2efdf; /*Light Beige*/
+  --color-orange: #F28F16;
+  --color-brown: #bf6734;
+  --color-red: #b63329;
+  --color-sage: #6b8779; /*Dark Turquoise*/
+}
+
+header {
+  background-color: #565939;
+}
+
+body {
+  background-color: #F2EFDF;
+  color: #565939;
+
+}
+
+
+footer {
+  background-color: #565939;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #565939;
+}
+
+
+
+
+h2 {
+  font-size: 2rem;
+  color: #BF6734;
+
+
+  /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+h2 {}
+
+
+/*
+Fondo principal: # F2EFDF.
+Cabecera y footer: #565939 con texto blanco.
+Botones primarios: Eliminar(#B63329) Editar(#2F7D1C) Añadir(#336D25)
+Card: #BD6363
+Detalle de la card: #E9E8E4
+Letras general: #000000
+Tipografía:
+TITULO
+https://fonts.google.com/specimen/Playfair+Display
+ CUERPO
+https://fonts.google.com/specimen/Lora 
+*/
+
+/*
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,3 +129,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
