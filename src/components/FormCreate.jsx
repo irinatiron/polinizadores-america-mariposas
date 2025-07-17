@@ -46,43 +46,56 @@ const Form = ({ onSubmit }) => {
 
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
-      <label htmlFor="input-name">Nombre:</label>
-      <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} required />
-
-      <label htmlFor="input-order">Orden:</label>
-      <input type="text" id="input-order" name="order" value={formData.order} onChange={handleChange} required />
-
-      <label htmlFor="input-family">Familia:</label>
-      <input type="text" id="input-family" name="family" value={formData.family} onChange={handleChange} required />
-
-      <label htmlFor="input-color">Color:</label>
-      <input type="text" id="input-color" name="color" value={formData.color} onChange={handleChange} />
-
-      <label htmlFor="input-size">Tamaño:</label>
-      <input type="text" id="input-size" name="size" value={formData.size} onChange={handleChange} />
-
-      <label htmlFor="input-origin">Origen:</label>
-      <input type="text" id="input-origin" name="origin" value={formData.origin} onChange={handleChange} />
-
-      <label htmlFor="input-location">Localización:</label>
-      <input type="text" id="input-location" name="location" value={formData.location} onChange={handleChange} />
-
-      <label htmlFor="input-habitat">Hábitat:</label>
-      <input type="text" id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} />
-
-      <label htmlFor="input-plants">Plantas visitadas:</label>
-      <input type="text" id="input-plants" name="plants" value={formData.plants} onChange={handleChange} />
-
-      <label htmlFor="input-cycle">Ciclo de vida:</label>
-      <input type="text" id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} />
-
-      <label htmlFor="input-img">Imagen:</label>
-      <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} />
-
-      <label htmlFor="input-fenology">Fenología:</label>
-      <input type="text" id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} />
-
-      <button type="submit">Enviar</button>
+      <p id='p-required'>* Campos obligatorios</p>
+      <div className="form-group">
+        <label htmlFor="input-name">Nombre *</label>
+        <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} placeholder='Ej: Mariposa monarca (Danaus plexippus) ' required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-order">Orden *</label>
+        <input type="text" id="input-order" name="order" value={formData.order} onChange={handleChange} placeholder='Ej: Lepidoptera' required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-family">Familia: *</label>
+        <input type="text" id="input-family" name="family" value={formData.family} onChange={handleChange} placeholder='Ej: Nymphalidae' required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-color">Color</label>
+        <input type="text" id="input-color" name="color" value={formData.color} onChange={handleChange} placeholder='Ej: Alas de color naranja con líneas negras.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-size">Tamaño</label>
+        <input type="text" id="input-size" name="size" value={formData.size} onChange={handleChange} placeholder='Ej: Entre 8,9 y 10,2 cm.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-origin">Origen</label>
+        <input type="text" id="input-origin" name="origin" value={formData.origin} onChange={handleChange} placeholder='Ej: Originaria de América del Norte.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-location">Localización</label>
+        <input type="text" id="input-location" name="location" value={formData.location} onChange={handleChange} placeholder='Ej: Se distribuye desde Canadá hasta el norte de Sudamérica.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-habitat">Hábitat</label>
+        <input type="text" id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} placeholder='Ej: Hábitat diverso abarcando desde bosques a campos de algodoncillo.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-plants">Plantas visitadas</label>
+        <input type="text" id="input-plants" name="plants" value={formData.plants} onChange={handleChange} placeholder='Ej: Plantas del género Asclepias.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-cycle">Ciclo de vida:</label>
+        <input type="text" id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} placeholder='Ej: Huevo, origa, crisálida y adulto.' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-img">Imagen</label>
+        <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} placeholder='https://url-de-la-imagen.jpg' />
+      </div>
+      <div className="form-group">
+        <label htmlFor="input-fenology">Fenología</label>
+        <input type="text" id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} placeholder='Ej: Migración en otoño, reproducción en primavera y verano.' />
+      </div>
+      <button type="submit">+ Añadir mariposa</button>
     </form>
   );
 };

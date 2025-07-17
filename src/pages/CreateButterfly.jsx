@@ -4,7 +4,7 @@ import { createButterfly } from '../services/ButterflyServices';
 const CreateButterfly = () => {
   return (
     <>
-      <p>Nueva mariposa.</p>
+      <h3 id='create-page-title'>Añadir una nueva mariposa al catálogo.</h3>
       <Form onSubmit={createButterfly} />
     </>
   );
