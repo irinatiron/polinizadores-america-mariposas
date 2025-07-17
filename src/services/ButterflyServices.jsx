@@ -4,11 +4,32 @@ const URL_API = "http://localhost:3000/butterflies";
 
 // Método GET para el READ
 async function getAllButterflies() {
-    
+
 }
 async function getOneButterfly(id) {
-    
+
 }
 // Método POST para el CREATE
+export async function createButterfly(newButterfly) {
+  try {
+    const response = await fetch(URL_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newButterfly)
+    });
+    if (response.ok) {
+      const created = await response.json();
+      alert('Mariposa añadida correctamente');
+      return created;
+    } else {
+      const errorText = await response.text();
+      console.error('Error al añadir la mariposa:', errorText);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 // Método PUT para el UPDATE
 // Método DELETE para eliminar
