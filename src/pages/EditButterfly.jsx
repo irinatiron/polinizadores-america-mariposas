@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes,Route,link,useParams } from "react-router-dom";
+import { Routes,Route,Link,useParams } from "react-router-dom";
 
 
 
