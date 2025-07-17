@@ -65,35 +65,35 @@ const Form = ({ onSubmit }) => {
         <p id='p-optional'>Información adicional</p>
         <div className="form-group">
           <label htmlFor="input-color">Color</label>
-          <input type="text" id="input-color" name="color" value={formData.color} onChange={handleChange} placeholder='Ej: Alas de color naranja con líneas negras.' />
+          <textarea id="input-color" name="color" value={formData.color} onChange={handleChange} placeholder='Ej: Alas de color naranja con líneas negras.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-size">Tamaño</label>
-          <input type="text" id="input-size" name="size" value={formData.size} onChange={handleChange} placeholder='Ej: Entre 8,9 y 10,2 cm.' />
+          <textarea id="input-size" name="size" value={formData.size} onChange={handleChange} placeholder='Ej: Entre 8,9 y 10,2 cm.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-origin">Origen</label>
-          <input type="text" id="input-origin" name="origin" value={formData.origin} onChange={handleChange} placeholder='Ej: Originaria de América del Norte.' />
+          <textarea id="input-origin" name="origin" value={formData.origin} onChange={handleChange} placeholder='Ej: Originaria de América del Norte.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-location">Localización</label>
-          <input type="text" id="input-location" name="location" value={formData.location} onChange={handleChange} placeholder='Ej: Se distribuye desde Canadá hasta el norte de Sudamérica.' />
+          <textarea id="input-location" name="location" value={formData.location} onChange={handleChange} placeholder='Ej: Se distribuye desde Canadá hasta el norte de Sudamérica.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-habitat">Hábitat</label>
-          <input type="text" id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} placeholder='Ej: Hábitat diverso abarcando desde bosques a campos de algodoncillo.' />
+          <textarea id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} placeholder='Ej: Hábitat diverso abarcando desde bosques a campos de algodoncillo.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-plants">Plantas visitadas</label>
-          <input type="text" id="input-plants" name="plants" value={formData.plants} onChange={handleChange} placeholder='Ej: Plantas del género Asclepias.' />
+          <textarea id="input-plants" name="plants" value={formData.plants} onChange={handleChange} placeholder='Ej: Plantas del género Asclepias.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-cycle">Ciclo de vida</label>
-          <input type="text" id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} placeholder='Ej: Huevo, oruga, crisálida y adulto.' />
+          <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} placeholder='Ej: Huevo, oruga, crisálida y adulto.' />
         </div>
         <div className="form-group">
           <label htmlFor="input-fenology">Fenología</label>
-          <input type="text" id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} placeholder='Ej: Migración en otoño, reproducción en primavera y verano.' />
+          <textarea id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} placeholder='Ej: Migración en otoño, reproducción en primavera y verano.' />
         </div>
         <div className="form-group" id='img-group'>
           <label htmlFor="input-img">Imagen</label>
