@@ -1,5 +1,6 @@
 #create-page-title, #create-page-intro {
     text-align: center;
+    margin: 10px;
 }
 
 #p-required {
@@ -9,6 +10,8 @@
 
 #create-butterfly {
     width: 10%;
+    display: block;
+    margin: 15px auto;
 }
 
 form {
@@ -52,7 +55,7 @@ input {
   display: block;
   width: 100%;
   justify-self: center; 
-  background-color: var(--color-sage);
+  background-color: var(--color-sage-green);
   opacity: 0.8;
   color: #ffff;
 }
@@ -68,7 +71,7 @@ input:hover {
 
 input:focus {
     opacity: 1;
-    outline: 2px solid var(--color-orange);
+    outline: 2px solid var(--color-accent-orange);
 }
 
 button[type="submit"] {
@@ -78,7 +81,7 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 1em;
     margin-bottom: 70px;
-    background-color: var(--color-dark-olive-green);
+    background-color: var(--color-forest-green);
     opacity: 0.8;
     color: #ffff;
     grid-column: 1 / -1; 

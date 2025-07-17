@@ -1,25 +1,67 @@
-:root {
-  --color-dark-olive-green:#565939;
-  --color-ivory: #f2efdf; /*Light Beige*/
-  --color-orange: #F28F16;
-  --color-brown: #bf6734;
-  --color-red: #b63329;
-  --color-sage: #6b8779; /*Dark Turquoise*/
+/*Reset and normalize styles in all elements*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #565939;
+:root {
+  /* Primary Colors */
+  --color-olive-green: #565939;    /* Main brand color, header, footer */
+  --color-light-beige: #F2EFDF;    /* Body background, light sections */
+  
+  /* Accent Colors */
+  --color-forest-green: #336D25;   /* Primary button */
+  --color-terracotta: #BF6734;     /* Secondary buttons, links, emphasis */
+  --color-accent-orange: #F28F16;  /* Call to Actions (CTA), highlights, active states */
+  --color-brick-red: #b63329;      /* Alerts, errors, important notices */
+  --color-sage-green: #6b8779;     /* Success states, subtle accents */
+  
+  /* Text Colors */
+  --color-text-dark: #565939;      /* Primary text (light background), body text */
+  --color-text-medium: #6b8779;     /* Secondary text, descriptions */
+  --color-text-light: #F2EFDF;     /* Primary text (dark background) body text, header-footer text */
+
+
+  /* Cards Colors*/
+  --color-card-background: #7F8C69; /* Background */
+  --color-card-header: #E9E8E4;     /* Header */
+  --color-card-button-detail: #F2EFDF; /* Botón "Ver Detalle" */
+  --color-card-button-edit: #D4A84A;   /* Botón "Editar" */
+
 }
 
 body {
-  background-color: #F2EFDF;
-  color: #565939;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-light-beige);
+}
+
+/* NAV */
+nav{
+  border: 3px dotted red;
+  background-color: var(--color-olive-green);
+  color: var(--color-light-beige);
+}
+
+
+  main {
+    border: 3px dotted red;
+  }
+
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 
 }
 
 
 footer {
+  border: 3px dotted red;
   background-color: #565939;
+  color: var(--color-ivory)
 }
 
 h1 {
