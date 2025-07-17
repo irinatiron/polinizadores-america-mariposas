@@ -1,25 +1,52 @@
+/*Reset and normalize styles in all elements*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --color-dark-olive-green:#565939;
-  --color-ivory: #f2efdf; /*Light Beige*/
+  --color-dark-olive-green: #565939;
+  --color-ivory: #f2efdf;
+  /*Light Beige*/
   --color-orange: #F28F16;
   --color-brown: #bf6734;
   --color-red: #b63329;
-  --color-sage: #6b8779; /*Dark Turquoise*/
+  --color-sage: #6b8779;
+  /*Dark Turquoise*/
 }
 
-header {
+header nav {
+  border: 3px dotted red;
   background-color: #565939;
+  color: var(--color-ivory)
 }
 
 body {
+
   background-color: #F2EFDF;
   color: #565939;
+
+  main {
+    border: 3px dotted red;
+
+
+  }
+
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 
 }
 
 
 footer {
+  border: 3px dotted red;
   background-color: #565939;
+  color: var(--color-ivory)
 }
 
 h1 {
