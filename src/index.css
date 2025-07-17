@@ -23,11 +23,11 @@
   --color-text-light: #F2EFDF;     /* Primary text (dark background) body text, header-footer text */
 
 
-/* Cards Colors*/
---color-card-background: #7F8C69;
---color-card-header: #E9E8E4;
---color-card-button-detail: #F2EFDF;
---color-card-button-edit: #D4A84A;
+  /* Cards Colors*/
+  --color-card-background: #7F8C69; /* Background */
+  --color-card-header: #E9E8E4;     /* Header */
+  --color-card-button-detail: #F2EFDF; /* Botón "Ver Detalle" */
+  --color-card-button-edit: #D4A84A;   /* Botón "Editar" */
 
 }
 
