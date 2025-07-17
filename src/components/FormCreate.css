@@ -42,6 +42,9 @@ form {
     font-size: 0.8em;
 }
 
+#required-fields label {
+    text-align: center;
+}
 
 #name-group {
     grid-column: 1 / -1;

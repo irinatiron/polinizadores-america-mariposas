@@ -62,7 +62,7 @@ const Form = ({ onSubmit }) => {
         </div>
       </div>
       <div id='optional-fields'>
-        <p id='p-optional'>Información adicional:</p>
+        <p id='p-optional'>Información adicional</p>
         <div className="form-group">
           <label htmlFor="input-color">Color</label>
           <input type="text" id="input-color" name="color" value={formData.color} onChange={handleChange} placeholder='Ej: Alas de color naranja con líneas negras.' />
