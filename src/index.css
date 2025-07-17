@@ -37,21 +37,18 @@ body {
   background-color: var(--color-light-beige);
 }
 
-header nav {
+/* NAV */
+nav{
   border: 3px dotted red;
-  background-color: #565939;
-  color: var(--color-light-beige)
+  background-color: var(--color-olive-green);
+  color: var(--color-light-beige);
 }
-
 
 
   main {
     border: 3px dotted red;
-
-
   }
 
-}
 
 .flex-container {
   display: flex;
