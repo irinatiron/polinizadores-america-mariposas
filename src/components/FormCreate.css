@@ -1,11 +1,7 @@
-#create-page-title, #create-page-intro {
+#create-page-title,
+#create-page-intro {
     text-align: center;
     margin: 10px;
-}
-
-#p-required {
-    grid-column: 1 / -1;
-    text-align: center;
 }
 
 #create-butterfly {
@@ -18,17 +14,50 @@ form {
     margin: 50px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3%;
+    gap: 2%;
     max-width: 100%;
-    margin: 20px auto 230px;
+    margin: 20px auto 100px;
+    background-color: #FAF9F6;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin: 2% 10% 5%;
 }
 
-.form-group {
-   padding: 0 60px 0;
+.form-group,
+#p-required {
+    padding: 0 60px 0;
 }
+
+#required-fields {
+    font-size: 1.2em;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3% 20% 0;
+}
+
+#p-required {
+    grid-column: 1 / -1;
+    text-align: right;
+    font-size: 0.8em;
+}
+
 
 #name-group {
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
+}
+
+#optional-fields {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10%;
+}
+
+#p-optional {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 1%;
 }
 
 #img-group {
@@ -37,7 +66,7 @@ form {
 }
 
 #img-group input {
-  min-height: 100px;
+    min-height: 100px;
 }
 
 label {
@@ -48,21 +77,23 @@ label {
 }
 
 input {
-  padding: 14px 10px; 
-  font-size: 1em;
-  border: none;
-  margin-bottom: 15px;
-  display: block;
-  width: 100%;
-  justify-self: center; 
-  background-color: var(--color-sage-green);
-  opacity: 0.8;
-  color: #ffff;
+    padding: 14px 10px;
+    font-size: 1em;
+    border: none;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    justify-self: center;
+    background-color: var(--color-sage-green);
+    opacity: 0.8;
+    color: #ffff;
+    transition: 0.5s;
+    box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
 }
 
 ::placeholder {
-  color: #fff;
-  opacity: 0.8;
+    color: #fff;
+    opacity: 0.8;
 }
 
 input:hover {
@@ -84,10 +115,12 @@ button[type="submit"] {
     background-color: var(--color-forest-green);
     opacity: 0.8;
     color: #ffff;
-    grid-column: 1 / -1; 
-    justify-self: center; 
     width: 20%;
+    grid-column: 1 / -1;
+    justify-self: center;
     font-size: 1.3em;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
 }
 
 button[type="submit"]:hover {
@@ -97,6 +130,26 @@ button[type="submit"]:hover {
 @media screen and (max-width: 900px) {
     form {
         grid-template-columns: 1fr;
+    }
+
+    #required-fields {
+        padding: 0;
+    }
+
+    #p-required {
+        text-align: center;
+    }
+
+    #optional-fields {
+        padding: 0;
+    }
+
+    .form-group {
+        grid-column: 1 / -1;
+    }
+
+    input {
+        width: 100%;
     }
 
     button[type="submit"] {
