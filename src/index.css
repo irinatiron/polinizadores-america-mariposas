@@ -6,14 +6,29 @@
 }
 
 :root {
-  --color-dark-olive-green: #565939;
-  --color-ivory: #f2efdf;
-  /*Light Beige*/
-  --color-orange: #F28F16;
-  --color-brown: #bf6734;
-  --color-red: #b63329;
-  --color-sage: #6b8779;
-  /*Dark Turquoise*/
+  /* Primary Colors */
+  --color-olive-green: #565939;    /* Main brand color, header, footer */
+  --color-light-beige: #F2EFDF;    /* Body background, light sections */
+  
+  /* Accent Colors */
+  --color-forest-green: #336D25;   /* Primary button */
+  --color-terracotta: #BF6734;     /* Secondary buttons, links, emphasis */
+  --color-accent-orange: #F28F16;  /* Call to Actions (CTA), highlights, active states */
+  --color-brick-red: #b63329;      /* Alerts, errors, important notices */
+  --color-sage-green: #6b8779;     /* Success states, subtle accents */
+  
+  /* Text Colors */
+  --color-text-dark: #565939;      /* Primary text (light background), body text */
+  --color-text-medium: #6b8779;     /* Secondary text, descriptions */
+  --color-text-light: #F2EFDF;     /* Primary text (dark background) body text, header-footer text */
+
+
+/* Cards Colors*/
+--color-card-background: #7F8C69;
+--color-card-header: #E9E8E4;
+--color-card-button-detail: #F2EFDF;
+--color-card-button-edit: #D4A84A;
+
 }
 
 header nav {
