@@ -118,13 +118,16 @@ Removes it from the normal document flow (other elements act as if it doesn't ex
 }
 
 .nav-title {
-  font-size: 2rem;
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--color-light-beige);
 }
 
 .nav-menu {
+  font-size: 1.5rem;
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .nav-link {
