@@ -31,16 +31,19 @@
 
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-light-beige);
+}
+
 header nav {
   border: 3px dotted red;
   background-color: #565939;
-  color: var(--color-ivory)
+  color: var(--color-light-beige)
 }
 
-body {
 
-  background-color: #F2EFDF;
-  color: #565939;
 
   main {
     border: 3px dotted red;
