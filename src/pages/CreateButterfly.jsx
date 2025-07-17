@@ -1,4 +1,4 @@
-import Form from '../components/Form';
+import Form from '../components/FormCreate';
 import { createButterfly } from '../services/ButterflyServices';
 
 const CreateButterfly = () => {

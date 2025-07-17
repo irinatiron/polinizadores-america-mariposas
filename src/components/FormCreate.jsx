@@ -1,5 +1,5 @@
 import { useState } from 'react'; // Importa hook useState que maneja el estado del formulario
-import './Form.css';
+import './FormCreate.css';
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState({ // Se crea un estado local llamado formData con los valores del formulario

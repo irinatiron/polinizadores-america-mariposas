@@ -14,6 +14,21 @@
       "vital-cycle": "5 meses. De verano a primavera",
       "butterfly-image": "http://localhost:3000/images/butterflies",
       "fenology": "Marzo-Octubre"
+    },
+    {
+      "id": "0370",
+      "name": "prueba de create",
+      "order": "prueba de create",
+      "family": "prueba de create",
+      "color": "prueba de create",
+      "size": "prueba de create",
+      "origin": "prueba de create",
+      "location": "prueba de create",
+      "habitat": "prueba de create",
+      "plants": "prueba de create",
+      "cycle": "prueba de create",
+      "img": "https://cienciaybiologia.com/wp-content/uploads/2015/06/mariposa-monarca.jpg",
+      "fenology": "prueba de create"
     }
   ]
 }
