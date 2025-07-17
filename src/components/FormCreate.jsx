@@ -46,8 +46,8 @@ const Form = ({ onSubmit }) => {
 
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
-      <p id='p-required'>* Campos obligatorios</p>
-      <div className="form-group">
+      <p id='p-required'><i>* Campos obligatorios</i></p>
+      <div className="form-group" id='name-group'>
         <label htmlFor="input-name">Nombre *</label>
         <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} placeholder='Ej: Mariposa monarca (Danaus plexippus) ' required />
       </div>
@@ -85,15 +85,15 @@ const Form = ({ onSubmit }) => {
       </div>
       <div className="form-group">
         <label htmlFor="input-cycle">Ciclo de vida:</label>
-        <input type="text" id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} placeholder='Ej: Huevo, origa, crisálida y adulto.' />
-      </div>
-      <div className="form-group">
-        <label htmlFor="input-img">Imagen</label>
-        <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} placeholder='https://url-de-la-imagen.jpg' />
+        <input type="text" id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} placeholder='Ej: Huevo, oruga, crisálida y adulto.' />
       </div>
       <div className="form-group">
         <label htmlFor="input-fenology">Fenología</label>
         <input type="text" id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} placeholder='Ej: Migración en otoño, reproducción en primavera y verano.' />
+      </div>
+      <div className="form-group" id='img-group'>
+        <label htmlFor="input-img">Imagen</label>
+        <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} placeholder='https://url-de-la-imagen.jpg' />
       </div>
       <button type="submit">+ Añadir mariposa</button>
     </form>

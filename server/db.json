@@ -29,6 +29,21 @@
       "cycle": "prueba de create",
       "img": "https://cienciaybiologia.com/wp-content/uploads/2015/06/mariposa-monarca.jpg",
       "fenology": "prueba de create"
+    },
+    {
+      "id": "e952",
+      "name": "prueba",
+      "order": "prueba",
+      "family": "prueba",
+      "color": "",
+      "size": "",
+      "origin": "",
+      "location": "",
+      "habitat": "",
+      "plants": "",
+      "cycle": "",
+      "img": "",
+      "fenology": ""
     }
   ]
 }
