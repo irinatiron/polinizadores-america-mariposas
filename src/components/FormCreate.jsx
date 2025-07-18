@@ -4,7 +4,7 @@ import './FormCreate.css';
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState({ // Se crea un estado local llamado formData con los valores del formulario
     name: '', // Valores iniciales como cadena vacía
-    order: '',
+    order: 'Lepidoptera', // Todas las mariposas son del orden Lepidoptera así que no dejamos al usuario modificar este campo
     family: '',
     color: '',
     size: '',
@@ -30,7 +30,7 @@ const Form = ({ onSubmit }) => {
     await onSubmit(formData); // Llamada a la función onSubmit
     setFormData({ // Tras enviar el formulario correctamente lo reinicia vacío
       name: '',
-      order: '',
+      order: 'Lepidoptera',
       family: '',
       color: '',
       size: '',
@@ -54,7 +54,11 @@ const Form = ({ onSubmit }) => {
         </div>
         <div className="form-group" id='order-group'>
           <label htmlFor="input-order">Orden *</label>
-          <input type="text" id="input-order" name="order" value={formData.order} onChange={handleChange} placeholder='Ej: Lepidoptera' required />
+          {/* <input type="text" id="input-order" name="order" value={formData.order} onChange={handleChange} placeholder='Ej: Lepidoptera' required /> */}
+
+          <input type="text" id="input-order" name="order" value={formData.order} readOnly />
+
+
         </div>
         <div className="form-group" id='family-group'>
           <label htmlFor="input-family">Familia *</label>
