@@ -78,7 +78,7 @@ label {
     margin-bottom: 20px;
 }
 
-input, textarea {
+input, textarea, select {
     padding: 20px;
     font-size: 1em;
     border: none;

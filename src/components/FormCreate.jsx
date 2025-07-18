@@ -44,6 +44,16 @@ const Form = ({ onSubmit }) => {
     });
   };
 
+  const butterflyFamilies = [
+    'Nymphalidae',
+    'Papilionidae',
+    'Pieridae',
+    'Lycaenidae',
+    'Hesperiidae',
+    'Riodinidae',
+  ];
+
+
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
       <div id='required-fields'>
@@ -60,10 +70,27 @@ const Form = ({ onSubmit }) => {
 
 
         </div>
-        <div className="form-group" id='family-group'>
+
+
+        {/* <div className="form-group" id='family-group'>
           <label htmlFor="input-family">Familia *</label>
           <input type="text" id="input-family" name="family" value={formData.family} onChange={handleChange} placeholder='Ej: Nymphalidae' required />
+        </div> */}
+
+        <div className="form-group" id='family-group'>
+          <label htmlFor="input-family">Familia *</label>
+          <select id="input-family" name="family" value={formData.family} onChange={handleChange} required>
+            <option value="">Selecciona la familia</option>
+            {butterflyFamilies.map((family) => (
+              <option key={family} value={family}>
+                {family}
+              </option>
+            ))}
+          </select>
         </div>
+
+
+
       </div>
       <div id='optional-fields'>
         <p id='p-optional'>Información adicional</p>
