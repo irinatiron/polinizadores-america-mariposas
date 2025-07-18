@@ -28,13 +28,11 @@ form {
     margin: 2% 0% 5%;
 }
 
-.form-group,
-#p-required {
+.form-group {
     padding: 20px 60px 0;
 }
 
 #required-fields {
-    font-size: 1.2em;
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -133,7 +131,15 @@ input:focus, textarea:focus, select:focus {
     outline: 2px solid var(--color-accent-orange);
 }
 
-button[type="submit"] {
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10% 0;
+    margin-top: 50px;
+}
+
+button[type="submit"], button[type="button"] {
     padding: 30px 25px;
     border-radius: 5px;
     border: none;
@@ -143,16 +149,19 @@ button[type="submit"] {
     background-color: var(--color-forest-green);
     opacity: 0.8;
     color: #ffff;
-    width: 23%;
+    width: 45%;
     grid-column: 1 / -1;
     justify-self: center;
-    font-size: 1.3em;
     transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover, button[type="button"]:hover {
     opacity: 1;
+}
+
+#endpage-add-button {
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -197,7 +206,7 @@ button[type="submit"]:hover {
         width: 100%;
     }
 
-    button[type="submit"] {
-        width: 85%;
+    button[type="submit"], button[type="button"] {
+        width: 45%;
     }
 }
