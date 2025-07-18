@@ -1,0 +1,89 @@
+.cards {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 100px 30px;
+    margin: 10% 0;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  background: linear-gradient(135deg, var(--color-dark-olive-green) 0%, var(--color-brown) 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding-top: 40px; /* espacio para la cinta */
+  overflow: hidden;
+}
+
+.corner-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  color: black;
+  padding: 15px 55px 15px 30px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+.corner-order {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 30px 15px 0;
+  font-size: 0.9em;
+  font-style: italic;
+  border-bottom-left-radius: 10px;
+}
+
+.card img {
+    text-align: center;
+    margin: 10px 30px 0 30px;
+}
+
+.card-content, .btns {
+    margin: 0 30px;
+}
+
+/* img { para la imagen
+    width: 340px;
+} */
+
+/*botones*/
+.btns {
+    margin: 15px 0 25px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    width: 40%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.btn-ver-detalle {
+    /* background-color: #F2EFDF; */
+    background-color: var(--color-light-beige);
+    color: black;
+}
+
+.btn-update {
+    /* background-color: #D4A84A; */
+    background-color: var(--color-card-button-edit);
+    color: black;
+}
+
+/* .btn-ver-detalle:hover {
+    background-color: #625952;
+}
+
+.btn-update:hover {
+    background-color: #c39739;
+} */
