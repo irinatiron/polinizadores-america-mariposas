@@ -1,4 +1,3 @@
-import React from 'react';
 // Step 1: Import the CSS file
 import './IntroPollinators.css';
 
