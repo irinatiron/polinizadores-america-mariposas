@@ -12,10 +12,10 @@ function Navbar() {
                 </Link>
                 {/*Title*/}
                 <Link to="/" className="nav-title">
-                    <p style="border: 3px dotted red">Mariposas de América</p>
+                    <p style={{border: "3px dotted red"}}>Mariposas de América</p>
                 </Link>
                 {/*Nav Links*/}
-                <ul className="nav-menu" style="border: 3px dotted red">
+                <ul className="nav-menu" style={{border: "3px dotted red"}}>
                     <li>
                         <Link to="/" className="nav-link">Inicio</Link>
                     </li>
