@@ -122,37 +122,7 @@ main div p {
 }
 
 
-/*---FOOTER---*/
-.footer {
-  border: 3px dotted red;
-  background-color: var(--color-olive-green);
-  color: var(--color-light-beige);
-  text-align: center;
-  padding: 1rem 0;
-  width: 100%;
-  bottom: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-logo {
-  margin-bottom: 1rem;
-}
-
-.footer-text {
-  margin-bottom: 1rem;
-}
-
-.footer-brand {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-accent-orange);
-}
 
 
 
