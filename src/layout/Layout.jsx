@@ -1,11 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom"; {/*React Router component that renders the current page content */ }
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import "./Layout.css";
 
-const Layout = () => {
+{/**Creates the Layout component using arrow function syntax */}
+const Layout = () => { 
   return (
     <>
-    <nav>Polinizadores de América: Mariposas. Inicio / Fichas / Creadoras</nav>
-    <Outlet/>
-    <footer>Mi footer. Proyecto creado en Factoría F5.</footer>
+      <Navbar />
+      <main className="layout-main">
+        <Outlet />
+      </main>
+      <Footer />
     </>
   )
 }
