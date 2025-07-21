@@ -1,6 +1,7 @@
 import './CardFrontButterflies.css';
 import { useEffect, useState } from 'react';
 import { getAllButterflies } from '../services/ButterflyServices'
+import { Link } from 'react-router-dom'
 
 const CardsButterflies = () => {
     const [butterflies, setButterflies] = useState([])//

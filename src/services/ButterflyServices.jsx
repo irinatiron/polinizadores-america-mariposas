@@ -20,7 +20,7 @@ export async function getAllButterflies() {
   }
   return response.json()
 }
-async function getOneButterfly(id) {
+export async function getOneButterfly(id) {
 
 }
 // Método POST para el CREATE
@@ -46,7 +46,7 @@ export async function createButterfly(newButterfly) {
   }
 }
 // Método PUT para el UPDATE
-async function updatebutterfly(id, updatedbutterfly) {
+export async function updateButterfly(id, updatedbutterfly) {
   try {
     const response = await fetch(`http://localhost:3000/butterflies"`, {
       method: "PUT",

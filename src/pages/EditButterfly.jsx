@@ -2,7 +2,7 @@
 import { Routes,Route,Link,useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditForm from "../components/EditForm";
-import {getOneButterfly,updateButterfly} from "../services/ButterflyServices";
+import {updateButterfly} from "../services/ButterflyServices";
 
 const EditButterfly = () => {
   const { id } = useParams(); // Obtiene el ID de la mariposa desde la URL
