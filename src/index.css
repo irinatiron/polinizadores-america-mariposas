@@ -69,12 +69,12 @@ main {
   /*Compensates fixed menu, so it is not covered by it */
 }
 
-.flex-container {
+/* .flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 
-}
+} */
 
 
 h1 {
