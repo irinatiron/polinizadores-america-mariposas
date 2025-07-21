@@ -32,7 +32,7 @@ export async function createButterfly(newButterfly) {
   }
 }
 // Método PUT para el UPDATE
-async function updatebutterfly(id,getOneButterfly ) {//SEGUN LO QUE USE 
+async function updateButterfly(getOneButterfly) {//SEGUN LO QUE USE GUISELLLA
 try {
 const response = await fetch(`${URL_API}${id}`, {
 method: "PUT",
