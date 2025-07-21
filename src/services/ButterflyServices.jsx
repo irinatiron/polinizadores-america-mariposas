@@ -32,22 +32,22 @@ export async function createButterfly(newButterfly) {
   }
 }
 // Método PUT para el UPDATE
-async function updatebutterfly(id, updatedbutterfly) {
+async function updatebutterfly(id,getOneButterfly ) {//SEGUN LO QUE USE 
 try {
-const response = await fetch(`http://localhost:3000/butterflies"`, {
+const response = await fetch(`${URL_API}${id}`, {
 method: "PUT",
 headers: {
 "Content-Type": "application/json",
 },
-body: JSON.stringify(updatedbutterfly),
+body: JSON.stringify(updatedButterfly),
 });
 
 if (!response.ok) {
-throw new Error("No se pudo actualizar ");
+throw new Error("No se pudo actualizar la mariposa ");
 }
 
 const data = await response.json();
-console.log("Actualizado:", data);
+console.log("Mariposa actualizada:", data);
 return data;
 
 } catch (error) {
