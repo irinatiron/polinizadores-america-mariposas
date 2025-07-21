@@ -1,6 +1,15 @@
+{/**Import custom component */}
+import IntroPollinators from "../components/IntroPollinators";
+import IntroProject from "../components/IntroProject";
+import AmericanMap from "../components/AmericanMap";
+
 const Home = () => {
   return (
-    <>Home</>
+    <>
+    <IntroPollinators/>
+    <IntroProject/>
+    <AmericanMap/>
+    </>
   )
 }
 

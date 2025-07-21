@@ -1,3 +1,4 @@
+/*---RESET STYLE---*/
 /*Reset and normalize styles in all elements*/
 * {
   margin: 0;
@@ -5,29 +6,43 @@
   box-sizing: border-box;
 }
 
+/*---WEB APP VARIABLES---*/
 :root {
-  /* Primary Colors */
-  --color-olive-green: #565939;    /* Main brand color, header, footer */
-  --color-light-beige: #F2EFDF;    /* Body background, light sections */
-  
-  /* Accent Colors */
-  --color-forest-green: #336D25;   /* Primary button */
-  --color-terracotta: #BF6734;     /* Secondary buttons, links, emphasis */
-  --color-accent-orange: #F28F16;  /* Call to Actions (CTA), highlights, active states */
-  --color-brick-red: #b63329;      /* Alerts, errors, important notices */
-  --color-sage-green: #6b8779;     /* Success states, subtle accents */
-  
-  /* Text Colors */
-  --color-text-dark: #565939;      /* Primary text (light background), body text */
-  --color-text-medium: #6b8779;     /* Secondary text, descriptions */
-  --color-text-light: #F2EFDF;     /* Primary text (dark background) body text, header-footer text */
+  /* ---Primary Colors--- */
+  --color-olive-green: #565939;
+  /* Main brand color, header, footer */
+  --color-light-beige: #F2EFDF;
+  /* Body background, light sections */
 
+  /* ---Accent Colors--- */
+  --color-forest-green: #336D25;
+  /* Primary button */
+  --color-terracotta: #BF6734;
+  /* Secondary buttons, links, emphasis */
+  --color-accent-orange: #F28F16;
+  /* Call to Actions (CTA), highlights, active states */
+  --color-brick-red: #b63329;
+  /* Alerts, errors, important notices */
+  --color-sage-green: #6b8779;
+  /* Success states, subtle accents */
 
-  /* Cards Colors*/
-  --color-card-background: #7F8C69; /* Background */
-  --color-card-header: #E9E8E4;     /* Header */
-  --color-card-button-detail: #F2EFDF; /* Botón "Ver Detalle" */
-  --color-card-button-edit: #D4A84A;   /* Botón "Editar" */
+  /* ---Text Colors--- */
+  --color-text-dark: #565939;
+  /* Primary text (light background), body text */
+  --color-text-medium: #6b8779;
+  /* Secondary text, descriptions */
+  --color-text-light: #F2EFDF;
+  /* Primary text (dark background) body text, header-footer text */
+
+  /* ---Cards Colors---*/
+  --color-card-background: #7F8C69;
+  /* Background */
+  --color-card-header: #E9E8E4;
+  /* Header */
+  --color-card-button-detail: #F2EFDF;
+  /* Botón "Ver Detalle" */
+  --color-card-button-edit: #D4A84A;
+  /* Botón "Editar" */
 
 }
 
@@ -37,18 +52,22 @@ body {
   background-color: var(--color-light-beige);
 }
 
-/* NAV */
-nav{
-  border: 3px dotted red;
-  background-color: var(--color-olive-green);
-  color: var(--color-light-beige);
+
+
+/*---HEADER---*/
+header {
+  border: 4px solid blue;
+  padding: 1rem;
+  background-color: yellow;
+  height: 200px;
 }
 
-
-  main {
-    border: 3px dotted red;
-  }
-
+/*---MAIN---*/
+main {
+  border: 3px dotted red;
+  margin: 10px;
+  /*Compensates fixed menu, so it is not covered by it */
+}
 
 .flex-container {
   display: flex;
@@ -58,23 +77,17 @@ nav{
 }
 
 
-footer {
-  border: 3px dotted red;
-  background-color: #565939;
-  color: var(--color-ivory)
-}
-
 h1 {
   font-size: 3rem;
   color: #565939;
+  text-align: center;
+  padding: 1rem;
 }
-
-
-
 
 h2 {
   font-size: 2rem;
   color: #BF6734;
+  padding: 1rem;
 
 
   /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
@@ -84,19 +97,38 @@ h2 {
 
 }
 
-/*
-Fondo principal: # F2EFDF.
-Cabecera y footer: #565939 con texto blanco.
-Botones primarios: Eliminar(#B63329) Editar(#2F7D1C) Añadir(#336D25)
-Card: #BD6363
-Detalle de la card: #E9E8E4
-Letras general: #000000
-Tipografía:
-TITULO
-https://fonts.google.com/specimen/Playfair+Display
- CUERPO
-https://fonts.google.com/specimen/Lora 
-*/
+h3 {
+  padding: 1rem;
+}
+
+main div p {
+  padding: 1rem;
+}
+
+
+.map-container {
+  border: 3px dotted blueviolet;
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+
+}
+
+.america-map {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
 
 /*
 :root {
