@@ -1,7 +1,6 @@
 #create-page-title,
 #create-page-intro {
     text-align: center;
-    margin: 10px;
 }
 
 .big-icon {
@@ -23,9 +22,9 @@ form {
     gap: 1%;
     max-width: 100%;
     background-color: #FAF9F6;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    margin: 2% 0% 5%;
+    margin: 2% 10% 5%;
 }
 
 .form-group {
@@ -157,7 +156,7 @@ select:focus,
     justify-content: space-between;
     padding: 0 10% 0;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
 }
 
 button[type="submit"],
@@ -167,7 +166,7 @@ button[type="button"] {
     gap: 0.5rem;
     justify-content: center;
     padding: 30px 25px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: none;
     cursor: pointer;
     font-size: 1em;
