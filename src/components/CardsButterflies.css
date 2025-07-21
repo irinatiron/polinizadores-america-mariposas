@@ -1,4 +1,6 @@
+.order-butterfly {
 
+}
 .cards {
     width: 900px;
     display: flex;
@@ -12,6 +14,9 @@ span {
     font-weight: 900;
 }
 
+.card-content p{
+    padding: 0;
+}
 p {
     font-size: 15px;
     margin-bottom: 10px;
@@ -42,15 +47,13 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 15px 30px 15px 0;
+  /* padding: 15px 30px 15px 0; */
+  padding-right: 15px;
   font-size: 0.9em;
   font-style: italic;
   border-bottom-left-radius: 10px;
 }
 
-/* img { para la imagen
-    width: 340px;
-} */
 .img-card{
     width: 340px;
     height: 230px;
@@ -60,7 +63,15 @@ p {
 
 .img-card img {
     text-align: center;
-    margin: 10px 30px 0 30px;
+    /* margin: 10px 30px 0 30px; */
+
+    /* width: 100%;
+    height: 230px; */
+}
+
+.img-butterfly {
+    width: 100%;
+    height: 230px;
 }
 
 .card-content, .btns {
