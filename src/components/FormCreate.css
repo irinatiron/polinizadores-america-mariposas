@@ -190,6 +190,12 @@ button[type="button"]:hover {
   justify-content: center;
 }
 
+.error-message {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
 
 @media screen and (max-width: 1200px) {
     form {
