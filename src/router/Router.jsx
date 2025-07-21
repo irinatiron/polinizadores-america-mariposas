@@ -19,7 +19,7 @@ const routerButterfly = createBrowserRouter([{
             element: <Home />,
         },
         {
-            path: "fichas-mariposas",
+            path: "/fichas-mariposas",
             element: <ButterfliesCards />
         },
         {
