@@ -1,5 +1,5 @@
-import './CardButterfly.css';
-const CardButterfly = () => {
+import './CardBackButterfly.css';
+const CardBackButterfly = () => {
     return (
         <div className="cards">
             <article className="card-butterfly">
@@ -32,4 +32,4 @@ const CardButterfly = () => {
     )
 }
 
-export default CardButterfly
+export default CardBackButterfly

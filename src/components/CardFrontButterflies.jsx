@@ -1,8 +1,8 @@
-import './CardsButterflies.css';
+import './CardFrontButterflies.css';
 import { useEffect, useState } from 'react';
 import { getAllButterflies } from '../services/ButterflyServices'
 
-const ButterfliesCards = () => {
+const CardsButterflies = () => {
     const [butterflies, setButterflies] = useState([])//
     const [loading, setLoading] = useState(true)//
 
@@ -51,7 +51,7 @@ const ButterfliesCards = () => {
     )
 }
 
-export default ButterfliesCards
+export default CardsButterflies
 
 
 // const CardsButterflies = () => {

@@ -1,3 +1,5 @@
+import CardBackButterfly from "../components/CardBackButterfly";
+
 function ButterflyDetail() {
     return(
         <>
