@@ -15,19 +15,19 @@ const routerButterfly = createBrowserRouter([{
             element: <Home/>,
         },
         {
-            path: "/new-butterfly",
+            path: "/nueva-mariposa",
             element: <CreateButterlfy/>
         },
         {
-            path: "/edit-butterfly/:id",
+            path: "/editar-mariposa/:id",
             element: <EditButterfly/>
         },
         {
-            path: "/butterfly-detail/:id",
+            path: "/detalle-mariposa/:id",
             element: <ButterflyDetail/>
         },
         {
-            path: "/sobre-nosotras",
+            path: "/creadoras",
             element: <About/>
         }
     ]
