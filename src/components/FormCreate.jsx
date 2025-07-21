@@ -1,19 +1,12 @@
 import { useState } from 'react'; // Importa hook useState que maneja el estado del formulario
 import './FormCreate.css';
-import { IoImageOutline } from "react-icons/io5";
+import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
 import { HiOutlineGlobeAmericas } from "react-icons/hi2";
 import { TbMapPin2 } from "react-icons/tb";
 import { MdOutlineColorLens } from "react-icons/md";
-import { LuRuler } from "react-icons/lu";
-import { IoCalendarOutline } from "react-icons/io5";
-import { LuHourglass } from "react-icons/lu";
+import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
-import { LuFlower2 } from "react-icons/lu";
-import { FaPlus } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa";
-
-
-
+import { FaPlus, FaCheck } from "react-icons/fa";
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState({ // Se crea un estado local llamado formData con los valores del formulario
@@ -146,7 +139,7 @@ const Form = ({ onSubmit }) => {
         </div>
       )}
       {/* Si el usuario decidió añadir más campos adicionales le mostramos el botón de submit justo al final del formulario */}
-      {showOptional && (<button type="submit" id='endpage-add-button'>Añadir mariposa <FaCheck /></button>)}
+      {showOptional && (<div className="form-buttons"><button type="submit">Añadir mariposa <FaCheck /></button></div>)}
     </form>
   );
 };
