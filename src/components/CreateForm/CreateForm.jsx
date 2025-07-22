@@ -1,5 +1,7 @@
 import { useState } from 'react'; // Importa hook useState que maneja el estado del formulario
-import './FormCreate.css';
+import validateButterfly from './ValidateButterfly'; // Importa la validación del formulario
+import { initialFormState, butterflyFamilies } from '../FormConstants'; // Importa el estado inicial del formulario y las familias existentes
+import './CreateForm.css';
 import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
 import { HiOutlineGlobeAmericas } from "react-icons/hi2";
 import { TbMapPin2 } from "react-icons/tb";
@@ -8,62 +10,20 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 
-// Validaciones del formulario
-const validateButterfly = (data) => {
-  const errors = {};
-  const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ() ,.-]{5,100}$/; // Permite letras mayúsculas y minúsculas, letras acentuadas y especiales en español, espacios, paréntesis, puntos y guiones
-  const wordCount = data.name.trim().split(/\s+/).length; // Elimina espacios al principio y final, divide el string en un array de palabras para poder contar cuántas hay
-  if (!data.name.trim()) { // Verifica que name no esté vacío
-    errors.name = 'El nombre es obligatorio.';
-  } else if (!namePattern.test(data.name)) { // Validaciones adicionales para verificar que el contenido cumple con el namePattern y el número de palabras
-    errors.name = 'Solo se permiten letras, espacios y paréntesis.';
-  } else if (wordCount < 2 || wordCount > 5) {
-    errors.name = 'El nombre debe tener entre 2 y 5 palabras.';
-  }
-  if (!data.family.trim()) {
-    errors.family = 'Selecciona una familia.';
-  }
-  if (data.img && !/^https?:\/\/.*\.(jpg|jpeg|png|webp|gif)$/i.test(data.img)) {
-    errors.img = 'La URL introducida no es válida.';
-  }
-  const textFields = ['origin', 'location', 'color', 'size', 'fenology', 'cycle', 'habitat', 'plants'];
-  const textPattern = /^[\wÀ-ÿ ,.'()\-:;]{5,500}$/i; // Letras mayúsculas y minúsculas, dígitos 0-9, acentos y letras especiales, espacio, coma, punto, apóstrofe, paréntesis, guión, dos puntos y punto y coma
-  // Entre 5 y 500 caracteres permitidos
-  textFields.forEach(field => {
-    if (data[field] && data[field].trim().length < 5) {
-      errors[field] = 'Debe escribir por lo menos 5 caracteres.';
-    } else if (data[field] && !textPattern.test(data[field])) {
-      errors[field] = 'Contiene caracteres no permitidos.';
-    }
-  });
-  return errors;
-};
 
-const initialFormState = {
-  name: '',
-  order: 'Lepidoptera',
-  family: '',
-  color: '',
-  size: '',
-  origin: '',
-  location: '',
-  habitat: '',
-  plants: '',
-  cycle: '',
-  img: '',
-  fenology: '',
-};
+import Swal from 'sweetalert2' // Importa sweetalert
+
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({}); // Se crea estado formErrors para almacenar los mensajes de error y por defecto está vacío
 
   const [showOptional, setShowOptional] = useState(false); // Vamos a dividir los campos en required (nombre, orden y familia) y opcionales (el resto)
-// Inicialmente los campos opcionales están ocultos: false
+  // Inicialmente los campos opcionales están ocultos: false
 
   const handleChange = (e) => { // handleChange es la función que se ejecuta cuando cambia un campo, se extrae name y value
     const { name, value } = e.target;
-    const updatedFormData = { 
+    const updatedFormData = {
       ...formData, // Spread operator: clona la información de formData
       [name]: value, // Los campos que han cambiado con su valor
     };
@@ -77,23 +37,40 @@ const Form = ({ onSubmit }) => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Evita que el navegador recargue la página
     const errors = validateButterfly(formData); // Validación final del formulario antes de permitir que envíe los datos
-    if (Object.keys(errors).length > 0) { 
-      alert("Errores en el formulario:\n" + Object.values(errors).join('\n'));
+   
+    const fieldLabels = { // Constante con la traducción de los campos
+      name: 'Nombre',
+      order: 'Orden',
+      family: 'Familia',
+      color: 'Color',
+      size: 'Tamaño',
+      origin: 'Origen',
+      location: 'Localización',
+      habitat: 'Hábitat',
+      plants: 'Plantas visitadas',
+      cycle: 'Ciclo de vida',
+      img: 'Imagen',
+      fenology: 'Fenología'
+    };
+
+    if (Object.keys(errors).length > 0) {
+      const firstErrorField = Object.keys(errors)[0];
+      const firstErrorMessage = errors[firstErrorField];
+      const fieldLabel = fieldLabels[firstErrorField] || firstErrorField;
+      Swal.fire({
+        icon: 'error',
+        title: 'Formulario inválido',
+        html: `<p>Por favor verifique lo que ha escrito en el campo <strong> ${fieldLabel} </strong> antes de continuar.</p><p>${firstErrorMessage}</p>`,
+        confirmButtonText: 'Entendido',
+        customClass: {confirmButton: 'swal2-confirm-error'} 
+      });
       return;
     }
+
     await onSubmit(formData); // Si no hay errores
     // Si el formulario se ha enviado correctamente se restablece a su valor inicial y se vacían todos los campos
     setFormData(initialFormState);
   };
-
-  const butterflyFamilies = [ // Las familias que existen de mariposas para el select
-    'Nymphalidae',
-    'Papilionidae',
-    'Pieridae',
-    'Lycaenidae',
-    'Hesperiidae',
-    'Riodinidae',
-  ];
 
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>

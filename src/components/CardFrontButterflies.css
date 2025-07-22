@@ -1,11 +1,12 @@
 
 .cards {
-    width: 900px;
+    /* width: 900px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 100px 30px;
-    margin: 10% 0;
+    /* margin: 10% 0; */
+    margin: 30px 0;
     color: black;
 }
 
@@ -24,7 +25,8 @@ p {
 
 .cards-butterflies {
   position: relative;
-  width: 400px;
+  /* width: 400px; */
+  width: 380px;
   height: 430px;
   background: linear-gradient(135deg, var(--color-olive-green) 0%, var(--color-terracotta) 100%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -58,7 +60,8 @@ p {
 }
 
 .img-card{
-    width: 340px;
+    /* width: 340px; */
+    width: 320px;
     height: 230px;
     background-color: white;
     margin: 13px 30px 0 30px;

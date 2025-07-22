@@ -1,10 +1,16 @@
 #create-page-title,
 #create-page-intro {
     text-align: center;
+    padding: 0;
+}
+
+#create-page-intro {
+    font-size: 15px;
+    margin: 5px 0 15px;
 }
 
 .big-icon {
-    font-size: 170px;
+    font-size: 150px;
     margin: 0 auto;
     display: block;
     color: var(--color-forest-green);
@@ -98,9 +104,9 @@ form {
 
 label {
     margin: 5px 10px 10px;
-    font-weight: bold;
+    font-weight: 600;
     display: block;
-    font-size: 1.1em;
+    font-size: 1em;
     margin-bottom: 20px;
 }
 
@@ -186,24 +192,44 @@ button[type="button"]:hover {
 }
 
 .form-buttons:has(button:only-child) {
-  justify-content: center;
+    justify-content: center;
 }
 
 .error-message {
-  color: #c0392b;
-  font-size: 0.85rem;
-  margin-top: 4px;
+    color: var( --color-brick-red);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.swal2-confirm-error {
+  font-size: 1.2rem !important;   
+  padding: 12px 28px !important;  
+  border-radius: 8px !important;
+  background-color: var(--color-brick-red) !important; 
+  color: #ffff !important;                
+  width: auto !important;                 
+  min-width: 100px !important;
+}
+
+.swal2-confirm-ok {
+  font-size: 1.2rem !important;   
+  padding: 12px 28px !important;  
+  border-radius: 8px !important;
+  background-color: var(--color-forest-green) !important; 
+  color: #ffff !important;                
+  width: auto !important;                 
+  min-width: 100px !important;
 }
 
 
 @media screen and (max-width: 1200px) {
     form {
         grid-template-columns: 1fr;
-        margin: 0;
+        margin: 10px 0 0;
     }
 
     .form-group {
-        padding: 20px 30px 0;
+        padding: 10px 30px 0;
     }
 
     #required-fields {
@@ -216,6 +242,10 @@ button[type="button"]:hover {
 
     #optional-fields {
         padding: 0;
+    }
+
+    #img-group input {
+        min-height: 60px;
     }
 
     #img-group {
@@ -232,15 +262,22 @@ button[type="button"]:hover {
 
     .form-buttons {
         flex-direction: column;
-        padding: 0 5%;
+        padding: 0 8%;
+        margin-top: 20px;
+        margin-bottom: 1.2rem;
+    }
+
+    .form-buttons:has(button:only-child) {
+        margin-bottom: 4.1rem;
     }
 
     .form-buttons button[type="submit"],
     .form-buttons button[type="button"] {
         width: 100%;
-        margin-bottom: 3rem;
+        margin-bottom: 1.3rem;
+        padding: 20px 15px;
     }
-    
+
     input {
         width: 100%;
     }

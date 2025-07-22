@@ -1,5 +1,5 @@
 // Sólo peticiones fetch en este archivo
-
+import Swal from 'sweetalert2';
 const URL_API = "http://localhost:3000/butterflies";
 
 // Método GET para el READ
@@ -39,9 +39,16 @@ export async function createButterfly(newButterfly) {
     });
     if (response.ok) {
       const created = await response.json();
-      alert('Mariposa añadida correctamente');
+      Swal.fire({
+        icon: 'success',
+        title: '¡Mariposa añadida!',
+        text: 'La información se ha guardado correctamente.',
+        confirmButtonText: 'Perfecto',
+        customClass: { confirmButton: 'swal2-confirm-ok' }
+      });
       return created;
-    } else {
+    }
+    else {
       const errorText = await response.text();
       console.error('Error al añadir la mariposa:', errorText);
     }

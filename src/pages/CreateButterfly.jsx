@@ -1,4 +1,4 @@
-import Form from '../components/FormCreate';
+import Form from '../components/CreateForm/CreateForm';
 import { createButterfly } from '../services/ButterflyServices';
 import { GiButterflyFlower } from "react-icons/gi";
 
