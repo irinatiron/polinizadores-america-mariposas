@@ -3,26 +3,26 @@ import { useEffect, useState } from 'react';
 import { getAllButterflies } from '../services/ButterflyServices'
 import { Link } from 'react-router-dom'
 
-const CardsButterflies = () => {
-    const [butterflies, setButterflies] = useState([])//
-    const [loading, setLoading] = useState(true)//
+const CardsButterflies = () => {// define un componente funcional (CardButterflies). Este componente va a mostrar tarjetas con información de mariposas
+    const [butterflies, setButterflies] = useState([])//Crea un estado llamado butterflies, que empieza con un array vacío. Aquí se va a guardar la lista de mariposas que vienen del servidor o API
+    const [loading, setLoading] = useState(true)//Crea otro estado llamado 'loading', que comienza en 'true'.Este sirve para mostrar un mensaje de "Cargando..." mientras se obtienen los datos
 
-    useEffect(() => {
-        const fetchData = async () => {
+    useEffect(() => {//es un hook que permite ejecutar ódigo cuando el componente se monta (se muestra por primera vez)
+        const fetchData = async () => {//Se define una función asíncrona (porque va a hacer una llamada a una API)
             try {
-                const data = await getAllButterflies()
-                setButterflies(data)
-            } catch (error) {
+                const data = await getAllButterflies()//Intenta obtener los datos de las mariposas usando la función getAllButterflies
+                setButterflies(data)//Cuando recibe los datos, los guarda en el estado 'butterflies
+            } catch (error) {//Si ocurre un error al pedir los datos, lo muestra en la consola
                 console.error('Error al cargar mariposas: ', error);
-            } finally {
+            } finally {//Cuando termina (haya salido bien o mal), pone 'loading' en 'false', indicando que ya no está cargando.
                 setLoading(false)
             }
         };
 
-        fetchData()
-    }, [])
+        fetchData()//LLama a la función fetchData para empezar a obtener los datos cuando el compornente se monta.
+    }, [])//El array vacío '[]' le dice a 'useEffect' que solo ejecute esto **una vez**, al principio
 
-    if (loading) return <p>Cargando mariposas...</p>
+    if (loading) return <p>Cargando mariposas...</p>//Mientras loading es true, muestra un mensaje
 
     return (
         <div className="cards">
@@ -42,8 +42,10 @@ const CardsButterflies = () => {
                     <p><span>Ciclo vital: </span> {butterfly.cycle}</p>
                 </div>
                 <div className="btns">
-                    <a className="btn btn-ver-detalle" href="card.html">Ver detalle</a>
-                    <a className="btn btn-update" href="#">Editar</a>
+                    {/* <a className="btn btn-ver-detalle" href="card.html">Ver detalle</a> */}
+                    {/* <a className="btn btn-update" href="#">Editar</a> */}
+                    <Link className="btn btn-ver-detalle" to={`/detalle-mariposa/${butterfly.id}`}>Ver detalle</Link>
+                    <Link className="btn btn-update" to={`/editar-mariposa/${butterfly.id}`}>Editar</Link>
                 </div>
             </article>
             ))}

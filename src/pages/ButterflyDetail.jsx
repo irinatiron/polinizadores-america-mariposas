@@ -4,6 +4,7 @@ function ButterflyDetail() {
     return(
         <>
         <p>Detalle de una mariposa.</p>
+        <CardBackButterfly></CardBackButterfly>
         </>
     )
 }

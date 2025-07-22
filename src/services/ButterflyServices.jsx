@@ -20,9 +20,13 @@ export async function getAllButterflies() {
   }
   return response.json()
 }
-export async function getOneButterfly(id) {
 
+export async function getOneButterfly(id) {
+  const response = await fetch(`${URL_API}/${id}`)
+  if (!response.ok) throw new Error('Error al obtener la mariposa')
+  return response.json()
 }
+
 // Método POST para el CREATE
 export async function createButterfly(newButterfly) {
   try {
