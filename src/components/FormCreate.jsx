@@ -8,50 +8,82 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 
-const Form = ({ onSubmit }) => {
-  const [formData, setFormData] = useState({ // Se crea un estado local llamado formData con los valores del formulario
-    name: '', // Valores iniciales como cadena vacía
-    order: 'Lepidoptera', // Todas las mariposas son del orden Lepidoptera así que no dejamos al usuario modificar este campo
-    family: '',
-    color: '',
-    size: '',
-    origin: '',
-    location: '',
-    habitat: '',
-    plants: '',
-    cycle: '',
-    img: '',
-    fenology: '',
+// Validaciones del formulario
+const validateButterfly = (data) => {
+  const errors = {};
+  const namePattern = /^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ() ,.-]{5,100}$/; // Permite letras mayúsculas y minúsculas, letras acentuadas y especiales en español, espacios, paréntesis, puntos y guiones
+  const wordCount = data.name.trim().split(/\s+/).length; // Elimina espacios al principio y final, divide el string en un array de palabras para poder contar cuántas hay
+  if (!data.name.trim()) { // Verifica que name no esté vacío
+    errors.name = 'El nombre es obligatorio.';
+  } else if (!namePattern.test(data.name)) { // Validaciones adicionales para verificar que el contenido cumple con el namePattern y el número de palabras
+    errors.name = 'Solo se permiten letras, espacios y paréntesis.';
+  } else if (wordCount < 2 || wordCount > 5) {
+    errors.name = 'El nombre debe tener entre 2 y 5 palabras.';
+  }
+  if (!data.family.trim()) {
+    errors.family = 'Selecciona una familia.';
+  }
+  if (data.img && !/^https?:\/\/.*\.(jpg|jpeg|png|webp|gif)$/i.test(data.img)) {
+    errors.img = 'La URL introducida no es válida.';
+  }
+  const textFields = ['origin', 'location', 'color', 'size', 'fenology', 'cycle', 'habitat', 'plants'];
+  const textPattern = /^[\wÀ-ÿ ,.'()\-:;]{5,500}$/i; // Letras mayúsculas y minúsculas, dígitos 0-9, acentos y letras especiales, espacio, coma, punto, apóstrofe, paréntesis, guión, dos puntos y punto y coma
+  // Entre 5 y 500 caracteres permitidos
+  textFields.forEach(field => {
+    if (data[field] && data[field].trim().length < 5) {
+      errors[field] = 'Debe escribir por lo menos 5 caracteres.';
+    } else if (data[field] && !textPattern.test(data[field])) {
+      errors[field] = 'Contiene caracteres no permitidos.';
+    }
   });
+  return errors;
+};
+
+const initialFormState = {
+  name: '',
+  order: 'Lepidoptera',
+  family: '',
+  color: '',
+  size: '',
+  origin: '',
+  location: '',
+  habitat: '',
+  plants: '',
+  cycle: '',
+  img: '',
+  fenology: '',
+};
+
+const Form = ({ onSubmit }) => {
+  const [formData, setFormData] = useState(initialFormState);
+  const [formErrors, setFormErrors] = useState({}); // Se crea estado formErrors para almacenar los mensajes de error y por defecto está vacío
 
   const [showOptional, setShowOptional] = useState(false); // Vamos a dividir los campos en required (nombre, orden y familia) y opcionales (el resto)
+// Inicialmente los campos opcionales están ocultos: false
 
+  const handleChange = (e) => { // handleChange es la función que se ejecuta cuando cambia un campo, se extrae name y value
+    const { name, value } = e.target;
+    const updatedFormData = { 
+      ...formData, // Spread operator: clona la información de formData
+      [name]: value, // Los campos que han cambiado con su valor
+    };
+    setFormData(updatedFormData); // Actualiza el estado del formulario 
 
-  const handleChange = (e) => { // Manejamos los cambios realizados por el usuario
-    const { name, value } = e.target; // Recoge name y value del input modificado
-    setFormData((prevData) => ({ // Recoge el estado anterior
-      ...prevData,
-      [name]: value, // Actualiza con los cambios modificados
-    }));
+    // Valida el campo que se modifica y guarda los errores
+    const validationErrors = validateButterfly({ ...formData, [name]: value });
+    setFormErrors(prev => ({ ...prev, [name]: validationErrors[name] }));
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del navegador 
-    await onSubmit(formData); // Llamada a la función onSubmit
-    setFormData({ // Tras enviar el formulario correctamente lo reinicia vacío
-      name: '',
-      order: 'Lepidoptera',
-      family: '',
-      color: '',
-      size: '',
-      origin: '',
-      location: '',
-      habitat: '',
-      plants: '',
-      cycle: '',
-      img: '',
-      fenology: '',
-    });
+    e.preventDefault(); // Evita que el navegador recargue la página
+    const errors = validateButterfly(formData); // Validación final del formulario antes de permitir que envíe los datos
+    if (Object.keys(errors).length > 0) { 
+      alert("Errores en el formulario:\n" + Object.values(errors).join('\n'));
+      return;
+    }
+    await onSubmit(formData); // Si no hay errores
+    // Si el formulario se ha enviado correctamente se restablece a su valor inicial y se vacían todos los campos
+    setFormData(initialFormState);
   };
 
   const butterflyFamilies = [ // Las familias que existen de mariposas para el select
@@ -68,7 +100,8 @@ const Form = ({ onSubmit }) => {
       <div id='required-fields'>
         <div className="form-group" id='name-group'>
           <label htmlFor="input-name">Nombre</label>
-          <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} placeholder='Ej: Mariposa monarca (Danaus plexippus) ' required autoFocus />
+          <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} placeholder='Ej: Mariposa monarca (Danaus plexippus)' required autoFocus />
+          {formErrors.name && <p className="error-message">{formErrors.name}</p>}
         </div>
         <div className="form-group" id='order-group'>
           <label htmlFor="input-order">Orden</label>
@@ -87,7 +120,7 @@ const Form = ({ onSubmit }) => {
         </div>
       </div>
       {/* Damos la opción al usuario de añadir información adicional a o de guardar la mariposa añadida sólo con el nombre y la familia */}
-      {!showOptional && (<div className="form-buttons"> 
+      {!showOptional && (<div className="form-buttons">
         <button type="button" className="show-optional" onClick={() => setShowOptional(true)}><FaPlus /> Añadir información adicional</button>
         <button type="submit" className="submit-button">Añadir mariposa <FaCheck /></button>
       </div>
@@ -98,6 +131,7 @@ const Form = ({ onSubmit }) => {
           <div className="form-group" id='img-group'>
             <label htmlFor="input-img"><IoImageOutline /> Imagen</label>
             <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} placeholder='https://url-de-la-imagen.jpg' />
+            {formErrors.img && <p className="error-message">{formErrors.img}</p>}
           </div>
           {/* Campo para una futura subida de archivos (imagen) por parte del usuario, necesario un back-end */}
           {/* <div className="form-group" id='img-group'>
@@ -107,34 +141,42 @@ const Form = ({ onSubmit }) => {
           <div className="form-group" id='origin-group'>
             <label htmlFor="input-origin"><HiOutlineGlobeAmericas /> Origen</label>
             <textarea id="input-origin" name="origin" value={formData.origin} onChange={handleChange} placeholder='Ej: Originaria de América del Norte.' />
+            {formErrors.origin && <p className="error-message">{formErrors.origin}</p>}
           </div>
           <div className="form-group" id='location-group'>
             <label htmlFor="input-location"><TbMapPin2 /> Localización</label>
             <textarea id="input-location" name="location" value={formData.location} onChange={handleChange} placeholder='Ej: Se distribuye desde Canadá hasta el norte de Sudamérica.' />
+            {formErrors.location && <p className="error-message">{formErrors.location}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="input-color"><MdOutlineColorLens /> Color</label>
             <textarea id="input-color" name="color" value={formData.color} onChange={handleChange} placeholder='Ej: Alas de color naranja con líneas negras.' />
+            {formErrors.color && <p className="error-message">{formErrors.color}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="input-size"><LuRuler /> Tamaño</label>
             <textarea id="input-size" name="size" value={formData.size} onChange={handleChange} placeholder='Ej: Entre 8,9 y 10,2 cm.' />
+            {formErrors.size && <p className="error-message">{formErrors.size}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="input-fenology"><IoCalendarOutline /> Fenología</label>
             <textarea id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} placeholder='Ej: Migración en otoño, reproducción en primavera y verano.' />
+            {formErrors.fenology && <p className="error-message">{formErrors.fenology}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="input-cycle"><LuHourglass /> Ciclo de vida</label>
             <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} placeholder='Ej: Huevo, oruga, crisálida y adulto.' />
+            {formErrors.cycle && <p className="error-message">{formErrors.cycle}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="input-habitat"><HiOutlineHome /> Hábitat</label>
             <textarea id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} placeholder='Ej: Hábitat diverso abarcando desde bosques a campos de algodoncillo.' />
+            {formErrors.habitat && <p className="error-message">{formErrors.habitat}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="input-plants"><LuFlower2 /> Plantas visitadas</label>
             <textarea id="input-plants" name="plants" value={formData.plants} onChange={handleChange} placeholder='Ej: Plantas del género Asclepias.' />
+            {formErrors.plants && <p className="error-message">{formErrors.plants}</p>}
           </div>
         </div>
       )}
