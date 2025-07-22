@@ -15,14 +15,8 @@ const EditButterfly = () => {
   const fetchButterflyData = async () => {
     try {
       setLoading(true);
-      // Reemplaza esta URL con tu endpoint real
-      const response = await fetch(URL_API);
-      
-      if (!response.ok) {
-        throw new Error('Error al cargar los datos de la mariposa');
-      }
-      
-      const data = await response.json();
+      // Usar el servicio que ya creaste en lugar de fetch directo
+      const data = await getOneButterfly(id);
       setButterflyData(data);
     } catch (err) {
       setError(err.message);
@@ -32,28 +26,13 @@ const EditButterfly = () => {
   };
 
   // Función para actualizar la mariposa
-  const handleUpDateButterfly = async (updatedData) => {
+  const handleUpdateButterfly = async (updatedData) => {
     try {
-       
-      const response = await fetch(`http://localhost:3000/butterflies`,{
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Error al actualizar la mariposa');
-      }
-
-      const result = await response.json();
+      const result = await updateButterfly(id, updatedData);
       
-      // Mostrar mensaje de éxito
       alert('Mariposa actualizada exitosamente');
       
-      // Navegar de vuelta a la lista o a la vista de detalle
-      navigate('/butterflies'); // Ajusta esta ruta según tu aplicación
+      navigate('/fichas-mariposas'); 
       
     } catch (err) {
       setError(err.message);
@@ -82,7 +61,7 @@ const EditButterfly = () => {
       <h2>Editar Mariposa</h2>
       {butterflyData && (
         <EditForm 
-          onSubmit={updateButterfly}
+          onSubmit={handleUpdateButterfly}
           initialData={butterflyData}
         />
       )}
