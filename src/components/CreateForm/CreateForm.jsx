@@ -1,6 +1,7 @@
 import { useState } from 'react'; // Importa hook useState que maneja el estado del formulario
 import validateButterfly from './ValidateButterfly'; // Importa la validación del formulario
-import './FormCreate.css';
+import { initialFormState, butterflyFamilies } from '../FormConstants'; // Importa el estado inicial del formulario y las familias existentes
+import './CreateForm.css';
 import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
 import { HiOutlineGlobeAmericas } from "react-icons/hi2";
 import { TbMapPin2 } from "react-icons/tb";
@@ -9,20 +10,6 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 
-const initialFormState = {
-  name: '',
-  order: 'Lepidoptera',
-  family: '',
-  color: '',
-  size: '',
-  origin: '',
-  location: '',
-  habitat: '',
-  plants: '',
-  cycle: '',
-  img: '',
-  fenology: '',
-};
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState(initialFormState);
@@ -55,15 +42,6 @@ const Form = ({ onSubmit }) => {
     // Si el formulario se ha enviado correctamente se restablece a su valor inicial y se vacían todos los campos
     setFormData(initialFormState);
   };
-
-  const butterflyFamilies = [ // Las familias que existen de mariposas para el select
-    'Nymphalidae',
-    'Papilionidae',
-    'Pieridae',
-    'Lycaenidae',
-    'Hesperiidae',
-    'Riodinidae',
-  ];
 
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
