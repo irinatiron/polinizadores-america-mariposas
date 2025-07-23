@@ -75,7 +75,6 @@ async function updatebutterfly(id, updatedbutterfly) {
 //  DELETE <<>> DELETE
 // ========================================
 
-
 const deleteButterfly = async (id) => {
  try {
    // Make the DELETE request to the server
