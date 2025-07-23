@@ -24,6 +24,7 @@ Los polinizadores están disminuyendo en todo el mundo debido a múltiples facto
 
 ## 🗂️ Estructura del proyecto
 
+```
 polinizadores-mariposas-america/
 ├── index.html                                                                   ← Archivo HTML principal
 ├── package.json                                                                 ← Define las dependencias, scripts y metadatos del proyecto.
@@ -50,6 +51,7 @@ polinizadores-mariposas-america/
      │   └── Router.jsx                                                          
      └── /services                                                               ← Funciones que llaman a la API: GET, POST, PUT, DELETE
          └── ButterflyServices.jsx                                               
+```
 
 ## ⚙️ Tecnologías y librerías utilizadas
 
