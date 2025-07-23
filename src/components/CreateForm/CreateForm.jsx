@@ -17,17 +17,11 @@ const Form = ({ onSubmit }) => {
   const [formErrors, setFormErrors] = useState({}); // Se crea estado formErrors para almacenar los mensajes de error y por defecto está vacío
   const [showOptional, setShowOptional] = useState(false); // Vamos a dividir los campos en required (nombre, orden y familia) y opcionales (el resto)
   // Inicialmente los campos opcionales están ocultos: false
-
-
   const isRequiredValid = () => {
     const { name, family } = formData;
     const errors = validateButterfly({ name, family });
     return Object.keys(errors).length === 0;
   };
-
-
-
-
   const handleChange = (e) => { // handleChange es la función que se ejecuta cuando cambia un campo, se extrae name y value
     // handleChange recibe un evento e a través del input
     const { name, value } = e.target; // Separa name y value
@@ -44,7 +38,6 @@ const Form = ({ onSubmit }) => {
       [name]: validationErrors[name], // Muestra los mensajes de error
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault(); // Evita que el navegador recargue la página
     const errors = validateButterfly(formData); // Validación final del formulario antes de permitir que envíe los datos
@@ -61,12 +54,10 @@ const Form = ({ onSubmit }) => {
       });
       return;
     }
-
     await onSubmit(formData); // Si no hay errores
     // Si el formulario se ha enviado correctamente se restablece a su valor inicial y se vacían todos los campos
     setFormData(initialFormState);
   };
-
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
       <div id='required-fields'>
@@ -99,7 +90,6 @@ const Form = ({ onSubmit }) => {
       </div>
       {/* Damos la opción al usuario de añadir información adicional a o de guardar la mariposa añadida sólo con el nombre y la familia */}
 
-
       {/* {!showOptional && (<div className="form-buttons">
         <button type="button" className="show-optional" onClick={() => setShowOptional(true)}><FaPlus /> Añadir información adicional</button>
         <button type="submit" className="submit-button">Añadir mariposa <FaCheck /></button>
@@ -113,8 +103,6 @@ const Form = ({ onSubmit }) => {
           <button type="submit" className="submit-button">Añadir mariposa <FaCheck /></button>
         </div>
       )}
-
-
       {/* Si el usuario elige añadir información adicional desplegamos el resto de campos */}
       {showOptional && (
         <div id='optional-fields'>
