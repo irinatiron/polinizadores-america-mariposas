@@ -1,6 +1,36 @@
 {
   "butterflies": [
     {
+      "id": "3001",
+      "name": "Mariposa monarca",
+      "order": "Lepidoptera",
+      "family": "Danaidae",
+      "color": "Naranja con negro",
+      "size": "10 cm",
+      "origin": "México",
+      "location": "América del Norte",
+      "habitat": "Bosques de oyamel",
+      "plants": "Asclepias",
+      "cycle": "Huevo, oruga, crisálida y adulto",
+      "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
+      "fenology": "Migración en otoño, reproducción en primavera y verano"
+    },
+    {
+      "id": "3002",
+      "name": "Morpho azul",
+      "order": "Lepidoptera",
+      "family": "Nymphalidae",
+      "color": "Azul metálico",
+      "size": "15 cm",
+      "origin": "Brasil",
+      "location": "Selvas del Amazonas",
+      "habitat": "Bosques tropicales",
+      "plants": "Frutas fermentadas, savia de árboles",
+      "cycle": "Huevo, larva, pupa y adulto",
+      "img": "https://palmitospark.es/wp-content/uploads/2023/04/butterfly-g31bc30040_1280.jpg",
+      "fenology": "Activa todo el año"
+    },
+    {
       "id": "3003",
       "name": "Heliconius charithonia",
       "order": "Lepidoptera",

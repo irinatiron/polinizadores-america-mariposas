@@ -125,7 +125,7 @@ const deleteButterfly = async (id) => {
 };
 export { deleteButterfly };
 
-
+window.deleteButterfly = deleteButterfly;
 
 
 
