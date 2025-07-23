@@ -113,8 +113,6 @@ const Form = ({ onSubmit }) => {
             {/* <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} onBlur={handleBlur} placeholder='https://url-de-la-imagen.jpg' title='Pega la URL de una foto de la mariposa.' /> */}
 
             {/* Subida de imagen mediante Cloudinary */}
-            {/* <ImageUpload onUpload={(url) => setFormData({ ...formData, img: url })} /> */}
-
             <ImageUpload onUpload={(url) => setFormData({ ...formData, img: url })} img={formData.img} />
 
 

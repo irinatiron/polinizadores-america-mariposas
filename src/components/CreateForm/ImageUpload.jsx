@@ -40,7 +40,7 @@ const ImageUpload = ({ onUpload, img }) => {
   };
 
   return (
-    <div>
+    <div id='image-upload-container'>
       <input
         type="file"
         onChange={handleImageChange}
@@ -52,7 +52,7 @@ const ImageUpload = ({ onUpload, img }) => {
         <img
           src={previewUrl}
           alt="Vista previa de la imagen subida"
-          style={{ marginTop: '1rem', maxWidth: '100%', height: 'auto' }}
+          id='img-preview'
         />
       )}
     </div>
