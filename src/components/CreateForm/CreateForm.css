@@ -199,7 +199,12 @@ button[type="button"]:hover {
 .error-message {
     color: var(--color-brick-red);
     font-size: 0.85rem;
-    margin-top: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.input-error {
+  outline: 2px solid var(--color-brick-red) !important;
 }
 
 .swal2-confirm-error {

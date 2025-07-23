@@ -6,12 +6,12 @@ const validateButterfly = (data) => {
   if (!data.name.trim()) { // Verifica que name no esté vacío
     errors.name = 'El nombre es obligatorio.';
   } else if (!namePattern.test(data.name)) { // Validaciones adicionales para verificar que el contenido cumple con el namePattern y el número de palabras
-    errors.name = 'Solo se permiten letras, espacios y paréntesis.';
+    errors.name = 'Mínimo 2 palabras. Solo se permiten letras, espacios y paréntesis.';
   } else if (wordCount < 2 || wordCount > 5) {
     errors.name = 'El nombre debe tener entre 2 y 5 palabras.';
   }
   if (!data.family.trim()) {
-    errors.family = 'Selecciona una familia.';
+    errors.family = 'Selecciona una familia de la lista.';
   }
   if (data.img && !/^https?:\/\/.*\.(jpg|jpeg|png|webp|gif)$/i.test(data.img)) {
     errors.img = 'La URL introducida no es válida.';
