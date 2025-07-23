@@ -1,36 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3018",
-      "name": "Marpesia petreus",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "Naranja con patrón marrón",
-      "size": "7 cm",
-      "origin": "América Central",
-      "location": "Desde Texas hasta Perú",
-      "habitat": "Bosques y claros",
-      "plants": "Croton, Frutas",
-      "cycle": "3 a 5 semanas",
-      "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/alas_daga.jpg",
-      "fenology": "Todo el año en clima cálido"
-    },
-    {
-      "id": "3020",
-      "name": "Mechanitis polymnia",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "Naranja translúcido con bordes negros",
-      "size": "6 cm",
-      "origin": "Amazonas",
-      "location": "América del Sur",
-      "habitat": "Bosques húmedos bajos",
-      "plants": "Solanaceae",
-      "cycle": "35 días",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Disturbed_Tigerwings%2C_Quito.jpg",
-      "fenology": "Todo el año"
-    },
-    {
       "id": "3021",
       "name": "Actinote thalia",
       "order": "Lepidoptera",
