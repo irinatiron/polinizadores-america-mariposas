@@ -2,6 +2,8 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 .creators-header {

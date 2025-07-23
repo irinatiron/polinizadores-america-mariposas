@@ -4,13 +4,13 @@ const Creators = () => {
   const creators = [
     {
       id: 1,
-      name: "María del Carmen Tajuelo",
+      name: "María Carmen Tajuelo",
       butterflySpecies: "Monarca",
       butterflyImage: "https://images.unsplash.com/photo-1444927714506-8492d94b5ba0?w=300&h=300&fit=crop",
       profileImage: "https://images.unsplash.com/photo-1494790108755-2616b612b194?w=200&h=200&fit=crop&crop=face",
       github: "https://github.com/CarmenTajuelo",
       linkedin: "https://www.linkedin.com/in/carmentajuelo/",
-      role: "Frontend Developer",
+      role: "Navbar y footer",
       description: "Especialista en React y apasionada por la conservación de mariposas monarca."
     },
     {
@@ -21,7 +21,7 @@ const Creators = () => {
       profileImage: "",
       github: "https://github.com/guiss26",
       linkedin: "https://www.linkedin.com/in/guissella-pérez/",
-      role: "UX/UI Designer",
+      role: "Método GET",
       description: "Diseñadora enfocada en crear experiencias que conecten a las personas con la naturaleza."
     },
     {
@@ -32,7 +32,7 @@ const Creators = () => {
       profileImage: "",
       github: "https://github.com/carmenrodriguez",
       linkedin: "https://www.linkedin.com/in/irinatiron/",
-      role: "Backend Developer",
+      role: "Formulario",
       description: "Desarrolladora backend con experiencia en bases de datos y APIs para proyectos científicos."
     },
     {

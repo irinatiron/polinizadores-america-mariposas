@@ -29,7 +29,7 @@ const routerButterfly = createBrowserRouter([{
             element: <ButterflyDetail/>
         },
         {
-            path: "/creadoras",
+            path: "/sobre-nosotras",
             element: <About/>
         },
         {
@@ -39,6 +39,10 @@ const routerButterfly = createBrowserRouter([{
         {
             path: "/creadoras",
             element: <Creators/>
+        },
+        {
+            path: "/formulario",
+            element: <Contact/>
         }
     ]
 }])

@@ -12,10 +12,10 @@ function Navbar() {
                 </Link>
                 {/*Title*/}
                 <Link to="/" className="nav-title">
-                    <p style={{border: "3px dotted red"}}>Mariposas de América</p>
+                    <p>Mariposas de América</p>
                 </Link>
                 {/*Nav Links*/}
-                <ul className="nav-menu" style={{border: "3px dotted red"}}>
+                <ul className="nav-menu">
                     <li>
                         <Link to="/" className="nav-link">Inicio</Link>
                     </li>
@@ -23,7 +23,10 @@ function Navbar() {
                         <Link to="/butterflies" className="nav-link">Fichas Mariposas</Link>
                     </li>
                     <li>
-                        <Link to="/creators" className="nav-link">Creadoras</Link>
+                        <Link to="/creadoras" className="nav-link">Creadoras</Link>
+                    </li>
+                     <li>
+                        <Link to="/formulario" className="nav-link">Formulario</Link>
                     </li>
                 </ul>
             </div>
