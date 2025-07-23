@@ -16,6 +16,7 @@
       "fenology": "Migración en otoño, reproducción en primavera y verano"
     },
     {
+      "id": "3002",
       "name": "Morpho azul",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -27,8 +28,7 @@
       "plants": "Frutas fermentadas, savia de árboles",
       "cycle": "Huevo, larva, pupa y adulto",
       "img": "https://palmitospark.es/wp-content/uploads/2023/04/butterfly-g31bc30040_1280.jpg",
-      "fenology": "Activa todo el año",
-      "id": "3002"
+      "fenology": "Activa todo el año"
     },
     {
       "id": "3003",
@@ -103,21 +103,6 @@
       "plants": "Plátano, Heliconia",
       "cycle": "40 a 60 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/1/10/Caligo_memnon.jpg",
-      "fenology": "Todo el año"
-    },
-    {
-      "id": "3008",
-      "name": "Dryas iulia",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "Naranja intenso",
-      "size": "8.5 cm",
-      "origin": "Sur de México",
-      "location": "Centro y Sudamérica",
-      "habitat": "Áreas abiertas tropicales",
-      "plants": "Lantana, Hamelia",
-      "cycle": "28 días",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Dryas_iulia_qtl1.jpg/1200px-Dryas_iulia_qtl1.jpg",
       "fenology": "Todo el año"
     },
     {

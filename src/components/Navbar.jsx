@@ -4,8 +4,10 @@ import navLogo from '../assets/images/nav-logo.png';
 
 function Navbar() {
     return (
-        <nav className="navbar">
-            <div className="nav-container">
+        
+        <nav className="navbar" style={{border: "5px dotted yellow"}}>
+
+            <div className="nav-container" style={{border: "3px dotted pink"}}>
                 {/*Logo */}
                 <Link to="/" className="nav-logo">
                     <img src={navLogo} alt="blue butterfly with america map on the left side" />
@@ -14,6 +16,9 @@ function Navbar() {
                 <Link to="/" className="nav-title">
                     <p>Mariposas de América</p>
                 </Link>
+
+                <button className="menu-toggle">&#9776;</button>
+
                 {/*Nav Links*/}
                 <ul className="nav-menu">
                     <li>
