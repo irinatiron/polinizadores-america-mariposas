@@ -35,14 +35,22 @@ const CardBackButterfly = () => {//Componente funcional
     //Alert message showed before the card is deleted 
     const handleDelete = (id) => {
         Swal.fire({
-            title: '¿Estás segura?',
+            title: '¿Estás seguro?',
             text: 'Esta acción eliminará la mariposa permanentemente.',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
             cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Sí, borrar',
-            cancelButtonText: 'Cancelar'
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar',
+            buttonsStyling: false,
+            customClass: {
+                popup: 'my-swal-popup',
+                title: 'my-swal-title',
+                confirmButton: 'my-confirm-btn',
+                cancelButton: 'my-cancel-btn'
+            }
+
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {

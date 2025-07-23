@@ -1,51 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3015",
-      "name": "Papilio garamas",
-      "order": "Lepidoptera",
-      "family": "Papilionidae",
-      "color": "Negro con amarillo intenso",
-      "size": "11 cm",
-      "origin": "América Central",
-      "location": "Bosques de montaña",
-      "habitat": "Bosques nubosos y templados",
-      "plants": "Rutaceae",
-      "cycle": "35 días",
-      "img": "https://pictureinsect.com/wiki-image/1080/153936691697025028.jpeg",
-      "fenology": "Mayo a noviembre"
-    },
-    {
-      "id": "3016",
-      "name": "Eurytides marcellus",
-      "order": "Lepidoptera",
-      "family": "Papilionidae",
-      "color": "Blanco con rayas negras y colas largas",
-      "size": "8 cm",
-      "origin": "EE. UU.",
-      "location": "Sur de EE. UU. y México",
-      "habitat": "Campos abiertos y bosques",
-      "plants": "Asimina",
-      "cycle": "25 días",
-      "img": "https://lh4.googleusercontent.com/proxy/f_sjmAeVv0J3HybvXk5rlpWQstza03-2zyeeOJIRx-OwOXaaItkkC1byAsvaBa-nwMq4omncDZAhv184LlneurUPeCc_kx_B7uewPE3IrlXhtbJzZknM1g",
-      "fenology": "Primavera a otoño"
-    },
-    {
-      "id": "3017",
-      "name": "Battus polydamas",
-      "order": "Lepidoptera",
-      "family": "Papilionidae",
-      "color": "Negro con manchas verdes o amarillas",
-      "size": "10 cm",
-      "origin": "Caribe",
-      "location": "América tropical",
-      "habitat": "Zonas abiertas tropicales",
-      "plants": "Aristolochia",
-      "cycle": "4 semanas",
-      "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/987966/original.jpg",
-      "fenology": "Todo el año"
-    },
-    {
       "id": "3018",
       "name": "Marpesia petreus",
       "order": "Lepidoptera",
@@ -59,21 +14,6 @@
       "cycle": "3 a 5 semanas",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/alas_daga.jpg",
       "fenology": "Todo el año en clima cálido"
-    },
-    {
-      "id": "3019",
-      "name": "Hypanartia lethe",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "Anaranjado y negro con líneas finas",
-      "size": "6.5 cm",
-      "origin": "Sudamérica",
-      "location": "Andes y Amazonía",
-      "habitat": "Bosques de niebla",
-      "plants": "Ortiga, Urticaceae",
-      "cycle": "30 días",
-      "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/1070139/original.jpg",
-      "fenology": "Todo el año"
     },
     {
       "id": "3020",
