@@ -69,12 +69,12 @@ main {
   /*Compensates fixed menu, so it is not covered by it */
 }
 
-.flex-container {
+/* .flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 
-}
+} */
 
 
 h1 {
@@ -88,7 +88,8 @@ h2 {
   font-size: 2rem;
   color: #BF6734;
   padding: 1rem;
-
+  text-align: center;
+  margin-top: 50px;
 
   /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
   font-family: "Aladin", system-ui;

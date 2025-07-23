@@ -1,4 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import Home from "../pages/Home";
+import ButterfliesCards from "../pages/ButterfliesCards";
+import About from "../pages/About";
+
 import EditButterfly from "../pages/EditButterfly";
 import CreateButterlfy from "../pages/CreateButterfly";
 import ButterflyDetail from "../pages/ButterflyDetail";
@@ -10,32 +14,29 @@ import Creators from "../pages/Creators";
 
 const routerButterfly = createBrowserRouter([{
     path: "/",
-    element: <Layout/>,
+    element: <Layout />,
     children: [
         {
             index: true,
-            element: <Home/>,
+            element: <Home />,
+        },
+        {
+            path: "/fichas-mariposas",
+            element: <ButterfliesCards />
         },
         {
             path: "/nueva-mariposa",
-            element: <CreateButterlfy/>
+            element: <CreateButterlfy />
         },
         {
             path: "/editar-mariposa/:id",
-            element: <EditButterfly/>
+            element: <EditButterfly />
         },
         {
             path: "/detalle-mariposa/:id",
-            element: <ButterflyDetail/>
+            element: <ButterflyDetail />
         },
-        {
-            path: "/sobre-nosotras",
-            element: <About/>
-        },
-        {
-            path: "/contacto",
-            element: <Contact/>
-        },
+
         {
             path: "/creadoras",
             element: <Creators/>
