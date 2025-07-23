@@ -99,8 +99,8 @@ const Form = ({ onSubmit }) => {
       {/* Evitamos que el usuario pueda ver los campos opcionales hasta que complete nombre y familia */}
       {!showOptional && (
         <div className="form-buttons">
-          <button type="button" className="show-optional" onClick={() => setShowOptional(true)} disabled={!isRequiredValid()} title="Debes completar nombre y familia para añadir más información"><FaPlus /> Añadir información adicional</button>
-          <button type="submit" className="submit-button">Añadir mariposa <FaCheck /></button>
+          <button type="button" className="show-optional" id='optional-button' onClick={() => setShowOptional(true)} disabled={!isRequiredValid()} title="Debes completar nombre y familia para añadir más información"><FaPlus /> Añadir información adicional</button>
+          <button type="submit" className="submit-button" id='send-button'>Añadir mariposa <FaCheck /></button>
         </div>
       )}
       {/* Si el usuario elige añadir información adicional desplegamos el resto de campos */}
@@ -159,7 +159,7 @@ const Form = ({ onSubmit }) => {
         </div>
       )}
       {/* Si el usuario decidió añadir más campos adicionales le mostramos el botón de submit justo al final del formulario */}
-      {showOptional && (<div className="form-buttons"><button type="submit">Añadir mariposa <FaCheck /></button></div>)}
+      {showOptional && (<div className="form-buttons"><button type="submit" id='send-button-end'>Añadir mariposa <FaCheck /></button></div>)}
     </form>
   );
 };
