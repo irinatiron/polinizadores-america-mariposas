@@ -26,44 +26,44 @@ Los polinizadores están disminuyendo en todo el mundo debido a múltiples facto
 
 ```
 polinizadores-mariposas-america/
-├── index.html                                                                   ← Archivo HTML principal
-├── package.json                                                                 ← Define las dependencias, scripts y metadatos del proyecto.
-├── package-lock.json                                                            ← Registra las versiones exactas de las dependencias instaladas.
-├── vite.config.js                                                               ← Configuración del blunder Vite 
-├── eslint.config.js                                                             ← Define reglas de estilo y calidad de código 
-├── READ.md                                                                      ← Documentación del proyecto
-├── .gitignore                                                                   ← Archivos que no se deben subir a GitHub
-├── /server                                                                      ← Lógica del backend (servidor, API, etc.) 
-│   └── db.json                                                                  ← Simula una API, contiene las mariposas
-└── /src                                                                         ← Código fuente principal del frontend
-     ├── /assets                                                                 ← Imágenes y recursos estáticos
+├── index.html                        ← Archivo HTML principal
+├── package.json                      ← Define las dependencias, scripts y metadatos del proyecto.
+├── package-lock.json                 ← Registra las versiones exactas de las dependencias instaladas.
+├── vite.config.js                    ← Configuración del blunder Vite 
+├── eslint.config.js                  ← Define reglas de estilo y calidad de código 
+├── READ.md                           ← Documentación del proyecto
+├── .gitignore                        ← Archivos que no se deben subir a GitHub
+├── /server                           ← Lógica del backend (servidor, API, etc.) 
+│   └── db.json                       ← Simula una API, contiene las mariposas
+└── /src                              ← Código fuente principal del frontend
+     ├── /assets                      ← Imágenes y recursos estáticos
      │   └── /images                                                             
-     ├── /components                                                             ← Componentes reutilizables de React
-     ├── /layout                                                                 ← Componentes de estructura (Nav, Footer, etc.)
-     ├── /pages                                                                  ← Páginas principales del sitio 
-     │   ├── About.jsx                                                           ← Información sobre las creadoras y contacto 
-     │   ├── ButterflyCards.jsx                                                  ← Listado de las mariposas registradas
-     │   ├── ButterflyDetail.jsx                                                 ← Detalle de una mariposa
-     │   ├── CreateButterfly.jsx                                                 ← Formulario para añadir una nueva mariposa
-     │   ├── EditButterfly.jsx                                                   ← Formulario para editar una mariposa existente
-     │   └── Home.jsx                                                            ← Inicio
-     ├── /router                                                                 ← Configuración de rutas con React Router
+     ├── /components                  ← Componentes reutilizables de React
+     ├── /layout                      ← Componentes de estructura (Nav, Footer, etc.)
+     ├── /pages                       ← Páginas principales del sitio 
+     │   ├── About.jsx                ← Información sobre las creadoras y contacto 
+     │   ├── ButterflyCards.jsx       ← Listado de las mariposas registradas
+     │   ├── ButterflyDetail.jsx      ← Detalle de una mariposa
+     │   ├── CreateButterfly.jsx      ← Formulario para añadir una nueva mariposa
+     │   ├── EditButterfly.jsx        ← Formulario para editar una mariposa existente
+     │   └── Home.jsx                 ← Inicio
+     ├── /router                      ← Configuración de rutas con React Router
      │   └── Router.jsx                                                          
-     └── /services                                                               ← Funciones que llaman a la API: GET, POST, PUT, DELETE
+     └── /services                    ← Funciones que llaman a la API: GET, POST, PUT, DELETE
          └── ButterflyServices.jsx                                               
 ```
 
 ## ⚙️ Tecnologías y librerías utilizadas
 
 - ### Tecnologías base 
-         - HTML5, CSS3 y JavaScript: Fundamentos del desarrollo web.
-         - React: Librería para construir interfaces de usuario basadas en componentes.
-         - Vite: Herramienta de construcción para un trabajo rápido y moderno con React.
-         - JSON Server: Simulación de una API REST a partir de un archivo db.json.
+    - HTML5, CSS3 y JavaScript: Fundamentos del desarrollo web.
+    - React: Librería para construir interfaces de usuario basadas en componentes.
+    - Vite: Herramienta de construcción para un trabajo rápido y moderno con React.
+    - JSON Server: Simulación de una API REST a partir de un archivo db.json.
 
 - ### Librerías instaladas 
-         - React-Icons: Biblioteca de iconos procedentes de múltiples packs para mejorar la experiencia de usuario.
-         - SweetAlert: Herramienta para mostrar alertas personalizadas mediante mensajes emergentes al usuario.
+   - React-Icons: Biblioteca de iconos procedentes de múltiples packs para mejorar la experiencia de usuario.
+   - SweetAlert: Herramienta para mostrar alertas personalizadas mediante mensajes emergentes al usuario.
         
 ## 📦 Instalación y uso
 
