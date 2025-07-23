@@ -76,6 +76,13 @@ main {
 
 } */
 
+.content-btn {/*botón añadir mariposa + h2 centralizados*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 h1 {
   font-size: 3rem;

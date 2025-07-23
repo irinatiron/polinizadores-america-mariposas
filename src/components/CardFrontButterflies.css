@@ -41,7 +41,8 @@ p {
   left: 0;
   background: white;
   color: black;
-  padding: 15px 55px 15px 30px;
+  width: 250px;/*prueba*/
+  padding: 15px 0px 15px 20px;
   border-bottom-right-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
@@ -57,6 +58,10 @@ p {
   font-size: 0.9em;
   font-style: italic;
   border-bottom-left-radius: 10px;
+}
+
+.order-butterfly {
+    margin-top: 5px;
 }
 
 .img-card{
@@ -114,4 +119,10 @@ p {
 
 .btn-update:hover {
     background-color: #ae8a3c;
+}
+
+@media only screen and (max-width: 415px){
+    .img-card {
+        width: 310px;
+    }
 }

@@ -29,18 +29,18 @@ const CardBackButterfly = () => {//Componente funcional
     return (
         <div className="cards">
             <article className="card-butterfly-back">
-                <div class="corner-ribbon-back">
+                <div className="corner-ribbon-back">
                     <h4><span>{butterfly.name}</span></h4>
                     <p><span>Locación:</span> {butterfly.location}</p>
                 </div>
-                <div class="corner-order-back">
+                <div className="corner-order-back">
                     <p><span>Order:</span> {butterfly.order}</p>
                     <p><span>Familia:</span> {butterfly.family}</p>
                 </div>
                 <div className="img-card-one">
                     <img className='img-butterfly-back' src={butterfly.img} alt={`Imagen de ${butterfly.name}`}/>
                 </div>
-                <div class="card-content paragraph">
+                <div className="card-content paragraph">
                     <p><span>Origen: </span>{butterfly.origin}</p>
                     <p><span>Habitat: </span>{butterfly.habitat}</p>
                     <p><span>Tamaño: </span>{butterfly.size}</p>
@@ -49,7 +49,7 @@ const CardBackButterfly = () => {//Componente funcional
                     <p><span>Ciclo vital: </span>{butterfly.cycle}</p>
                     <p><span>Fenología: </span>{butterfly.fenology}</p>
                 </div>
-                <div class="btns">
+                <div className="btns">
                     {/* <a class="btn btn-delete" href="#">Eliminar</a>
                     <a class="btn btn-update" href="#">Editar</a> */}
                     <Link className="btn btn-delete" to={`/${butterfly.id}`}>Eliminar</Link>
