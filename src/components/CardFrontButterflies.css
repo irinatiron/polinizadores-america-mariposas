@@ -1,24 +1,33 @@
 
 .cards {
-    width: 900px;
+    /* width: 900px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 100px 30px;
-    margin: 10% 0;
+    /* margin: 10% 0; */
+    margin: 30px 0;
     color: black;
 }
+
 span {
     font-weight: 900;
+}
+
+.card-content p{
+    padding: 0;
 }
 
 p {
     font-size: 15px;
     margin-bottom: 10px;
 }
+
 .cards-butterflies {
   position: relative;
-  width: 400px;
+  /* width: 400px; */
+  width: 380px;
+  height: 430px;
   background: linear-gradient(135deg, var(--color-olive-green) 0%, var(--color-terracotta) 100%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -32,7 +41,8 @@ p {
   left: 0;
   background: white;
   color: black;
-  padding: 15px 55px 15px 30px;
+  width: 250px;/*prueba*/
+  padding: 15px 0px 15px 20px;
   border-bottom-right-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
@@ -42,25 +52,34 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 15px 30px 15px 0;
+
+  /* padding: 15px 30px 15px 0; */
+  padding-right: 15px;
   font-size: 0.9em;
   font-style: italic;
   border-bottom-left-radius: 10px;
 }
 
-/* img { para la imagen
-    width: 340px;
-} */
+.order-butterfly {
+    margin-top: 5px;
+}
+
 .img-card{
-    width: 340px;
+    /* width: 340px; */
+    width: 320px;
     height: 230px;
     background-color: white;
-    margin: 10px 30px 0 30px;
+    margin: 13px 30px 0 30px;
 }
 
 .img-card img {
     text-align: center;
-    margin: 10px 30px 0 30px;
+    /* margin: 10px 30px 0 30px; */
+}
+
+.img-butterfly {
+    width: 100%;
+    height: 230px;
 }
 
 .card-content, .btns {
@@ -100,4 +119,10 @@ p {
 
 .btn-update:hover {
     background-color: #ae8a3c;
+}
+
+@media only screen and (max-width: 415px){
+    .img-card {
+        width: 310px;
+    }
 }

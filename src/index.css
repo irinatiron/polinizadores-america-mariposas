@@ -80,13 +80,27 @@ main {
     /*Compensates fixed menu, so it is not covered by it */
 }
 
+<<<<<<< HEAD
 .flex-container {
     display: flex;
     flex-flow: column wrap;
     /* Column layout for mobile */
     justify-content: center;
     gap: 1rem;
+=======
+/* .flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+>>>>>>> d57a7af82a335fb19fedbcf0a62ee6fdc247f564
 
+} */
+
+.content-btn {/*botón añadir mariposa + h2 centralizados*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Typography - Mobile */
@@ -99,11 +113,24 @@ h1 {
 }
 
 h2 {
+<<<<<<< HEAD
     font-size: 1.5rem;
     /* Smaller for mobile */
     color: #BF6734;
     padding: 0.5rem;
     text-align: center;
+=======
+  font-size: 2rem;
+  color: #BF6734;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 50px;
+
+  /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+>>>>>>> d57a7af82a335fb19fedbcf0a62ee6fdc247f564
 
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;
