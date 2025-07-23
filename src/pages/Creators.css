@@ -1,6 +1,6 @@
 .creators-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-light-beige) 0%, var(--color-light-beige) 70%, var(--color-sage-green) 100%);
   padding: 2rem 1rem;
   margin: 0 auto;
   max-width: 1400px;
@@ -8,16 +8,22 @@
 
 .creators-header {
   text-align: center;
-  color: white;
+  color: var(--color-text-dark);
   margin-bottom: 3rem;
   position: relative;
 }
 
 .creators-header h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: var(--color-terracotta);
+  padding: 1rem;
+  text-align: center;
+  margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
 }
 
 .creators-header p {

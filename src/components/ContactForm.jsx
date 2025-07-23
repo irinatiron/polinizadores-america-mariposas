@@ -87,6 +87,18 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form-container">
+      <div className="contact-header">
+        <h2>¡Conecta con Nosotras!</h2>
+                <p>
+          Cada una de nosotras aporta su experiencia única: desde el desarrollo web, trabajamos juntas para crear esta plataforma que celebra la belleza y importancia 
+          de las mariposas en nuestros ecosistemas.
+        </p>
+        <p>
+          ¿Tienes preguntas, sugerencias o quieres colaborar con nosotras? ¡Nos encantaría saber de ti! 
+          Completa el formulario y te responderemos pronto.
+        </p>
+      </div>
+
       {submitMessage && (
         <div className={`message ${submitMessage.includes('Error') ? 'error' : 'success'}`}>
           {submitMessage}
@@ -166,9 +178,9 @@ const ContactForm = () => {
 
       <div className="contact-info">
         <h3>Información adicional</h3>
-        <p>📧 Email: polinizadores.america@ejemplo.com</p>
+        <p>📧 Email: polinizadoras.america@f5.com</p>
         <p>🦋 Síguenos en nuestras redes sociales para más contenido sobre mariposas</p>
-        <p>📍 Estamos en toda América, documentando la biodiversidad de nuestras mariposas</p>
+        <p>📍 Documentando la biodiversidad de nuestras mariposas en toda America</p>
       </div>
     </div>
   );
