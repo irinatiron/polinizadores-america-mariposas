@@ -1,0 +1,61 @@
+/* Contact page styles */
+.contact-page {
+  margin-bottom: 2rem;
+  /* Elimina margin y max-width para que el fondo ocupe todo el ancho */
+}
+
+.contact-header {
+  margin-bottom: 3rem;
+  padding: 0;
+  text-align: left;
+}
+
+/* Reutilizando estilos de IntroPollinators para consistencia */
+.contact-header .main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.contact-header .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-bottom: 1rem;
+  margin-top: 0;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.contact-header .description-text {
+  color: var(--color-text-medium);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+  text-align: left;
+  max-width: 800px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-header .main-title {
+    font-size: 2rem;
+  }
+  
+  .contact-header .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .contact-header .description-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .contact-header {
+    padding: 1rem 0;
+  }
+}
