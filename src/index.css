@@ -1,202 +1,343 @@
+/* THIS FILE CONTAINS THE GLOBAL STYLES + GENERAL STRUCTURE FOR THE WHOLE WEB APP */
+
+
+/* ================================================
+   RESET STYLE + BASE STYLE 
+   ================================================ */
+
 /*---RESET STYLE---*/
 /*Reset and normalize styles in all elements*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/*---WEB APP VARIABLES---*/
-:root {
-  /* ---Primary Colors--- */
-  --color-olive-green: #565939;
-  /* Main brand color, header, footer */
-  --color-light-beige: #F2EFDF;
-  /* Body background, light sections */
-
-  /* ---Accent Colors--- */
-  --color-forest-green: #336D25;
-  /* Primary button */
-  --color-terracotta: #BF6734;
-  /* Secondary buttons, links, emphasis */
-  --color-accent-orange: #F28F16;
-  /* Call to Actions (CTA), highlights, active states */
-  --color-brick-red: #b63329;
-  /* Alerts, errors, important notices */
-  --color-sage-green: #6b8779;
-  /* Success states, subtle accents */
-
-  /* ---Text Colors--- */
-  --color-text-dark: #565939;
-  /* Primary text (light background), body text */
-  --color-text-medium: #6b8779;
-  /* Secondary text, descriptions */
-  --color-text-light: #F2EFDF;
-  /* Primary text (dark background) body text, header-footer text */
-
-  /* ---Cards Colors---*/
-  --color-card-background: #7F8C69;
-  /* Background */
-  --color-card-header: #E9E8E4;
-  /* Header */
-  --color-card-button-detail: #F2EFDF;
-  /* Botón "Ver Detalle" */
-  --color-card-button-edit: #D4A84A;
-  /* Botón "Editar" */
-
-}
-
+/*---BASE STYLE---*/
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--color-text-dark);
-  background-color: var(--color-light-beige);
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-dark);
+    background-color: var(--color-light-beige);
 }
 
 
+/* ================================================
+   COLOUR DESIGN VARIABLES
+   ================================================ */
 
-/*---HEADER---*/
-header {
-  border: 4px solid blue;
-  padding: 1rem;
-  background-color: yellow;
-  height: 200px;
+:root {
+    /* ---Primary Colors--- */
+    --color-olive-green: #565939;
+    /* Main brand color, header, footer */
+    --color-light-beige: #F2EFDF;
+    /* Body background, light sections */
+
+    /* ---Accent Colors--- */
+    --color-forest-green: #336D25;
+    /* Primary button */
+    --color-terracotta: #BF6734;
+    /* Secondary buttons, links, emphasis */
+    --color-accent-orange: #F28F16;
+    /* Call to Actions (CTA), highlights, active states */
+    --color-brick-red: #b63329;
+    /* Alerts, errors, important notices */
+    --color-sage-green: #6b8779;
+    /* Success states, subtle accents */
+
+
+    /* ---Text Colors--- */
+    --color-text-dark: #565939;
+    /* Primary text (light background), body text */
+    --color-text-medium: #6b8779;
+    /* Secondary text, descriptions */
+    --color-text-light: #F2EFDF;
+    /* Primary text (dark background) body text, header-footer text */
+
+
+    /* ---Cards Colors---*/
+    --color-card-background: #7F8C69;
+    /* Background */
+    --color-card-header: #E9E8E4;
+    /* Header */
+    --color-card-button-detail: #F2EFDF;
+    /* Botón "Ver Detalle" */
+    --color-card-button-edit: #D4A84A;
+    /* Botón "Editar" */
+
 }
+
+/* ================================================
+   BASE STYLES (MOBILE FIRST - 320px to 767px)
+   ================================================ */
 
 /*---MAIN---*/
 main {
-  border: 3px dotted red;
-  margin: 10px;
-  /*Compensates fixed menu, so it is not covered by it */
+    border: 3px dotted red;
+    margin: 5px;
+    /* Reduced margin for mobile */
+    /*Compensates fixed menu, so it is not covered by it */
 }
 
 .flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+    display: flex;
+    flex-flow: column wrap;
+    /* Column layout for mobile */
+    justify-content: center;
+    gap: 1rem;
 
 }
 
-
+/* Typography - Mobile */
 h1 {
-  font-size: 3rem;
-  color: #565939;
-  text-align: center;
-  padding: 1rem;
+    font-size: 2rem;
+    /* Smaller for mobile */
+    color: #565939;
+    text-align: center;
+    padding: 0.5rem;
 }
 
 h2 {
-  font-size: 2rem;
-  color: #BF6734;
-  padding: 1rem;
+    font-size: 1.5rem;
+    /* Smaller for mobile */
+    color: #BF6734;
+    padding: 0.5rem;
+    text-align: center;
 
-
-  /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
-  font-family: "Aladin", system-ui;
-  font-weight: 400;
-  font-style: normal;
-
+    /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
+    font-family: "Aladin", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h3 {
-  padding: 1rem;
+    padding: 0.5rem;
+    font-size: 1.25rem;
 }
 
 main div p {
-  padding: 1rem;
+    padding: 0.5rem;
+    line-height: 1.5;
 }
 
-
+/* Map container - Mobile */
 .map-container {
-  border: 3px dotted blueviolet;
-  height: 500px;
-  width: 500px;
-  margin: 0 auto;
-
+    border: 3px dotted blueviolet;
+    height: 300px;
+    /* Smaller for mobile */
+    width: 100%;
+    max-width: 350px;
+    margin: 1rem auto;
 }
 
 .america-map {
-  height: 100%;
-  width: 100%;
-  object-fit: fill;
-  display: block;
-  margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    /* Better for mobile */
+    display: block;
+    margin: 0 auto;
+}
+
+/* ================================================
+   GLOBAL LAYOUT CLASSES FOR COMPONENTS
+   ================================================ */
+
+/* Main app container */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
 
-
-
-
-
-
-
-/*
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Page containers */
+.page-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+/* ================================================
+   MEDIA QUERIES - TABLET (768px and up)
+   ================================================ */
+@media screen and (min-width: 768px) {
+
+
+    /*---MAIN---*/
+    main {
+        margin: 15px;
+    }
+
+    .flex-container {
+        flex-flow: row wrap;
+        /* Back to row layout */
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    /* Typography - Tablet */
+    h1 {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        padding: 1rem;
+        text-align: left;
+        /* Left align for larger screens */
+    }
+
+    h3 {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    main div p {
+        padding: 1rem;
+    }
+
+    /* Map container - Tablet */
+    .map-container {
+        height: 400px;
+        width: 400px;
+        max-width: none;
+    }
+
+    .america-map {
+        object-fit: fill;
+    }
+
+
+    /* Page containers - Tablet */
+    .page-container {
+        padding: 2rem;
+    }
+
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* ================================================
+   MEDIA QUERIES - LAPTOP (1024px and up)
+   ================================================ */
+@media screen and (min-width: 1024px) {
+
+
+    /*---MAIN---*/
+    main {
+        margin: 10px;
+        /* Original margin restored */
+    }
+
+    .flex-container {
+        gap: 3rem;
+        padding: 3rem;
+    }
+
+    /* Typography - Laptop */
+    h1 {
+        font-size: 3rem;
+        /* Original size restored */
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        /* Original size restored */
+        padding: 1rem;
+    }
+
+    /* Map container - Laptop */
+    .map-container {
+        height: 500px;
+        /* Original size restored */
+        width: 500px;
+    }
+
+
+    /* Page containers - Laptop */
+    .page-container {
+        padding: 3rem;
+        max-width: 1400px;
+    }
+
+
+    /* Hover effects for desktop */
+    .interactive-element {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .interactive-element:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* ================================================
+   MEDIA QUERIES - DESKTOP (1440px and up)
+   ================================================ */
+@media screen and (min-width: 1440px) {
+
+    /*---HEADER---*/
+
+    .flex-container {
+        gap: 4rem;
+        padding: 4rem;
+    }
+
+    /* Typography - Desktop */
+    h1 {
+        font-size: 3.5rem;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+        padding: 1.5rem;
+    }
+
+    /* Map container - Desktop */
+    .map-container {
+        height: 600px;
+        width: 600px;
+    }
+
+    /* Navigation - Desktop */
+
+
+    /* Page containers - Desktop */
+    .page-container {
+        padding: 4rem;
+        max-width: 1600px;
+    }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* ================================================
+   MEDIA QUERIES - ULTRA WIDE (1920px and up)
+   ================================================ */
+@media screen and (min-width: 1920px) {
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+    .flex-container {
+        padding: 5rem;
+    }
+
+    /* Typography - Ultra Wide */
+    h1 {
+        font-size: 4rem;
+    }
+
+    /* Map container - Ultra Wide */
+    .map-container {
+        height: 700px;
+        width: 700px;
+    }
+
+    /* Page containers - Ultra Wide */
+    .page-container {
+        max-width: 1800px;
+    }
 }
-*/
