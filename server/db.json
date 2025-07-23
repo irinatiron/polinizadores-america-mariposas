@@ -1,21 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3003",
-      "name": "Heliconius charithonia",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "Negro con rayas amarillas",
-      "size": "7.5 cm",
-      "origin": "América Central",
-      "location": "Desde México hasta Florida",
-      "habitat": "Bosques húmedos y jardines",
-      "plants": "Passiflora",
-      "cycle": "Completo en 4 semanas",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Heliconius_charithonia%2C_Mariposario_de_Icod_de_los_Vinos%2C_Tenerife%2C_Espa%C3%B1a%2C_2012-12-13%2C_DD_04.jpg",
-      "fenology": "Todo el año en climas cálidos"
-    },
-    {
       "id": "3004",
       "name": "Agraulis vanillae",
       "order": "Lepidoptera",
