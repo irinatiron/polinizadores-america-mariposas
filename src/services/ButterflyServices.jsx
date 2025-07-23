@@ -1,5 +1,5 @@
 // Sólo peticiones fetch en este archivo
-
+import Swal from 'sweetalert2';
 const URL_API = "http://localhost:3000/butterflies";
 
 // Método GET para el READ
@@ -39,9 +39,16 @@ export async function createButterfly(newButterfly) {
     });
     if (response.ok) {
       const created = await response.json();
-      alert('Mariposa añadida correctamente');
+      Swal.fire({
+        icon: 'success',
+        title: '¡Mariposa añadida!',
+        text: 'La información se ha guardado correctamente.',
+        confirmButtonText: 'Perfecto',
+        customClass: { confirmButton: 'swal2-confirm-ok' }
+      });
       return created;
-    } else {
+    }
+    else {
       const errorText = await response.text();
       console.error('Error al añadir la mariposa:', errorText);
     }
@@ -50,26 +57,29 @@ export async function createButterfly(newButterfly) {
   }
 }
 // Método PUT para el UPDATE
-export async function updateButterfly(id, updatedbutterfly) {
+export async function updateButterfly(id, updatedButterfly) {
   try {
-    const response = await fetch(`http://localhost:3000/butterflies"`, {
+    const response = await fetch(`${URL_API}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedbutterfly),
+      body: JSON.stringify(updatedButterfly),
     });
 
     if (!response.ok) {
-      throw new Error("No se pudo actualizar ");
+      console.log("Status del error:", response.status);
+      throw new Error("Error al actualizar mariposa");
     }
 
     const data = await response.json();
-    console.log("Actualizado:", data);
+    console.log("Mariposa actualizada correctamente", data);
     return data;
 
   } catch (error) {
     console.error("Error al actualizar:", error.message);
+    //throw error;
+
   }
 }
 

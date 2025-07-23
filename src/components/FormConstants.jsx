@@ -21,3 +21,18 @@ export const butterflyFamilies = [ // Las familias que existen de mariposas para
   'Hesperiidae',
   'Riodinidae',
 ];
+
+export const fieldLabels = { // Traducción de los campos del formulario para utilizarlo en los mensajes de error diciéndole al usuario qué revisar
+  name: 'Nombre',
+  order: 'Orden',
+  family: 'Familia',
+  color: 'Color',
+  size: 'Tamaño',
+  origin: 'Origen',
+  location: 'Localización',
+  habitat: 'Hábitat',
+  plants: 'Plantas visitadas',
+  cycle: 'Ciclo de vida',
+  img: 'Imagen',
+  fenology: 'Fenología'
+};

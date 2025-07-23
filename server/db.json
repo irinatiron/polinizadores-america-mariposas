@@ -16,7 +16,6 @@
       "fenology": "Migración en otoño, reproducción en primavera y verano"
     },
     {
-      "id": "3002",
       "name": "Morpho azul",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -28,7 +27,8 @@
       "plants": "Frutas fermentadas, savia de árboles",
       "cycle": "Huevo, larva, pupa y adulto",
       "img": "https://palmitospark.es/wp-content/uploads/2023/04/butterfly-g31bc30040_1280.jpg",
-      "fenology": "Activa todo el año"
+      "fenology": "Activa todo el año",
+      "id": "3002"
     },
     {
       "id": "3003",

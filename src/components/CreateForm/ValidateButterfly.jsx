@@ -17,13 +17,13 @@ const validateButterfly = (data) => {
     errors.img = 'La URL introducida no es válida.';
   }
   const textFields = ['origin', 'location', 'color', 'size', 'fenology', 'cycle', 'habitat', 'plants'];
-  const textPattern = /^[\wÀ-ÿ ,.'()\-:;]{5,500}$/i; // Letras mayúsculas y minúsculas, dígitos 0-9, acentos y letras especiales, espacio, coma, punto, apóstrofe, paréntesis, guión, dos puntos y punto y coma
+  const textPattern = /^[\wÀ-ÿ ,.'()\-:;]{4,500}$/i; // Letras mayúsculas y minúsculas, dígitos 0-9, acentos y letras especiales, espacio, coma, punto, apóstrofe, paréntesis, guión, dos puntos y punto y coma
   // Entre 5 y 500 caracteres permitidos
   textFields.forEach(field => {
-    if (data[field] && data[field].trim().length < 5) {
-      errors[field] = 'Debe escribir por lo menos 5 caracteres.';
+    if (data[field] && data[field].trim().length < 4) {
+      errors[field] = 'Debe escribir por lo menos 4 caracteres.';
     } else if (data[field] && !textPattern.test(data[field])) {
-      errors[field] = 'Contiene caracteres no permitidos.';
+      errors[field] = 'El texto introducido no es válido.';
     }
   });
   return errors;

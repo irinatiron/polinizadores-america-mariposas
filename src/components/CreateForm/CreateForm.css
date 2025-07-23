@@ -57,7 +57,8 @@ form {
     grid-column: 1 / -1;
 }
 
-#order-group input {
+#order-group,
+#input-order {
     cursor: default;
 }
 
@@ -196,9 +197,29 @@ button[type="button"]:hover {
 }
 
 .error-message {
-    color: #c0392b;
+    color: var(--color-brick-red);
     font-size: 0.85rem;
     margin-top: 4px;
+}
+
+.swal2-confirm-error {
+    font-size: 1.2rem !important;
+    padding: 12px 28px !important;
+    border-radius: 8px !important;
+    background-color: var(--color-brick-red) !important;
+    color: #ffff !important;
+    width: auto !important;
+    min-width: 100px !important;
+}
+
+.swal2-confirm-ok {
+    font-size: 1.2rem !important;
+    padding: 12px 28px !important;
+    border-radius: 8px !important;
+    background-color: var(--color-forest-green) !important;
+    color: #ffff !important;
+    width: auto !important;
+    min-width: 100px !important;
 }
 
 
