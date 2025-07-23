@@ -1,36 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3004",
-      "name": "Agraulis vanillae",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "Anaranjado brillante con manchas negras",
-      "size": "7 cm",
-      "origin": "Sur de EE. UU.",
-      "location": "América Central y del Sur",
-      "habitat": "Zonas abiertas, jardines",
-      "plants": "Passiflora",
-      "cycle": "30 días",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
-      "fenology": "Primavera a otoño"
-    },
-    {
-      "id": "3005",
-      "name": "Danaus gilippus",
-      "order": "Lepidoptera",
-      "family": "Danaidae",
-      "color": "Café rojizo con bordes negros",
-      "size": "9 cm",
-      "origin": "América del Sur",
-      "location": "Tropical y subtropical americano",
-      "habitat": "Sabana y matorral",
-      "plants": "Asclepias",
-      "cycle": "Huevo, larva, crisálida, adulto",
-      "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/Danaus_gilippus_thersippus.jpg",
-      "fenology": "Todo el año en zonas cálidas"
-    },
-    {
       "id": "3006",
       "name": "Diaethria clymena",
       "order": "Lepidoptera",
