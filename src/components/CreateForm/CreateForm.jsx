@@ -11,6 +11,7 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 import Swal from 'sweetalert2' // Importa sweetalert
+import ImageUpload from './ImageUpload'; // Importamos el componente de Cloudinary
 
 const Form = ({ onSubmit }) => {
   const [formData, setFormData] = useState(initialFormState);
@@ -56,7 +57,8 @@ const Form = ({ onSubmit }) => {
     }
     await onSubmit(formData); // Si no hay errores
     // Si el formulario se ha enviado correctamente se restablece a su valor inicial y se vacían todos los campos
-    setFormData(initialFormState);
+    setShowOptional(false); // Para que no muestre los campos opcionales abiertos al reiniciar el formulario
+    setFormData(initialFormState); // Limpia los datos que se acabaron de enviar y pone los que vienen por defecto
   };
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
@@ -66,7 +68,7 @@ const Form = ({ onSubmit }) => {
           {/* <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder='Ej: Mariposa monarca (Danaus plexippus)' title='Nombre científico o nombre común con científico entre paréntesis.' required autoFocus /> */}
           <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)" title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus
             className={formErrors.name ? 'input-error' : ''} // Se añade la clase .input-error para darle estilo en css
-            // La interrogación es un operador ternario y formErrors.name la condición: si hay error se aplica la clase y si no se deja vacía
+          // La interrogación es un operador ternario y formErrors.name la condición: si hay error se aplica la clase y si no se deja vacía
           />
 
           {formErrors.name && <p className="error-message">{formErrors.name}</p>}
@@ -108,14 +110,16 @@ const Form = ({ onSubmit }) => {
         <div id='optional-fields'>
           <div className="form-group" id='img-group'>
             <label htmlFor="input-img"><IoImageOutline /> Imagen</label>
-            <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} onBlur={handleBlur} placeholder='https://url-de-la-imagen.jpg' title='Pega la URL de una foto de la mariposa.' />
+            {/* <input type="url" id="input-img" name="img" value={formData.img} onChange={handleChange} onBlur={handleBlur} placeholder='https://url-de-la-imagen.jpg' title='Pega la URL de una foto de la mariposa.' /> */}
+
+            {/* Subida de imagen mediante Cloudinary */}
+            {/* <ImageUpload onUpload={(url) => setFormData({ ...formData, img: url })} /> */}
+
+            <ImageUpload onUpload={(url) => setFormData({ ...formData, img: url })} img={formData.img} />
+
+
             {formErrors.img && <p className="error-message">{formErrors.img}</p>}
           </div>
-          {/* Campo para una futura subida de archivos (imagen) por parte del usuario, necesario un back-end */}
-          {/* <div className="form-group" id='img-group'>
-          <label htmlFor="input-img">Imagen</label>
-          <input type="file" id="input-img" name="img" accept="image/*" onChange={handleChange} />
-        </div> */}
           <div className="form-group" id='origin-group'>
             <label htmlFor="input-origin"><HiOutlineGlobeAmericas /> Origen</label>
             <textarea id="input-origin" name="origin" value={formData.origin} onChange={handleChange} onBlur={handleBlur} placeholder='Ej: Originaria de América del Norte.' title='¿De dónde procede esta mariposa?' />
