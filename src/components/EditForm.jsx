@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import "../components/CreateForm/CreateForm.css"
-import "./EditForm.css"
+import "../components/CreateForm/CreateForm.module.css"
+
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
     name: '',
