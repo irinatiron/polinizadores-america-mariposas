@@ -83,15 +83,16 @@ const StyledWrapper = styled.div`
     display: none;
   }
   .labelFile {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 250px;
+    // width: 250px;
     height: 190px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--color-sage-green);
     align-items: center;
     text-align: center;
-    padding: 5px;
+    // padding: 5px;
     color: var(--color-olive-green);
     cursor: pointer;
   }
@@ -106,6 +107,7 @@ const StyledWrapper = styled.div`
     margin-top: 0.5rem;
     font-size: 0.875rem;
   }
+    
 `;
 
 export default Input;
