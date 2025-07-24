@@ -129,7 +129,6 @@ main div p {
 
 /* Map container - Mobile */
 .map-container {
-    border: 3px dotted blueviolet;
     height: 300px;
     /* Smaller for mobile */
     width: 100%;
