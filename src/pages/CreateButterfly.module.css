@@ -5,13 +5,14 @@
 }
 
 .create-page-intro {
-    font-size: 15px;
+    font-size: 1.2rem;
+    opacity: 0.9;
     margin: 5px 0 15px;
 }
 
-.big-icon {
-    font-size: 150px;
-    margin: 0 auto 10px;
-    display: block;
-    color: var(--color-forest-green);
+.butterfly-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 180px;           
 }

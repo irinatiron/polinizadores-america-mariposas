@@ -31,23 +31,29 @@ form {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* padding: 0 3% 0; */
 }
 
 .requiredFields label {
     text-align: center;
+    font-size: 1.1em;
 }
 
 .nameGroup {
     grid-column: 1 / -1;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .orderGroup,
 .inputOrder {
     cursor: default;
+    text-align: center;
 }
 
 .familyGroup select {
     cursor: pointer;
+    text-align: center;
 }
 
 .familyGroup select {
@@ -60,16 +66,16 @@ form {
     /* Flecha desplegable */
     background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0.75rem center;
+    background-position: right 6.75rem center;
     background-size: 2rem;
-    padding-right: 2rem;
+    padding-right: 1rem;
 }
 
-.optionalFields {
+  .optionalFields {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+} 
 
 .optionalFields .imgGroup div > * {
   margin-left: 0;
@@ -202,8 +208,7 @@ select:focus,
     border: none;
     cursor: pointer;
     font-size: 1em;
-    text-transform: capitalize !important;
-    background-color: var(--color-forest-green);
+    text-transform: capitalize;
     opacity: 0.8;
     color: #ffff;
     width: 37%;
@@ -211,9 +216,17 @@ select:focus,
     justify-self: center;
     transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
-    transition: background-color 0.7s ease;
+    transition: 1.5s ease;
 }
 
+.optionalButton {
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(51, 109, 37, 1) 100%);
+    /* background-color: var(--color-forest-green); */
+}
+
+.sendButton, .sendButtonEnd {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 .optionalButton:hover,
 .sendButton:hover,
 .sendButtonEnd:hover {
@@ -225,7 +238,7 @@ select:focus,
 }
 
 .optionalButton:disabled, .sendButton:disabled {
-  background-color: #ccc; 
+    background: #ccc;
   color: #666;
   cursor: not-allowed;
   box-shadow: none;
@@ -263,6 +276,16 @@ select:focus,
 }
 
 @media screen and (max-width: 1200px) {
+
+    .containerForm {
+    
+    padding: 2.5%;
+    
+}
+
+
+
+
     form {
         grid-template-columns: 1fr;
         margin: 10px 0 0;
@@ -300,6 +323,13 @@ select:focus,
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .formButtons:has(button:only-child) {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
     }
 
     .optionalButton, .sendButton, .sendButtonEnd {
