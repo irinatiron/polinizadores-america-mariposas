@@ -27,7 +27,7 @@ p {
   position: relative;
   /* width: 400px; */
   width: 380px;
-  height: 430px;
+  height: 450px;
   background: linear-gradient(135deg, var(--color-olive-green) 0%, var(--color-terracotta) 100%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
