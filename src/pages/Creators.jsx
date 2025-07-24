@@ -1,63 +1,50 @@
+import { useState, useEffect } from 'react';
 import './Creators.css';
+import { getAllCreators } from '../services/CreatorServices';
 
 const Creators = () => {
-  const creators = [
-    {
-      id: 1,
-      name: "María Carmen Tajuelo",
-      butterflySpecies: "Monarca",
-      butterflyImage: "",
-      profileImage: "src/assets/images/mc.png",
-      github: "https://github.com/CarmenTajuelo",
-      linkedin: "https://www.linkedin.com/in/carmentajuelo/",
-      role: "Navbar y footer",
-      description: "Especialista en React y apasionada por la conservación de mariposas monarca."
-    },
-    {
-      id: 2,
-      name: "Guissella Pérez",
-      butterflySpecies: "Morpho Azul",
-      butterflyImage: "",
-      profileImage: "src/assets/images/gp.png",
-      github: "https://github.com/guiss26",
-      linkedin: "https://www.linkedin.com/in/guissella-pérez/",
-      role: "Método GET",
-      description: "Diseñadora enfocada en crear experiencias que conecten a las personas con la naturaleza."
-    },
-    {
-      id: 3,
-      name: "Irina Tiron",
-      butterflySpecies: "Cola de Golondrina",
-      butterflyImage: "",
-      profileImage: "src/assets/images/it.png",
-      github: "https://github.com/carmenrodriguez",
-      linkedin: "https://www.linkedin.com/in/irinatiron/",
-      role: "Formulario",
-      description: "Desarrolladora backend con experiencia en bases de datos y APIs para proyectos científicos."
-    },
-    {
-      id: 4,
-      name: "Ingrid Martínez",
-      butterflySpecies: "Mariposa Cebra",
-      butterflyImage: "",
-      profileImage: "src/assets/images/im.png",
-      github: "https://github.com/ingridD2707",
-      linkedin: "",
-      role: "Full Stack Developer",
-      description: "Desarrolladora full stack comprometida con proyectos de impacto ambiental y social."
-    },
-    {
-      id: 5,
-      name: "Paloma Gómez",
-      butterflySpecies: "Mariposa del Café",
-      butterflyImage: "",
-      profileImage: "src/assets/images/pg.png",
-      github: "https://github.com/Pal-cloud",
-      linkedin: "https://www.linkedin.com/in/palomagsal/",
-      role: "Formulario y Creadoras",
-      description: "Científica de datos especializada en análisis de biodiversidad y conservación."
-    }
-  ];
+  const [creators, setCreators] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCreators = async () => {
+      try {
+        setLoading(true);
+        const creatorsData = await getAllCreators();
+        setCreators(creatorsData);
+      } catch (err) {
+        setError('Error al cargar la información de las creadoras');
+        console.error('Error:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCreators();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="creators-container">
+        <div className="loading-message">
+          <div className="butterfly-decoration">🦋</div>
+          <p>Cargando información de nuestras creadoras...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="creators-container">
+        <div className="error-message">
+          <h2>Oops! 🦋</h2>
+          <p>{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="creators-container">
@@ -88,41 +75,77 @@ const Creators = () => {
               <div className="butterfly-info">
                 <h4>Mariposa Favorita</h4>
                 <p className="species-name">{creator.butterflySpecies}</p>
+                {creator.butterflySpeciesLatin && (
+                  <p className="species-latin">{creator.butterflySpeciesLatin}</p>
+                )}
               </div>
-              <img 
-                src={creator.butterflyImage} 
-                alt={creator.butterflySpecies}
-                className="butterfly-image"
-              />
+              {creator.butterflyImage && (
+                <img 
+                  src={creator.butterflyImage} 
+                  alt={creator.butterflySpecies}
+                  className="butterfly-image"
+                />
+              )}
             </div>
 
             <div className="description">
-              <p>{creator.description}</p>
+              <p>{creator.bio || creator.description}</p>
             </div>
 
+            {creator.skills && creator.skills.length > 0 && (
+              <div className="skills-section">
+                <h4>Habilidades</h4>
+                <div className="skills-tags">
+                  {creator.skills.slice(0, 4).map((skill, index) => (
+                    <span key={index} className="skill-tag">{skill}</span>
+                  ))}
+                  {creator.skills.length > 4 && (
+                    <span className="skill-tag more">+{creator.skills.length - 4}</span>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="social-links">
-              <a 
-                href={creator.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link github"
-              >
-                <svg viewBox="0 0 24 24" className="social-icon">
-                  <path d="M12 0.297C5.37 0.297 0 5.67 0 12.297c0 5.302 3.438 9.8 8.207 11.387.6.111.82-.26.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
-                GitHub
-              </a>
-              <a 
-                href={creator.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link linkedin"
-              >
-                <svg viewBox="0 0 24 24" className="social-icon">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                LinkedIn
-              </a>
+              {creator.github && (
+                <a 
+                  href={creator.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link github"
+                >
+                  <svg viewBox="0 0 24 24" className="social-icon">
+                    <path d="M12 0.297C5.37 0.297 0 5.67 0 12.297c0 5.302 3.438 9.8 8.207 11.387.6.111.82-.26.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                  </svg>
+                  GitHub
+                </a>
+              )}
+              {creator.linkedin && (
+                <a 
+                  href={creator.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link linkedin"
+                >
+                  <svg viewBox="0 0 24 24" className="social-icon">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              )}
+              {creator.portfolio && (
+                <a 
+                  href={creator.portfolio} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link portfolio"
+                >
+                  <svg viewBox="0 0 24 24" className="social-icon">
+                    <path d="M20 6h-2V4c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM8 4h8v2H8V4zm12 15H4V8h16v11z"/>
+                  </svg>
+                  Portfolio
+                </a>
+              )}
             </div>
           </div>
         ))}

@@ -123,6 +123,13 @@
   margin: 0;
 }
 
+.species-latin {
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
 .butterfly-image {
   width: 80px;
   height: 80px;
@@ -187,6 +194,15 @@
   box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
 }
 
+.social-link.portfolio {
+  background: linear-gradient(135deg, var(--color-terracotta), var(--color-sage-green));
+}
+
+.social-link.portfolio:hover {
+  background: linear-gradient(135deg, var(--color-sage-green), var(--color-terracotta));
+  transform: translateY(-3px);
+}
+
 .social-icon {
   width: 18px;
   height: 18px;
@@ -219,6 +235,63 @@
 .butterflies-footer {
   font-size: 1.5rem;
   animation: flutter 4s ease-in-out infinite;
+}
+
+/* Loading and Error states */
+.loading-message, .error-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-dark);
+}
+
+.loading-message p, .error-message p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.error-message h2 {
+  color: var(--color-terracotta);
+  margin-bottom: 1rem;
+}
+
+/* Skills section */
+.skills-section {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(var(--color-sage-green-rgb), 0.2);
+}
+
+.skills-section h4 {
+  color: var(--color-terracotta);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: var(--color-sage-green);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--color-terracotta);
+  transform: translateY(-2px);
+}
+
+.skill-tag.more {
+  background: var(--color-light-beige);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-sage-green);
 }
 
 /* Responsive Design */
