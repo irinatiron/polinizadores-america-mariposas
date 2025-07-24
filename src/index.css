@@ -110,7 +110,7 @@ h2 {
     padding: 1rem;
     text-align: center;
     margin-top: 50px;
-
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;
     font-weight: 400;

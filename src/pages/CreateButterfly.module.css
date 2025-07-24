@@ -11,7 +11,7 @@
 
 .big-icon {
     font-size: 150px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     display: block;
     color: var(--color-forest-green);
 }

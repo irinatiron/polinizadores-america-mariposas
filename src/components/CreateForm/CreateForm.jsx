@@ -14,7 +14,6 @@ import Swal from 'sweetalert2' // Importa sweetalert
 import Input from './ImageUpload'; // Importamos el componente de Cloudinary
 import { useNavigate } from 'react-router-dom'; // Importa hook useNavigate para navegar a otra ruta dentro de la app
 
-
 const Form = ({ onSubmit }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormState);
@@ -73,7 +72,8 @@ const Form = ({ onSubmit }) => {
     setFormData(initialFormState); // Limpia los datos que se acabaron de enviar y pone los que vienen por defecto
   };
   return ( // Renderizado del formulario
-    <form onSubmit={handleSubmit}>
+    <div className={styles.containerForm}>
+    <form onSubmit={handleSubmit}> 
       <div className={styles.requiredFields}>
         <div className={`${styles.formGroup} ${styles.nameGroup}`}>
           <label htmlFor="input-name">Nombre</label>
@@ -168,7 +168,8 @@ const Form = ({ onSubmit }) => {
           <button type="submit" className={`${styles.sendButton} ${styles.SendButtonEnd}`} disabled={!isRequiredValid()}>Añadir mariposa <FaCheck /></button>
         </div>
       )}
-    </form>
+      
+    </form></div>
   );
 };
 
