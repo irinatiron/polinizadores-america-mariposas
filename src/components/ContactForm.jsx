@@ -87,18 +87,6 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form-container">
-      <div className="contact-header">
-        <h2>¡Conecta con Nosotras!</h2>
-                <p>
-          Cada una de nosotras aporta su experiencia única: desde el desarrollo web, trabajamos juntas para crear esta plataforma que celebra la belleza y importancia 
-          de las mariposas en nuestros ecosistemas.
-        </p>
-        <p>
-          ¿Tienes preguntas, sugerencias o quieres colaborar con nosotras? ¡Nos encantaría saber de ti! 
-          Completa el formulario y te responderemos pronto.
-        </p>
-      </div>
-
       {submitMessage && (
         <div className={`message ${submitMessage.includes('Error') ? 'error' : 'success'}`}>
           {submitMessage}
