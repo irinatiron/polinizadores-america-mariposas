@@ -1,11 +1,65 @@
+.edit-form-container {
+  max-width: 950px;
+  margin: 2rem auto;
+  /* padding: 2rem;  */
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  
+}
 
-@media screen and (max-width:1200px){
-    .form-style{
+.butterfly-form {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px ;
+  border-radius: 5px;
+}
+
+.btn-submit {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background-color:#4caf50;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  gap: 14rem;
+  justify-content: center; 
+}
+
+
+ @media screen and (max-width:1200px){
+    .butterfly-form{
 
         display: flex;
         flex-direction: column;
+        padding: 10px 30px 0;
     }
 }
 h2{
     text-align: center;
-}
+} 

@@ -1,9 +1,6 @@
 {
   "butterflies": [
     {
-<<<<<<< HEAD
-=======
-      "id": "3001",
       "name": "Mariposa monarca",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -15,7 +12,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, oruga, crisálida y adulto",
       "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
-      "fenology": "Migración en otoño, reproducción en primavera y verano"
+      "fenology": "Migración en otoño, reproducción en primavera y verano",
+      "id": "3001"
     },
     {
       "id": "3002",
@@ -63,7 +61,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3005",
       "name": "Danaus gilippus",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -75,7 +72,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, larva, crisálida, adulto",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/Danaus_gilippus_thersippus.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "id": "3005"
     },
     {
       "id": "3006",
@@ -289,7 +287,6 @@
     },
     {
       "id": "3021",
->>>>>>> 784679d17419c69be644e3ffe91b479f554d7ffe
       "name": "Actinote thalia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -301,8 +298,7 @@
       "plants": "Asteraceae",
       "cycle": "28 días",
       "img": "https://www.ecoregistros.org/site/images/albumes/246/10145/Nymphalidae--Actinote-pyrrha--Perezosa-Grande.jpg",
-      "fenology": "Primavera y verano",
-      "id": "3021"
+      "fenology": "Primavera y verano"
     },
     {
       "id": "3022",
