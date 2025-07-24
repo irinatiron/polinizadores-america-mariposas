@@ -4,5 +4,8 @@
     background-color: var(--color-forest-green);
     color: white;
     border-radius: 15px;
+}
 
+.btn-add-butterfly:hover {
+    background-color: #26531a;
 }
