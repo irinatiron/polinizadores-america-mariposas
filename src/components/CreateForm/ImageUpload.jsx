@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 // useEffect actua cuando se cambia el valor de img
 // useRef accede al input file
 import axios from 'axios'; // Envía la imagen a Cloudinary
+import styles from './CreateForm.module.css';
+
 
 const ImageUpload = ({ onUpload, img }) => { //onUpload es una función que recibe la URL cuando ya se subió la imagen
   const [previewUrl, setPreviewUrl] = useState(img || null); // Guarda la imagen para mostrarla 
@@ -11,7 +13,7 @@ const ImageUpload = ({ onUpload, img }) => { //onUpload es una función que reci
   useEffect(() => { // Actualiza previewUrl cada vez que se modifica la imagen
     setPreviewUrl(img || null);
     if (!img && inputFileRef.current) { // Si está vacío el input se vacía para que no muestre el archivo que se subió antes
-      inputFileRef.current.value = '';  
+      inputFileRef.current.value = '';
     }
   }, [img]);
   const handleImageChange = async (e) => {
@@ -38,11 +40,16 @@ const ImageUpload = ({ onUpload, img }) => { //onUpload es una función que reci
   return ( // Renderizado del componente
     <div id='image-upload-container'>
       {/* El usuario selecciona la imagen pulsando esto: */}
-      <input type="file" onChange={handleImageChange} accept="image/*" ref={inputFileRef}/> 
+      <input type="file" onChange={handleImageChange} accept="image/*" ref={inputFileRef} />
       {/* handleImageChange se ejecuta cuando se selecciona un archivo e image/* restrige la selección a archivos de imagen */}
       {loading && <p>Subiendo imagen...</p>}
       {previewUrl && (
-      <img src={previewUrl} alt="Vista previa de la imagen subida" id='img-preview'/>
+        // <img src={previewUrl} alt="Vista previa de la imagen subida" id='img-preview'/>
+        <img
+          src={previewUrl}
+          alt="Vista previa de la imagen subida"
+          className={styles.imgPreview}
+        />
       )}
     </div>
   );
