@@ -6,16 +6,6 @@ const URL_API = "http://localhost:3000/butterflies";
 
 // Método GET para el READ
 export async function getAllButterflies() {
-  // const response = await fetch(URL_API, {
-  //   method: "GET",
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // })
-  // const butterflyData = await response.json()
-  // console.log(butterflyData)
-  // return butterflyData
-
   const response = await fetch(URL_API)
   if (!response.ok) {
     throw new Error('Error al obtener las mariposas')
