@@ -100,3 +100,41 @@ p {
 }
 
 
+/*SWEET ALERT*/
+.my-swal-popup {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 1rem;
+  padding: 2rem;
+  
+}
+
+.my-swal-popup .my-swal-title {
+  font-size: 1.8rem;
+  color: #333;
+  
+}
+
+.my-swal-popup .my-confirm-btn {
+  background-color: #336D25;
+  color: white;
+  padding: 1rem 3rem;
+  margin: 1rem; 
+  border-radius: 0.5rem;
+  font-weight: bold;
+  border: none;
+  width: 50%;
+
+}
+
+.my-swal-popup .my-cancel-btn {
+  background-color: #c0392b;
+  color: white;
+  padding: 1rem 4rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+  border: none;
+  margin: 1rem;
+  width: 50%;
+
+}

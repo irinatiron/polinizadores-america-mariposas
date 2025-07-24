@@ -17,7 +17,11 @@ const Form = ({ onSubmit }) => {
   const [formErrors, setFormErrors] = useState({}); // Se crea estado formErrors para almacenar los mensajes de error y por defecto está vacío
   const [showOptional, setShowOptional] = useState(false); // Vamos a dividir los campos en required (nombre, orden y familia) y opcionales (el resto)
   // Inicialmente los campos opcionales están ocultos: false
-
+  const isRequiredValid = () => {
+    const { name, family } = formData;
+    const errors = validateButterfly({ name, family });
+    return Object.keys(errors).length === 0;
+  };
   const handleChange = (e) => { // handleChange es la función que se ejecuta cuando cambia un campo, se extrae name y value
     // handleChange recibe un evento e a través del input
     const { name, value } = e.target; // Separa name y value
@@ -34,7 +38,6 @@ const Form = ({ onSubmit }) => {
       [name]: validationErrors[name], // Muestra los mensajes de error
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault(); // Evita que el navegador recargue la página
     const errors = validateButterfly(formData); // Validación final del formulario antes de permitir que envíe los datos
@@ -51,27 +54,30 @@ const Form = ({ onSubmit }) => {
       });
       return;
     }
-
     await onSubmit(formData); // Si no hay errores
     // Si el formulario se ha enviado correctamente se restablece a su valor inicial y se vacían todos los campos
     setFormData(initialFormState);
   };
-
   return ( // Renderizado del form
     <form onSubmit={handleSubmit}>
       <div id='required-fields'>
         <div className="form-group" id='name-group'>
           <label htmlFor="input-name">Nombre</label>
-          <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder='Ej: Mariposa monarca (Danaus plexippus)' title='Nombre científico o nombre común con científico entre paréntesis.' required autoFocus />
+          {/* <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder='Ej: Mariposa monarca (Danaus plexippus)' title='Nombre científico o nombre común con científico entre paréntesis.' required autoFocus /> */}
+          <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)" title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus
+            className={formErrors.name ? 'input-error' : ''} // Se añade la clase .input-error para darle estilo en css
+            // La interrogación es un operador ternario y formErrors.name la condición: si hay error se aplica la clase y si no se deja vacía
+          />
+
           {formErrors.name && <p className="error-message">{formErrors.name}</p>}
         </div>
         <div className="form-group" id='order-group'>
           <label htmlFor="input-order">Orden</label>
-          <input type="text" id="input-order" name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title='Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera.'/>
+          <input type="text" id="input-order" name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title='Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera.' />
         </div>
         <div className="form-group" id='family-group'>
           <label htmlFor="input-family">Familia</label>
-          <select id="input-family" name="family" value={formData.family} onChange={handleChange} title='Selecciona entre las familias existentes.' required>
+          <select id="input-family" name="family" value={formData.family} onChange={handleChange} onBlur={handleBlur} title='Selecciona entre las familias existentes.' required className={formErrors.family ? 'input-error' : ''}>
             <option value="">Selecciona la familia</option>
             {butterflyFamilies.map((family) => (
               <option key={family} value={family}>
@@ -79,13 +85,23 @@ const Form = ({ onSubmit }) => {
               </option>
             ))}
           </select>
+          {formErrors.family && <p className="error-message">{formErrors.family}</p>}
         </div>
       </div>
       {/* Damos la opción al usuario de añadir información adicional a o de guardar la mariposa añadida sólo con el nombre y la familia */}
-      {!showOptional && (<div className="form-buttons">
+
+      {/* {!showOptional && (<div className="form-buttons">
         <button type="button" className="show-optional" onClick={() => setShowOptional(true)}><FaPlus /> Añadir información adicional</button>
         <button type="submit" className="submit-button">Añadir mariposa <FaCheck /></button>
       </div>
+      )} */}
+
+      {/* Evitamos que el usuario pueda ver los campos opcionales hasta que complete nombre y familia */}
+      {!showOptional && (
+        <div className="form-buttons">
+          <button type="button" className="show-optional" onClick={() => setShowOptional(true)} disabled={!isRequiredValid()} title="Debes completar nombre y familia para añadir más información"><FaPlus /> Añadir información adicional</button>
+          <button type="submit" className="submit-button">Añadir mariposa <FaCheck /></button>
+        </div>
       )}
       {/* Si el usuario elige añadir información adicional desplegamos el resto de campos */}
       {showOptional && (

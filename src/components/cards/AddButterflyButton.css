@@ -1,0 +1,8 @@
+.btn-add-butterfly {
+    text-decoration: none;
+    padding: 13px 20px;
+    background-color: var(--color-forest-green);
+    color: white;
+    border-radius: 15px;
+
+}

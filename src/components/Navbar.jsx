@@ -4,18 +4,23 @@ import navLogo from '../assets/images/nav-logo.png';
 
 function Navbar() {
     return (
-        <nav className="navbar">
-            <div className="nav-container">
+        
+        <nav className="navbar" style={{border: "5px dotted yellow"}}>
+
+            <div className="nav-container" style={{border: "3px dotted pink"}}>
                 {/*Logo */}
                 <Link to="/" className="nav-logo">
                     <img src={navLogo} alt="blue butterfly with america map on the left side" />
                 </Link>
                 {/*Title*/}
                 <Link to="/" className="nav-title">
-                    <p style={{border: "3px dotted red"}}>Mariposas de América</p>
+                    <p>Mariposas de América</p>
                 </Link>
+
+                <button className="menu-toggle">&#9776;</button>
+
                 {/*Nav Links*/}
-                <ul className="nav-menu" style={{border: "3px dotted red"}}>
+                <ul className="nav-menu">
                     <li>
                         <Link to="/" className="nav-link">Inicio</Link>
                     </li>
@@ -24,6 +29,9 @@ function Navbar() {
                     </li>
                     <li>
                         <Link to="/creadoras" className="nav-link">Creadoras</Link>
+                    </li>
+                     <li>
+                        <Link to="/formulario" className="nav-link">Formulario</Link>
                     </li>
                 </ul>
             </div>
