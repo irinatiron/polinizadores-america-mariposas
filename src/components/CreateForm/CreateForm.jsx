@@ -99,7 +99,7 @@ const Form = ({ onSubmit }) => {
       {!showOptional && (
         <div className={styles.formButtons}>
           <button type="button" className={styles.optionalButton} onClick={() => setShowOptional(true)} disabled={!isRequiredValid()} title="Debes completar nombre y familia para añadir más información"><FaPlus /> Añadir información adicional</button>
-          <button type="submit" className={styles.sendButton}>Añadir mariposa <FaCheck /></button>
+          <button type="submit" className={styles.sendButton} disabled={!isRequiredValid()}>Añadir mariposa <FaCheck /></button>
         </div>
       )}
       {showOptional && (
@@ -153,7 +153,7 @@ const Form = ({ onSubmit }) => {
       )}
       {showOptional && (
         <div className={styles.formButtons}>
-          <button type="submit" className={`${styles.sendButton} ${styles.SendButtonEnd}`}>Añadir mariposa <FaCheck /></button>
+          <button type="submit" className={`${styles.sendButton} ${styles.SendButtonEnd}`} disabled={!isRequiredValid()}>Añadir mariposa <FaCheck /></button>
         </div>
       )}
     </form>
