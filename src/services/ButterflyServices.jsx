@@ -96,35 +96,49 @@ export async function updateButterfly(id, updatedButterfly) {
 // ========================================
 
 const deleteButterfly = async (id) => {
- try {
-   // Make the DELETE request to the server
-   const response = await fetch(`${URL_API}/${id}`, {
-     method: 'DELETE',
-     headers: {
-       'Content-Type': 'application/json'
-     }
-   });
+  try {
+    // Make the DELETE request to the server
+    const response = await fetch(`${URL_API}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-   // Handle HTTP errors (4xx, 5xx status codes)
-   // Server responded but with an error status
-   if (!response.ok) {
-     throw new Error(`Error al borrar la mariposa ${id}: ${response.status}`);
-   }
-   
-   // Request was successful - show success message
-   toast.success(`Mariposa con id ${id} eliminada correctamente.`);
-   return response;
-   
- } catch (error) {
-   // Handle two types of errors:
-   // 1. Network errors (server unreachable, no internet, timeout, etc.)
-   // 2. HTTP errors thrown by the if (!response.ok) check above
-   toast.error('Error al eliminar la mariposa');
-   throw error; // Re-throw so component can handle it if needed
- }
+    // Handle HTTP errors (4xx, 5xx status codes)
+    // Server responded but with an error status
+    if (!response.ok) {
+      throw new Error(`Error al borrar la mariposa ${id}: ${response.status}`);
+    }
+
+    // Request was successful - show success message
+    //toast.success(`Mariposa con id ${id} eliminada correctamente.`);
+    Swal.fire({
+      icon: 'success',
+      title: '¡Eliminada!',
+      text: `La mariposa con ID ${id} fue eliminada correctamente.`,
+      timer: 2000,
+      showConfirmButton: false
+    });
+
+    return response;
+
+  } catch (error) {
+    // Handle two types of errors:
+    // 1. Network errors (server unreachable, no internet, timeout, etc.)
+    // 2. HTTP errors thrown by the if (!response.ok) check above
+
+    //toast.error('Error al eliminar la mariposa');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudo eliminar la mariposa.',
+    });
+
+    throw error; // Re-throw so component can handle it if needed
+  }
 };
 export { deleteButterfly };
-
 
 
 

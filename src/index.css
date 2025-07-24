@@ -87,11 +87,12 @@ main {
 
 } */
 
-.content-btn {/*botón añadir mariposa + h2 centralizados*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.content-btn {
+    /*botón añadir mariposa + h2 centralizados*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Typography - Mobile */
@@ -104,6 +105,13 @@ h1 {
 }
 
 h2 {
+<<<<<<< HEAD
+    font-size: 2rem;
+    color: #BF6734;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 50px;
+=======
   font-size: 2rem;
   color: #BF6734;
   padding: 1rem;
@@ -114,6 +122,7 @@ h2 {
   font-family: "Aladin", system-ui;
   font-weight: 400;
   font-style: normal;
+>>>>>>> 3104f097a29b7e764aef87d0f02a339b181a4c53
 
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;

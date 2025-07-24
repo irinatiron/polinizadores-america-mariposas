@@ -1,10 +1,15 @@
 import './CardBackButterfly.css';
 import { useEffect, useState } from 'react';
-import { getOneButterfly, deleteButterfly } from '../services/ButterflyServices'
-import { Link, useParams } from 'react-router-dom'
+import { getOneButterfly, deleteButterfly } from '../services/ButterflyServices';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+
+
 
 const CardBackButterfly = () => {//Componente funcional
     const { id } = useParams() //Para obtener el ID desde la URL
+    const navigate = useNavigate();
     const [butterfly, setButterfly] = useState(null)//Estado para guardar los datos de la mariposa que obtienes de la API. Empieza como null mientras se carga
     const [loading, setLoading] = useState(true)//Otro estado que indica si la mariposa todavíase está cargando. Empiea en true y se pone en false cuando termina la carga
 
@@ -25,6 +30,38 @@ const CardBackButterfly = () => {//Componente funcional
 
     if (loading) return <p>Cargando mariposa...</p>//Mientras la mariposa se esté cargando, se muestra este mensaje
     if (!butterfly) return <p>No se encontró la mariposa</p>//Si no se encontró nada(ej ID inválido), se muestra este otro mensaje
+
+
+    //Alert message showed before the card is deleted 
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción eliminará la mariposa permanentemente.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar',
+            buttonsStyling: false,
+            customClass: {
+                popup: 'my-swal-popup',
+                title: 'my-swal-title',
+                confirmButton: 'my-confirm-btn',
+                cancelButton: 'my-cancel-btn'
+            }
+
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await deleteButterfly(id);
+                    navigate('/fichas-mariposas'); // o la ruta que lleve al listado principal
+                } catch (error) {
+                    console.error('Error al eliminar:', error);
+                }
+            }
+        });
+    };
 
     return (
         <div className="cards">
@@ -50,7 +87,7 @@ const CardBackButterfly = () => {//Componente funcional
                     <p><span>Fenología: </span>{butterfly.fenology}</p>
                 </div>
                 <div className="btns">
-                    <button className="btn btn-delete" onClick={() => deleteButterfly(butterfly.id)}>
+                    <button className="btn btn-delete" onClick={() => handleDelete(butterfly.id)}>
                         Eliminar
                     </button>
                     <Link className="btn btn-update" to={`/editar-mariposa/${butterfly.id}`}>Editar</Link>
