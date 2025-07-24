@@ -121,8 +121,23 @@ p {
     background-color: #ae8a3c;
 }
 
+@media only screen and (max-width:541px) {
+    .order-butterfly {
+        margin-top: 12px;
+    } 
+
+    .card-content p {/*añadido*/
+        font-size: 15px;
+    }
+
+    .btns {
+        font-size: 14px;
+    }
+}
+
 @media only screen and (max-width: 415px){
     .img-card {
-        width: 310px;
+        /* width: 310px; */
+        width: 320px;
     }
 }
