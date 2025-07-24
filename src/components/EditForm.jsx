@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import "../components/CreateForm/CreateForm.css"
-
+import "./EditForm.css"
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -61,7 +61,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
 
   return (
     <div className="edit-form-container">
-      <form onSubmit={handleSubmit} className="butterfly-form">
+      <form onSubmit={handleSubmit} className="butterfly-form form-style" >
         
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>
