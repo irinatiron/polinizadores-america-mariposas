@@ -105,16 +105,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
-  color: #BF6734;
-  padding: 1rem;
-  text-align: center;
-  margin-top: 50px;
-
-  /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
-  font-family: "Aladin", system-ui;
-  font-weight: 400;
-  font-style: normal;
+    font-size: 2rem;
+    color: #BF6734;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 50px;
 
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;
