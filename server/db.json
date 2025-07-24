@@ -434,41 +434,11 @@
       "cycle": "1 mes",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/15559975/large.jpg",
       "fenology": "Todo el año"
-    },
-    {
-      "id": "41ee",
-      "name": "Prueba Cloudinary",
-      "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "color": "",
-      "size": "",
-      "origin": "Mariposa de prueba",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753302604/bvzjqqgs008o7sj88vlg.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "579f",
-      "name": "cloudinary cloudinary",
-      "order": "Lepidoptera",
-      "family": "Hesperiidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753303914/trjjga1tjv44qhe1mt90.jpg",
-      "fenology": ""
     }
   ],
   "creators": [
     {
-      "id": 1,
+      "id": "1",
       "name": "María Carmen Tajuelo",
       "email": "carmen.tajuelo@example.com",
       "role": "Frontend Developer - Navbar y Footer",
@@ -481,13 +451,19 @@
       "linkedin": "https://www.linkedin.com/in/carmentajuelo/",
       "portfolio": "https://carmentajuelo.dev",
       "bio": "Especialista en React y apasionada por la conservación de mariposas monarca. Me enfoco en crear interfaces intuitivas que conecten a los usuarios con la naturaleza.",
-      "skills": ["React", "JavaScript", "CSS", "Responsive Design", "Accessibility"],
+      "skills": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "Responsive Design",
+        "Accessibility"
+      ],
       "location": "España",
       "yearsExperience": 3,
       "favoriteQuote": "El código limpio es como una mariposa: bello y funcional a la vez."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Guissella Pérez",
       "email": "guissella.perez@example.com",
       "role": "Backend Developer - Método GET",
@@ -500,13 +476,19 @@
       "linkedin": "https://www.linkedin.com/in/guissella-pérez/",
       "portfolio": "https://guisselladev.com",
       "bio": "Desarrolladora backend enfocada en crear APIs robustas y eficientes. Apasionada por la conservación de especies y el uso de tecnología para el bien común.",
-      "skills": ["Node.js", "Express", "MongoDB", "PostgreSQL", "RESTful APIs"],
+      "skills": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "PostgreSQL",
+        "RESTful APIs"
+      ],
       "location": "Perú",
       "yearsExperience": 4,
       "favoriteQuote": "Los datos bien estructurados son la base de todo ecosistema digital."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Irina Tiron",
       "email": "irina.tiron@example.com",
       "role": "Full Stack Developer - Formularios",
@@ -519,13 +501,19 @@
       "linkedin": "https://www.linkedin.com/in/irinatiron/",
       "portfolio": "https://irinatiron.dev",
       "bio": "Desarrolladora full stack con experiencia en formularios complejos y validaciones. Me especializo en crear experiencias de usuario fluidas y accesibles.",
-      "skills": ["React", "Node.js", "Form Validation", "TypeScript", "Testing"],
+      "skills": [
+        "React",
+        "Node.js",
+        "Form Validation",
+        "TypeScript",
+        "Testing"
+      ],
       "location": "Rumania",
       "yearsExperience": 5,
       "favoriteQuote": "Un buen formulario es como una mariposa: debe ser ligero pero poderoso."
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Ingrid Martínez",
       "email": "ingrid.martinez@example.com",
       "role": "Full Stack Developer",
@@ -538,13 +526,20 @@
       "linkedin": "https://www.linkedin.com/in/ingridmartinez/",
       "portfolio": "https://ingridmartinez.dev",
       "bio": "Desarrolladora full stack comprometida con proyectos de impacto ambiental y social. Especialista en arquitecturas escalables y metodologías ágiles.",
-      "skills": ["React", "Node.js", "MongoDB", "Docker", "CI/CD", "Jest"],
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Docker",
+        "CI/CD",
+        "Jest"
+      ],
       "location": "Colombia",
       "yearsExperience": 6,
       "favoriteQuote": "El código sostenible protege tanto el software como el planeta."
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Paloma Gómez",
       "email": "paloma.gomez@example.com",
       "role": "Frontend Developer - Formularios y Creadoras",
@@ -557,7 +552,14 @@
       "linkedin": "https://www.linkedin.com/in/palomagsal/",
       "portfolio": "https://palomacloud.dev",
       "bio": "Científica de datos especializada en análisis de biodiversidad y conservación. Combino mi pasión por los datos con el desarrollo frontend para crear visualizaciones impactantes.",
-      "skills": ["React", "D3.js", "Python", "Data Analysis", "Machine Learning", "Statistics"],
+      "skills": [
+        "React",
+        "D3.js",
+        "Python",
+        "Data Analysis",
+        "Machine Learning",
+        "Statistics"
+      ],
       "location": "México",
       "yearsExperience": 4,
       "favoriteQuote": "Los datos cuentan historias, las mariposas cuentan la historia de nuestro ecosistema."

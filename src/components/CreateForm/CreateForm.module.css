@@ -1,22 +1,4 @@
-#create-page-title,
-#create-page-intro {
-    text-align: center;
-    padding: 0;
-}
-
-#create-page-intro {
-    font-size: 15px;
-    margin: 5px 0 15px;
-}
-
-.big-icon {
-    font-size: 150px;
-    margin: 0 auto;
-    display: block;
-    color: var(--color-forest-green);
-}
-
-#create-butterfly {
+.createButterfly {
     width: 10%;
     display: block;
     margin: auto;
@@ -33,40 +15,40 @@ form {
     margin: 2% 10% 5%;
 }
 
-.form-group {
+.formGroup {
     padding: 20px 60px 0;
 }
 
-#required-fields {
+.requiredFields {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#p-required {
+.pRequired {
     grid-column: 1 / -1;
     text-align: right;
     font-size: 0.8em;
 }
 
-#required-fields label {
+.requiredFields label {
     text-align: center;
 }
 
-#name-group {
+.nameGroup {
     grid-column: 1 / -1;
 }
 
-#order-group,
-#input-order {
+.orderGroup,
+.inputOrder {
     cursor: default;
 }
 
-#family-group select {
+.familyGroup select {
     cursor: pointer;
 }
 
-#family-group select {
+.familyGroup select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -81,25 +63,24 @@ form {
     padding-right: 2rem;
 }
 
-#optional-fields {
+.optionalFields {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#p-optional {
+.pOptional {
     grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 1%;
 }
 
-#img-group {
+.imgGroup {
     grid-column: 1 / 2;
     grid-row: span 2;
-
 }
 
-#img-preview {
+.imgPreview {
     max-width: 100%;
     max-height: 255px;
 }
@@ -144,7 +125,6 @@ textarea::placeholder {
     opacity: 0.8;
 }
 
-
 input:hover,
 textarea:hover {
     opacity: 0.9;
@@ -153,12 +133,12 @@ textarea:hover {
 input:focus,
 textarea:focus,
 select:focus,
-#family-group select:focus {
+.familyGroup select:focus {
     opacity: 1;
     outline: 2px solid var(--color-accent-orange);
 }
 
-.form-buttons {
+.formButtons {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
@@ -167,9 +147,9 @@ select:focus,
     margin-bottom: 5rem;
 }
 
-#optional-button,
-#send-button,
-#send-button-end {
+.optionalButton,
+.sendButton,
+.sendButtonEnd {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -190,28 +170,28 @@ select:focus,
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
 }
 
-#optional-button:hover,
-#send-button:hover,
-#send-button-end:hover {
+.optionalButton:hover,
+.sendButton:hover,
+.sendButtonEnd:hover {
     opacity: 1;
 }
 
-.form-buttons:has(button:only-child) {
+.formButtons:has(button:only-child) {
     justify-content: center;
 }
 
-.error-message {
+.errorMessage {
     color: var(--color-brick-red);
     font-size: 0.85rem;
     margin: 0;
     padding: 0;
 }
 
-.input-error {
+.inputError {
     outline: 2px solid var(--color-brick-red) !important;
 }
 
-.swal2-confirm-error {
+.swal2ConfirmError {
     font-size: 1.2rem !important;
     padding: 12px 28px !important;
     border-radius: 8px !important;
@@ -221,7 +201,7 @@ select:focus,
     min-width: 100px !important;
 }
 
-.swal2-confirm-ok {
+.swal2ConfirmOk {
     font-size: 1.2rem !important;
     padding: 12px 28px !important;
     border-radius: 8px !important;
@@ -231,34 +211,33 @@ select:focus,
     min-width: 100px !important;
 }
 
-
 @media screen and (max-width: 1200px) {
     form {
         grid-template-columns: 1fr;
         margin: 10px 0 0;
     }
 
-    .form-group {
+    .formGroup {
         padding: 10px 30px 0;
     }
 
-    #required-fields {
+    .requiredFields {
         padding: 0;
     }
 
-    #p-required {
+    .pRequired {
         text-align: center;
     }
 
-    #optional-fields {
+    .optionalFields {
         padding: 0;
     }
 
-    #img-group input {
+    .imgGroup input {
         min-height: 60px;
     }
 
-    #img-group {
+    .imgGroup {
         grid-column: 1 / -1;
     }
 
@@ -266,31 +245,7 @@ select:focus,
         text-align: center;
     }
 
-    .form-group {
+    .formGroup {
         grid-column: 1 / -1;
     }
-
-    .form-buttons {
-        flex-direction: column;
-        padding: 0 8%;
-        margin-top: 20px;
-        margin-bottom: 1.2rem;
-    }
-
-    .form-buttons:has(button:only-child) {
-        margin-bottom: 4.1rem;
-    }
-
-    #optional-button,
-    #send-button,
-    #send-button-end {
-        width: 100%;
-        margin-bottom: 1.3rem;
-        padding: 20px 15px;
-    }
-
-    input {
-        width: 100%;
-    }
-
 }
