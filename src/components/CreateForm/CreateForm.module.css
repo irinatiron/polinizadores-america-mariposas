@@ -85,6 +85,49 @@ form {
     max-height: 255px;
 }
 
+.imagePreviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.imagePreview {
+  max-width: 300px;
+}
+
+.imageActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--color-sage-green);
+  opacity: 0.8;
+  box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+}
+
+.imageUrlLabel {
+  font-size: 0.9rem;
+  color: #ffff;
+  word-break: break-word;
+  flex: 1;
+}
+
+.changeImageButton {
+  margin-right: 5%;
+  border: none;
+  background-color: #eee;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.changeImageButton:hover {
+  background-color: var(--color-brick-red);
+}
+
 label {
     margin: 5px 10px 10px;
     font-weight: 600;
@@ -185,8 +228,8 @@ select:focus,
   background-color: #ccc; 
   color: #666;
   cursor: not-allowed;
+  box-shadow: none;
 }
-
 
 .errorMessage {
     color: var(--color-brick-red);

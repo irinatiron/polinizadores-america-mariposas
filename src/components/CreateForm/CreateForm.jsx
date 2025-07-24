@@ -11,7 +11,7 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 import Swal from 'sweetalert2' // Importa sweetalert
-import ImageUpload from './ImageUpload'; // Importamos el componente de Cloudinary
+import Input from './ImageUpload'; // Importamos el componente de Cloudinary
 import { useNavigate } from 'react-router-dom'; // Importa hook useNavigate para navegar a otra ruta dentro de la app
 
 
@@ -77,17 +77,17 @@ const Form = ({ onSubmit }) => {
       <div className={styles.requiredFields}>
         <div className={`${styles.formGroup} ${styles.nameGroup}`}>
           <label htmlFor="input-name">Nombre</label>
-          <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)"
+          <input type="text" id='input-name' className={styles.inputName} name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)"
             title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus className={formErrors.name ? styles.inputError : ''} />
           {formErrors.name && <p className={styles.errorMessage}>{formErrors.name}</p>}
         </div>
         <div className={`${styles.formGroup} ${styles.orderGroup}`}>
           <label htmlFor="input-order">Orden</label>
-          <input type="text" id="input-order" name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera." />
+          <input type="text" id='input-order' className={styles.inputOrder} name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera." />
         </div>
         <div className={`${styles.formGroup} ${styles.familyGroup}`}>
           <label htmlFor="input-family">Familia</label>
-          <select name="family" id="input-family" value={formData.family} onChange={handleChange} onBlur={handleBlur} title="Selecciona entre las familias existentes." required className={formErrors.family ? styles.inputError : ''} >
+          <select name="family" id='input-family' className={styles.inputFamily} value={formData.family} onChange={handleChange} onBlur={handleBlur} title="Selecciona entre las familias existentes." required className={formErrors.family ? styles.inputError : ''} >
             <option value="">Selecciona la familia</option>
             {butterflyFamilies.map((family) => (
               <option key={family} value={family}>{family}</option>
@@ -105,9 +105,21 @@ const Form = ({ onSubmit }) => {
       {showOptional && (
         <div className={styles.optionalFields}>
           <div className={`${styles.formGroup} ${styles.imgGroup}`}>
-            <label htmlFor="input-img"><IoImageOutline /> Imagen</label>
-            <ImageUpload onUpload={(url) => setFormData({ ...formData, img: url })} img={formData.img} />
-            {formErrors.img && <p className={styles.errorMessage}>{formErrors.img}</p>}
+            <label htmlFor="input-img"><IoImageOutline /> Foto de la mariposa</label>
+            {formData.img ? (
+              <div className={styles.imagePreviewContainer}>
+                <img src={formData.img} alt="Preview" className={styles.imagePreview} />
+                <div className={styles.imageActions}>
+                  <p className={styles.imageUrlLabel}>{formData.img.split('/').pop()}</p>
+                  <button type="button" className={styles.changeImageButton} onClick={() => setFormData({ ...formData, img: '' })}>Borrar imagen</button>
+                </div>
+              </div>
+            ) : (
+              <Input name="img" id="input-img" value={formData.img} onUpload={(url) => setFormData({ ...formData, img: url })} error={formErrors.img} />
+            )}
+            {formErrors.img && (
+              <p className={styles.errorMessage}>{formErrors.img}</p>
+            )}
           </div>
           <div className={`${styles.formGroup} ${styles.originGroup}`}>
             <label htmlFor="input-origin"><HiOutlineGlobeAmericas /> Origen</label>
