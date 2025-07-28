@@ -1,43 +1,58 @@
-// src/components/AmericanMapLeaflet.jsx
+import { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const AmericanMapLeaflet = () => {
-    const markers = [
-        {
-            position: [38.9072, -77.0369], // Washington D.C., EE.UU.
-            text: 'Estados Unidos: Washington D.C.',
-        },
-        {
-            position: [19.4326, -99.1332], // Ciudad de México
-            text: 'México: Ciudad de México',
-        },
-        {
-            position: [-15.7939, -47.8828], // Brasília, Brasil
-            text: 'Brasil: Brasília',
-        },
-    ];
+// Icono por defecto
+const customIcon = new L.Icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+});
 
+const AmericanMapLeaflet = () => {
+    const [butterflies, setButterflies] = useState([]);
+
+    useEffect(() => {
+        fetch('/butterflies.json') // asegúrate que esté en public/
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data); // <-- Verifica que tenga la clave butterflies
+                setButterflies(data.butterflies); // 👈 CORRECTO
+            })
+            .catch((err) => console.error('Error al cargar mariposas:', err));
+    }, []);
 
     return (
-
         <MapContainer
-            center={[37.0902, -95.7129]} // Coordenadas centradas en Estados Unidos
+            center={[-10, -60]} // Centro general de América del Sur
             zoom={4}
-            scrollWheelZoom={false}
+            scrollWheelZoom={true}
             style={{ height: '100vh', width: '100%' }}
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                attribution='&copy; OpenStreetMap contributors'
             />
-            {markers.map((marker, index) => (
-                <Marker key={index} position={marker.position}>
-                    <Popup>{marker.text}</Popup>
+
+            {butterflies.map((butterfly) => (
+                <Marker key={butterfly.id} position={butterfly.position} icon={customIcon}>
+                    <Popup maxWidth={250}>
+                        <strong>{butterfly.name}</strong>
+                        <br />
+                        <img
+                            src={butterfly.img}
+                            alt={butterfly.name}
+                            style={{ width: '100%', maxHeight: '120px', objectFit: 'cover', margin: '8px 0' }}
+                        />
+                        <div><strong>Origen:</strong> {butterfly.origin}</div>
+                        <div><strong>Hábitat:</strong> {butterfly.habitat}</div>
+                        <div><strong>Fenología:</strong> {butterfly.fenology}</div>
+                    </Popup>
                 </Marker>
             ))}
         </MapContainer>
-
     );
 };
 
