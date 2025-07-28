@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './ContactForm.css';
 
 const ContactForm = () => {
@@ -31,6 +32,7 @@ const ContactForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!formData.name.trim()) {
       newErrors.name = 'El nombre es requerido';
@@ -38,7 +40,7 @@ const ContactForm = () => {
 
     if (!formData.email.trim()) {
       newErrors.email = 'El email es requerido';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!emailRegex.test(formData.email)) {
       newErrors.email = 'El email no es válido';
     }
 
@@ -56,37 +58,70 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+  e.preventDefault();
 
-    setIsSubmitting(true);
-    setErrors({});
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const newErrors = {};
 
-    try {
-      // Simular envío del formulario
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitMessage('¡Mensaje enviado correctamente! Te responderemos pronto.');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      setSubmitMessage('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  if (!formData.name.trim()) newErrors.name = 'El nombre es requerido';
+  if (!formData.email.trim()) {
+    newErrors.email = 'El email es requerido';
+  } else if (!emailRegex.test(formData.email)) {
+    newErrors.email = 'El email no es válido';
+  }
+  if (!formData.subject.trim()) newErrors.subject = 'El asunto es requerido';
+  if (!formData.message.trim()) newErrors.message = 'El mensaje es requerido';
 
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors); // Mostrar errores debajo de cada campo (si tenés esa lógica)
+    return; // No enviamos si hay errores
+  }
+
+  setIsSubmitting(true);
+  setErrors({});
+
+  try {
+    await emailjs.send(
+      'service_m97yeod',       // ← ID real de tu servicio
+      'template_w6wwniy',      // ← ID real de tu plantilla
+      {
+        user_name: formData.name,
+        user_email: formData.email,
+        message: formData.message
+      },
+      'osMYH7kDCSAwRaOXt'       // ← tu clave pública
+    );
+
+    setSubmitMessage('¡Mensaje enviado correctamente! 🦋 Te responderemos pronto.');
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+  } catch (error) {
+    console.error('Error al enviar el mensaje:', error);
+    setSubmitMessage('Hubo un error al enviar el mensaje. Intenta de nuevo.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div className="contact-form-container">
+      {submitMessage && !submitMessage.includes('Error') && (
+        <div className="butterfly-animation">
+          <img src="/butterfly.svg" alt="Mariposa animada" />
+        </div>
+      )}
+
+      <div className="form-header-box">
+        <h2>Contáctanos</h2>
+        <p>
+          Si tienes preguntas, sugerencias o quieres colaborar en la documentación
+          de mariposas, escríbenos.
+        </p>
+      </div>
+
       {submitMessage && (
         <div className={`message ${submitMessage.includes('Error') ? 'error' : 'success'}`}>
           {submitMessage}
@@ -105,6 +140,7 @@ const ContactForm = () => {
             className={errors.name ? 'error' : ''}
             placeholder="Tu nombre completo"
           />
+          {errors.name && <span className="error-icon">❗</span>}
           {errors.name && <span className="error-text">{errors.name}</span>}
         </div>
 
@@ -119,6 +155,7 @@ const ContactForm = () => {
             className={errors.email ? 'error' : ''}
             placeholder="tu.email@ejemplo.com"
           />
+          {errors.email && <span className="error-icon">❗</span>}
           {errors.email && <span className="error-text">{errors.email}</span>}
         </div>
 
@@ -132,12 +169,13 @@ const ContactForm = () => {
             className={errors.subject ? 'error' : ''}
           >
             <option value="">Selecciona un asunto</option>
-            <option value="identificacion">Identificación de mariposas</option>
-            <option value="colaboracion">Colaboración</option>
-            <option value="informacion">Solicitud de información</option>
-            <option value="sugerencia">Sugerencias</option>
-            <option value="otro">Otro</option>
+            <option value="identificacion">🦋Identificación de mariposas</option>
+            <option value="colaboracion">🤝Colaboración</option>
+            <option value="informacion">ℹ️ Solicitud de información</option>
+            <option value="sugerencia">💡 Sugerencias</option>
+            <option value="otro">🔄 Otro</option>
           </select>
+          {errors.subject && <span className="error-icon">❗</span>}
           {errors.subject && <span className="error-text">{errors.subject}</span>}
         </div>
 
@@ -152,6 +190,7 @@ const ContactForm = () => {
             placeholder="Escribe tu mensaje aquí..."
             rows="6"
           />
+          {errors.message && <span className="error-icon">❗</span>}
           {errors.message && <span className="error-text">{errors.message}</span>}
         </div>
 
