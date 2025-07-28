@@ -1,3 +1,10 @@
+.title-detail-butterfly {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .cards {
     display: flex;
     justify-content: center;
@@ -15,13 +22,17 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+
+
 .corner-ribbon-back {
     position: absolute;
     top: 0;
     left: 0;
     background: white;
     color: black;
-    padding: 12px 125px 12px 40px;
+    width: 370px;
+    /* padding: 12px 125px 12px 40px; */
+    padding: 11px 30px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
@@ -69,7 +80,6 @@ p {
 
 .img-card-one img {
     text-align: center;
-    /* margin: 10px 30px 0 30px; */
 }
 
 .img-butterfly-back {
@@ -79,7 +89,6 @@ p {
 
 .card-content,
 .btns {
-    /* margin: 20px 40px; */
     margin: 30px 40px 20px 40px;
 }
 
@@ -157,5 +166,108 @@ p {
   border: none;
   margin: 1rem;
   width: 50%;
+}
+
+/*responsive a partir de 615px*/
+@media only screen and (max-width: 615px) {
+    .card-butterfly-back {
+        width: 500px;
+    }
+
+    .corner-ribbon-back {
+        width: 350px;
+    }
+
+    .img-card-one {
+        width: 440px;
+    }
+
+    .paragraph p {
+        font-size: 13px;
+    }
+
+    .btn-back {
+        font-size: 13px;
+    }
+
+    @media only screen and (max-width: 431px) {
+        .corner-ribbon-back {
+            width: 250px;
+        }
+
+        .corner-order-back {
+            padding: 15px 2px 15px 0px;
+        }
+    
+        .img-card-one {
+            margin-top: 50px;
+            width: 340px;
+        }
+        
+        @media only screen and (max-width: 415px) {
+            .img-card-one {
+                margin-top: 51px;
+                width: 325px;
+            }
+
+            .corner-order-back {
+                padding: 15px 0;
+            }
+
+            @media only screen and (max-width: 391px) {
+                .corner-ribbon-back {
+                    width: 220px;
+                }
+
+                .img-card-one {
+                    width: 300px;
+                }
+
+                @media only screen and (max-width:376px) {
+                    .corner-ribbon-back {
+                        width: 210px;
+                    }
+
+                    .img-card-one {
+                        width: 285px;
+                    }
+
+                    .btn-back {
+                        padding: 10px;
+                    }
+
+                    @media only screen and (max-width: 360px) {
+                        .corner-ribbon-back {
+                            width: 195px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                        }
+
+                        .img-card-one {
+                            margin-top: 48px;
+                            width: 270px;
+                        }
+
+                        @media only screen and (max-width: 345px) {
+                            .corner-ribbon-back {
+                                width: 180px;
+                            }
+
+                            .img-card-one, .img-butterfly-back {
+                                width: 255px;
+                                height: 240px;
+                            }
+
+                            .btn-back {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

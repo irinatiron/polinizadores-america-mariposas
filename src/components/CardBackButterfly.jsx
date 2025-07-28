@@ -66,13 +66,24 @@ const CardBackButterfly = () => {//Componente funcional
     return (
         <div className="cards">
             <article className="card-butterfly-back">
-                <div className="corner-ribbon-back">
+                {/* <div className="corner-ribbon-back">
                     <h4><span>{butterfly.name}</span></h4>
                     <p><span>Locación:</span> {butterfly.location}</p>
                 </div>
                 <div className="corner-order-back">
                     <p><span>Order:</span> {butterfly.order}</p>
                     <p><span>Familia:</span> {butterfly.family}</p>
+                </div> */}
+
+                <div className="corners-box">
+                    <div className="corner-ribbon-back">
+                        <h4><span>{butterfly.name}</span></h4>
+                        <p><span>Locación:</span> {butterfly.location}</p>
+                    </div>
+                    <div className="corner-order-back">
+                        <p><span>Order:</span> {butterfly.order}</p>
+                        <p><span>Familia:</span> {butterfly.family}</p>
+                    </div>
                 </div>
                 <div className="img-card-one">
                     <img className='img-butterfly-back' src={butterfly.img} alt={`Imagen de ${butterfly.name}`} />

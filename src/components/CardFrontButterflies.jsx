@@ -32,7 +32,7 @@ const CardsButterflies = () => {// define un componente funcional (CardButterfli
             {butterflies.map((butterfly) => (
             <article key={butterfly.id} className="cards-butterflies">
                 <div className="corner-ribbon">
-                    <h4><span>{butterfly.name}</span></h4>
+                    <h4 className='name-butterfly'><span>{butterfly.name}</span></h4>
                 </div>
                 <div className="corner-order">
                     <p className='order-butterfly'><span>Order:</span> {butterfly.order}</p>
