@@ -22,8 +22,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-
-
 .corner-ribbon-back {
     position: absolute;
     top: 0;
@@ -69,13 +67,12 @@ p {
     margin-bottom: 4px;
 }
 
-
-
 .img-card-one{
-    width: 485px;
+    /* width: 485px; */
+    width: 450px;
     height: 260px;
     background-color: white;
-    margin: 33px 30px 0 30px;
+    margin: 33px 50px 0 50px;
 }
 
 .img-card-one img {
@@ -87,25 +84,31 @@ p {
     height: 260px;
 }
 
-.card-content,
-.btns {
-    margin: 30px 40px 20px 40px;
+.card-content-back {
+    margin: 30px 50px 20px 50px;
+}
+.btns-back {
+    margin: 30px 0px 20px 0px;
 }
 
 .paragraph p{
     font-size: 16px;
+    padding: 0;
 }
 
-.btns {
+.btns-back {/*antes .btns   ---> copiar y pegar estilo de front .btns*/
     margin-bottom: 15px;
+
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
 .btn-back {
-    width: 30%;
-
+    width: 25%;
     text-decoration: none;
-    /* color: white; */
-    padding: 10px 20px;
+    padding: 10px 0px;
     text-align: center;
     border-radius: 15px;
 }
@@ -190,78 +193,96 @@ p {
         font-size: 13px;
     }
 
-    @media only screen and (max-width: 431px) {
-        .corner-ribbon-back {
-            width: 250px;
-        }
-
-        .corner-order-back {
-            padding: 15px 2px 15px 0px;
-        }
-    
+    @media only screen and (max-width: 541px) {
         .img-card-one {
-            margin-top: 50px;
-            width: 340px;
+            width: 420px;
+            margin: 33px 40px 0 40px;
         }
-        
-        @media only screen and (max-width: 415px) {
-            .img-card-one {
-                margin-top: 51px;
-                width: 325px;
-            }
 
+        .card-content-back {
+            margin: 30px 40px 20px 40px;
+        }
+
+
+        @media only screen and (max-width: 431px) {
+            .corner-ribbon-back {
+                width: 250px;
+            }
+    
             .corner-order-back {
-                padding: 15px 0;
+                padding: 15px 2px 15px 0px;
             }
-
-            @media only screen and (max-width: 391px) {
-                .corner-ribbon-back {
-                    width: 220px;
-                }
-
+        
+            .img-card-one {
+                margin-top: 50px;
+                width: 320px;
+            }
+            
+            @media only screen and (max-width: 415px) {
                 .img-card-one {
-                    width: 300px;
+                    margin: 51px 30px 0 30px;
+                    width: 325px;
+                }
+    
+                .corner-order-back {
+                    padding: 15px 0;
                 }
 
-                @media only screen and (max-width:376px) {
+                .card-content-back {
+                    margin: 30px 30px 20px 30px;
+                }
+    
+                @media only screen and (max-width: 391px) {
                     .corner-ribbon-back {
-                        width: 210px;
+                        width: 220px;
                     }
-
+    
                     .img-card-one {
-                        width: 285px;
+                        width: 300px;
                     }
-
-                    .btn-back {
-                        padding: 10px;
-                    }
-
-                    @media only screen and (max-width: 360px) {
+    
+                    @media only screen and (max-width:376px) {
                         .corner-ribbon-back {
-                            width: 195px;
+                            width: 210px;
+                            padding: 11px 30px 0;
                         }
-
-                        h4 {
-                            font-size: 15px;
-                        }
-
+    
                         .img-card-one {
-                            margin-top: 48px;
-                            width: 270px;
+                            width: 285px;
+                            margin-top: 40px;
                         }
-
-                        @media only screen and (max-width: 345px) {
+    
+                        .btn-back {
+                            padding: 10px;
+                        }
+    
+                        @media only screen and (max-width: 360px) {
                             .corner-ribbon-back {
-                                width: 180px;
+                                width: 195px;
                             }
-
-                            .img-card-one, .img-butterfly-back {
-                                width: 255px;
-                                height: 240px;
+    
+                            h4 {
+                                font-size: 15px;
                             }
-
-                            .btn-back {
-                                font-size: 12px;
+    
+                            .img-card-one {
+                                margin-top: 38px;
+                                width: 270px;
+                            }
+    
+                            @media only screen and (max-width: 345px) {
+                                .corner-ribbon-back {
+                                    width: 180px;
+                                }
+    
+                                .img-card-one, .img-butterfly-back {
+                                    width: 255px;
+                                    height: 240px;
+                                }
+    
+                                .btn-back {
+                                    font-size: 12px;
+                                }
                             }
                         }
                     }
@@ -269,5 +290,6 @@ p {
             }
         }
     }
+
 
 }
