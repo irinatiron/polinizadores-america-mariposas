@@ -126,6 +126,7 @@ p {
     color: black;
     border: none;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .btn-delete:hover {

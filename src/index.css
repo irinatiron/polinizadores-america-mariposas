@@ -75,7 +75,7 @@ body {
 /*---MAIN---*/
 main {
     border: 3px dotted red;
-    margin: 5px;
+    /* margin: 5px; */
     /* Reduced margin for mobile */
     /*Compensates fixed menu, so it is not covered by it */
 }
@@ -175,7 +175,7 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 15px;
+        /* margin: 15px; */
     }
 
     .flex-container {
@@ -234,7 +234,7 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 10px;
+        /* margin: 10px; */
         /* Original margin restored */
     }
 
