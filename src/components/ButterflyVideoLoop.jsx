@@ -10,30 +10,40 @@ const videoUrls = [
 function ButterflyHeader() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef(null);
+  const timeoutRef = useRef(null);
 
-  // Avanza al siguiente video cuando el actual termina
-  const handleVideoEnd = () => {
+  // Avanza al siguiente video
+  const goToNextVideo = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % videoUrls.length);
   };
 
-  // Reinicia el video al cambiar de URL
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play();
+    const video = videoRef.current;
+    if (video) {
+      video.load();
+      video.play();
+
+      // Limita duración a 3 segundos
+      timeoutRef.current = setTimeout(() => {
+        goToNextVideo();
+      }, 4000);
     }
+
+    // Limpieza del timeout al cambiar de vídeo
+    return () => {
+      clearTimeout(timeoutRef.current);
+    };
   }, [currentIndex]);
 
   return (
-    <div style={{ width: "100%", height: "400px", overflow: "hidden" }}>
+    <div className="butterfly-header-container">
       <video
         ref={videoRef}
         src={videoUrls[currentIndex]}
         autoPlay
         muted
         playsInline
-        onEnded={handleVideoEnd}
-        style={{ width: "100%", height: "auto", objectFit: "cover" }}
+        className="butterfly-video"
       />
     </div>
   );
