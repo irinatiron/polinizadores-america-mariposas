@@ -11,9 +11,7 @@
     "api-fake": "json-server --watch server/db.json"
   },
   "dependencies": {
-    "@cloudinary/react": "^1.14.3",
-    "@cloudinary/url-gen": "^1.21.0",
-    "axios": "^1.11.0",
+    "@emailjs/browser": "^4.4.1",
     "json-server": "^1.0.0-beta.3",
     "leaflet": "^1.9.4",
     "react": "^19.0.0-rc.1",

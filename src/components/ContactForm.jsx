@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './ContactForm.css';
 
 const ContactForm = () => {
@@ -31,6 +32,7 @@ const ContactForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!formData.name.trim()) {
       newErrors.name = 'El nombre es requerido';
@@ -38,7 +40,7 @@ const ContactForm = () => {
 
     if (!formData.email.trim()) {
       newErrors.email = 'El email es requerido';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!emailRegex.test(formData.email)) {
       newErrors.email = 'El email no es válido';
     }
 
@@ -56,37 +58,101 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+  e.preventDefault();
 
-    setIsSubmitting(true);
-    setErrors({});
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+  const newErrors = {};
 
-    try {
-      // Simular envío del formulario
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitMessage('¡Mensaje enviado correctamente! Te responderemos pronto.');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      setSubmitMessage('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  if (!formData.name.trim()) newErrors.name = 'El nombre es requerido';
+  if (!formData.email.trim()) {
+    newErrors.email = 'El email es requerido';
+  } else if (!emailRegex.test(formData.email)) {
+    newErrors.email = 'El email no es válido';
+  }
+  if (!formData.subject.trim()) newErrors.subject = 'El asunto es requerido';
+  if (!formData.message.trim()) newErrors.message = 'El mensaje es requerido';
 
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors); // Mostrar errores debajo de cada campo (si tenés esa lógica)
+    return; // No enviamos si hay errores
+  }
+
+  setIsSubmitting(true);
+  setErrors({});
+
+  try {
+    await emailjs.send(
+      'service_m97yeod',       // ← ID real de tu servicio
+      'template_w6wwniy',      // ← ID real de tu plantilla
+      {
+        user_name: formData.name,
+        user_email: formData.email,
+        message: formData.message
+      },
+      'osMYH7kDCSAwRaOXt'       // ← tu clave pública
+    );
+
+    setSubmitMessage('¡Mensaje enviado correctamente! 🦋 Te responderemos pronto.');
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+  } catch (error) {
+    console.error('Error al enviar el mensaje:', error);
+    setSubmitMessage('Hubo un error al enviar el mensaje. Intenta de nuevo.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div className="contact-form-container">
+      {submitMessage && !submitMessage.includes('Error') && (
+        <div className="butterfly-animation">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            {/* Cuerpo de la mariposa */}
+            <ellipse cx="50" cy="50" rx="2" ry="25" fill="#4a4a4a" />
+            
+            {/* Ala izquierda superior */}
+            <path className="wing-left" d="M30 35 Q15 25 20 45 Q25 55 35 45 Q40 40 30 35" 
+                  fill="#BF6734" opacity="0.9" />
+            
+            {/* Ala izquierda inferior */}
+            <path className="wing-left" d="M35 55 Q20 60 25 75 Q30 80 40 70 Q42 65 35 55" 
+                  fill="#565939" opacity="0.8" />
+            
+            {/* Ala derecha superior */}
+            <path className="wing-right" d="M70 35 Q85 25 80 45 Q75 55 65 45 Q60 40 70 35" 
+                  fill="#BF6734" opacity="0.9" />
+            
+            {/* Ala derecha inferior */}
+            <path className="wing-right" d="M65 55 Q80 60 75 75 Q70 80 60 70 Q58 65 65 55" 
+                  fill="#565939" opacity="0.8" />
+            
+            {/* Antenas */}
+            <line x1="47" y1="30" x2="45" y2="25" stroke="#4a4a4a" strokeWidth="1.5" />
+            <line x1="53" y1="30" x2="55" y2="25" stroke="#4a4a4a" strokeWidth="1.5" />
+            <circle cx="45" cy="25" r="1.5" fill="#4a4a4a" />
+            <circle cx="55" cy="25" r="1.5" fill="#4a4a4a" />
+            
+            {/* Detalles decorativos en las alas */}
+            <circle cx="25" cy="40" r="3" fill="#fff" opacity="0.6" />
+            <circle cx="75" cy="40" r="3" fill="#fff" opacity="0.6" />
+            <circle cx="30" cy="65" r="2" fill="#BF6734" opacity="0.7" />
+            <circle cx="70" cy="65" r="2" fill="#BF6734" opacity="0.7" />
+          </svg>
+        </div>
+      )}
+
+      <div className="form-header-box">
+        <h2>Contáctanos</h2>
+        <p>
+          Si tienes preguntas, sugerencias o quieres colaborar en la documentación
+          de mariposas, escríbenos.
+        </p>
+      </div>
+
       {submitMessage && (
         <div className={`message ${submitMessage.includes('Error') ? 'error' : 'success'}`}>
           {submitMessage}
@@ -105,6 +171,7 @@ const ContactForm = () => {
             className={errors.name ? 'error' : ''}
             placeholder="Tu nombre completo"
           />
+          {errors.name && <span className="error-icon">❗</span>}
           {errors.name && <span className="error-text">{errors.name}</span>}
         </div>
 
@@ -119,6 +186,7 @@ const ContactForm = () => {
             className={errors.email ? 'error' : ''}
             placeholder="tu.email@ejemplo.com"
           />
+          {errors.email && <span className="error-icon">❗</span>}
           {errors.email && <span className="error-text">{errors.email}</span>}
         </div>
 
@@ -132,12 +200,13 @@ const ContactForm = () => {
             className={errors.subject ? 'error' : ''}
           >
             <option value="">Selecciona un asunto</option>
-            <option value="identificacion">Identificación de mariposas</option>
-            <option value="colaboracion">Colaboración</option>
-            <option value="informacion">Solicitud de información</option>
-            <option value="sugerencia">Sugerencias</option>
-            <option value="otro">Otro</option>
+            <option value="identificacion">🦋Identificación de mariposas</option>
+            <option value="colaboracion">🤝Colaboración</option>
+            <option value="informacion">ℹ️ Solicitud de información</option>
+            <option value="sugerencia">💡 Sugerencias</option>
+            <option value="otro">🔄 Otro</option>
           </select>
+          {errors.subject && <span className="error-icon">❗</span>}
           {errors.subject && <span className="error-text">{errors.subject}</span>}
         </div>
 
@@ -152,6 +221,7 @@ const ContactForm = () => {
             placeholder="Escribe tu mensaje aquí..."
             rows="6"
           />
+          {errors.message && <span className="error-icon">❗</span>}
           {errors.message && <span className="error-text">{errors.message}</span>}
         </div>
 
