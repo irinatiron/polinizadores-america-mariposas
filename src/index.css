@@ -22,6 +22,18 @@ body {
     background-color: var(--color-light-beige);
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* ================================================
    COLOUR DESIGN VARIABLES
@@ -73,19 +85,10 @@ body {
    ================================================ */
 
 /*---MAIN---*/
-main {
-    border: 3px dotted red;
-    /* margin: 5px; */
-    /* Reduced margin for mobile */
-    /*Compensates fixed menu, so it is not covered by it */
+
+#root {
+    background: linear-gradient(135deg, var(--color-light-beige) 0%, var(--color-light-beige) 70%, var(--color-sage-green) 100%);
 }
-
-/* .flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-} */
 
 .content-btn {
     /*botón añadir mariposa + h2 centralizados*/

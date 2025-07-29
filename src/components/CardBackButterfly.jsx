@@ -40,7 +40,7 @@ const CardBackButterfly = () => {//Componente funcional
         fetchButterfly()
     }, [id])//El array [id] indica que se ejecuta este efecto cuando el componente se monta o si cambia el ID
 
-    if (loading) return <p>Cargando mariposa...</p>//Mientras la mariposa se esté cargando, se muestra este mensaje
+    if (loading) return <></>//Mientras la mariposa se esté cargando, se muestra este mensaje
     if (!butterfly) return <p>No se encontró la mariposa</p>//Si no se encontró nada(ej ID inválido), se muestra este otro mensaje
 
 

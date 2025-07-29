@@ -37,7 +37,7 @@ const CardsButterflies = () => {// define un componente funcional (CardButterfli
         fetchData()//LLama a la función fetchData para empezar a obtener los datos cuando el compornente se monta.
     }, [])//El array vacío '[]' le dice a 'useEffect' que solo ejecute esto **una vez**, al principio
 
-    if (loading) return <p>Cargando mariposas...</p>//Mientras loading es true, muestra un mensaje
+    // if (loading) return <p>Cargando mariposas...</p>//Mientras loading es true, muestra un mensaje
 
     return (
         <>

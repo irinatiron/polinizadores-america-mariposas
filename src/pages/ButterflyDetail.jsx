@@ -3,7 +3,7 @@ import CardBackButterfly from "../components/CardBackButterfly";
 function ButterflyDetail() {
     return(
         <>
-        <p className="title-detail-butterfly">Detalle de una mariposa.</p>
+        <h2 className="title-detail-butterfly">Detalle de una mariposa.</h2>
         <CardBackButterfly></CardBackButterfly>
         </>
     )
