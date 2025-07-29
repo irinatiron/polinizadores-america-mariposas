@@ -46,7 +46,6 @@
       "fenology": "Todo el año en climas cálidos"
     },
     {
-      "id": "3004",
       "name": "Agraulis vanillae",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -58,7 +57,8 @@
       "plants": "Passiflora",
       "cycle": "30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "id": "3004"
     },
     {
       "name": "Danaus gilippus",
