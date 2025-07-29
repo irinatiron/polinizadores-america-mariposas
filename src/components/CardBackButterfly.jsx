@@ -77,7 +77,7 @@ const CardBackButterfly = () => {//Componente funcional
                 <div className="img-card-one">
                     <img className='img-butterfly-back' src={butterfly.img} alt={`Imagen de ${butterfly.name}`} />
                 </div>
-                <div className="card-content paragraph">
+                <div className="card-content-back paragraph">
                     <p><span>Origen: </span>{butterfly.origin}</p>
                     <p><span>Habitat: </span>{butterfly.habitat}</p>
                     <p><span>Tamaño: </span>{butterfly.size}</p>
@@ -86,11 +86,12 @@ const CardBackButterfly = () => {//Componente funcional
                     <p><span>Ciclo vital: </span>{butterfly.cycle}</p>
                     <p><span>Fenología: </span>{butterfly.fenology}</p>
                 </div>
-                <div className="btns">
-                    <button className="btn btn-delete" onClick={() => handleDelete(butterfly.id)}>
+                <div className="btns-back">
+                    <button className="btn-back btn-delete" onClick={() => handleDelete(butterfly.id)}>
                         Eliminar
                     </button>
-                    <Link className="btn btn-update" to={`/editar-mariposa/${butterfly.id}`}>Editar</Link>
+                    <Link className="btn-back btn-update" to={`/editar-mariposa/${butterfly.id}`}>Editar</Link>
+                    <Link to="/fichas-mariposas" className="btn-back btn-home">Volver</Link>
                 </div>
             </article>
         </div>

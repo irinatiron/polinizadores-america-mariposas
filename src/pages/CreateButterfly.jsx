@@ -1,14 +1,18 @@
 import Form from '../components/CreateForm/CreateForm';
 import { createButterfly } from '../services/ButterflyServices';
-import { GiButterflyFlower } from "react-icons/gi";
+import styles from './CreateButterfly.module.css';
+import ButterflyWings from '../components/Animations/ButterflyWings';
 
 const CreateButterfly = () => {
   return (
     <>
-      <h2 id='create-page-title'>Añadir una nueva mariposa al catálogo.</h2>
-      <h3 id='create-page-intro'>¿No encuentras la mariposa que buscas? Puedes contribuir completando el siguiente formulario con sus datos para incluirla en nuestro listado.</h3>
-      {/* <img src='../../src/assets/images/create-butterfly.png' id='create-butterfly'></img> */}
-      <GiButterflyFlower className='big-icon' />
+      <h2 className={styles['create-page-title']}>Añadir una nueva mariposa al catálogo.</h2>
+      <p className={styles['create-page-intro']}>
+        ¿No encuentras la mariposa que buscas? Puedes contribuir completando el siguiente formulario con sus datos para incluirla en nuestro listado.
+      </p>
+      <div className={styles['butterfly-container']}>
+        <ButterflyWings />
+      </div>
       <Form onSubmit={createButterfly} />
     </>
   );

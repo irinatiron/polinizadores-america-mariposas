@@ -64,6 +64,7 @@ polinizadores-mariposas-america/
 - ### Librerías instaladas 
    - React-Icons: Biblioteca de iconos procedentes de múltiples packs para mejorar la experiencia de usuario.
    - SweetAlert: Herramienta para mostrar alertas personalizadas mediante mensajes emergentes al usuario.
+   - Cloudinary: Servicio externo para subir, almacenar y mostrar imágenes de forma eficiente. 
         
 ## 📦 Instalación y uso
 

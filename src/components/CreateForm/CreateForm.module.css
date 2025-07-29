@@ -1,25 +1,15 @@
-#create-page-title,
-#create-page-intro {
-    text-align: center;
-    padding: 0;
-}
-
-#create-page-intro {
-    font-size: 15px;
-    margin: 5px 0 15px;
-}
-
-.big-icon {
-    font-size: 150px;
-    margin: 0 auto;
-    display: block;
-    color: var(--color-forest-green);
-}
-
-#create-butterfly {
+.createButterfly {
     width: 10%;
     display: block;
     margin: auto;
+}
+
+.containerForm {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 1%;
+    margin-bottom: 50px;
 }
 
 form {
@@ -27,46 +17,46 @@ form {
     grid-template-columns: 1fr 1fr;
     gap: 1%;
     max-width: 100%;
-    background-color: #FAF9F6;
+    background: #fff;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    margin: 2% 10% 5%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 3%;
 }
 
-.form-group {
+.formGroup {
     padding: 20px 60px 0;
 }
 
-#required-fields {
+.requiredFields {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* padding: 0 3% 0; */
 }
 
-#p-required {
+.requiredFields label {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.nameGroup {
     grid-column: 1 / -1;
-    text-align: right;
-    font-size: 0.8em;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
-#required-fields label {
+.orderGroup,
+.inputOrder {
+    cursor: default;
     text-align: center;
 }
 
-#name-group {
-    grid-column: 1 / -1;
-}
-
-#order-group,
-#input-order {
-    cursor: default;
-}
-
-#family-group select {
+.familyGroup select {
     cursor: pointer;
+    text-align: center;
 }
 
-#family-group select {
+.familyGroup select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -76,31 +66,72 @@ form {
     /* Flecha desplegable */
     background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 0.75rem center;
+    background-position: right 6.75rem center;
     background-size: 2rem;
-    padding-right: 2rem;
+    padding-right: 1rem;
 }
 
-#optional-fields {
+  .optionalFields {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
+} 
+
+.optionalFields .imgGroup div > * {
+  margin-left: 0;
 }
 
-#p-optional {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 1%;
+.imgGroup {
+  grid-column: 1 / 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-#img-group {
-    grid-column: 1 / 2;
-    grid-row: span 2;
-
+.imagePreviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-#img-group input {
-    min-height: 255px;
+.imagePreview {
+  max-width: 300px;
+  align-self: center;
+}
+
+.imageActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--color-sage-green);
+  opacity: 0.8;
+  box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+}
+
+.imageUrlLabel {
+  font-size: 0.9rem;
+  color: #ffff;
+  word-break: break-word;
+  flex: 1;
+}
+
+.changeImageButton {
+  margin-right: 5%;
+  border: none;
+  background-color: #eee;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.changeImageButton:hover {
+  background-color: var(--color-brick-red);
 }
 
 label {
@@ -143,7 +174,6 @@ textarea::placeholder {
     opacity: 0.8;
 }
 
-
 input:hover,
 textarea:hover {
     opacity: 0.9;
@@ -152,12 +182,12 @@ textarea:hover {
 input:focus,
 textarea:focus,
 select:focus,
-#family-group select:focus {
+.familyGroup select:focus {
     opacity: 1;
     outline: 2px solid var(--color-accent-orange);
 }
 
-.form-buttons {
+.formButtons {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
@@ -166,8 +196,9 @@ select:focus,
     margin-bottom: 5rem;
 }
 
-button[type="submit"],
-button[type="button"] {
+.optionalButton,
+.sendButton,
+.sendButtonEnd {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -177,7 +208,7 @@ button[type="button"] {
     border: none;
     cursor: pointer;
     font-size: 1em;
-    background-color: var(--color-forest-green);
+    text-transform: capitalize;
     opacity: 0.8;
     color: #ffff;
     width: 37%;
@@ -185,29 +216,46 @@ button[type="button"] {
     justify-self: center;
     transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
+    transition: 1.5s ease;
 }
 
-button[type="submit"]:hover,
-button[type="button"]:hover {
+.optionalButton {
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(51, 109, 37, 1) 100%);
+    /* background-color: var(--color-forest-green); */
+}
+
+.sendButton, .sendButtonEnd {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.optionalButton:hover,
+.sendButton:hover,
+.sendButtonEnd:hover {
     opacity: 1;
 }
 
-.form-buttons:has(button:only-child) {
+.formButtons:has(button:only-child) {
     justify-content: center;
 }
 
-.error-message {
+.optionalButton:disabled, .sendButton:disabled {
+    background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.errorMessage {
     color: var(--color-brick-red);
     font-size: 0.85rem;
     margin: 0;
     padding: 0;
 }
 
-.input-error {
-  outline: 2px solid var(--color-brick-red) !important;
+.inputError {
+    outline: 2px solid var(--color-brick-red) !important;
 }
 
-.swal2-confirm-error {
+.swal2ConfirmError {
     font-size: 1.2rem !important;
     padding: 12px 28px !important;
     border-radius: 8px !important;
@@ -217,7 +265,7 @@ button[type="button"]:hover {
     min-width: 100px !important;
 }
 
-.swal2-confirm-ok {
+.swal2ConfirmOk {
     font-size: 1.2rem !important;
     padding: 12px 28px !important;
     border-radius: 8px !important;
@@ -227,34 +275,39 @@ button[type="button"]:hover {
     min-width: 100px !important;
 }
 
-
 @media screen and (max-width: 1200px) {
+
+    .containerForm {
+    
+    padding: 2.5%;
+    
+}
+
+
+
+
     form {
         grid-template-columns: 1fr;
         margin: 10px 0 0;
     }
 
-    .form-group {
+    .formGroup {
         padding: 10px 30px 0;
     }
 
-    #required-fields {
+    .requiredFields {
         padding: 0;
     }
 
-    #p-required {
-        text-align: center;
-    }
-
-    #optional-fields {
+    .optionalFields {
         padding: 0;
     }
 
-    #img-group input {
+    .imgGroup input {
         min-height: 60px;
     }
 
-    #img-group {
+    .imgGroup {
         grid-column: 1 / -1;
     }
 
@@ -262,29 +315,24 @@ button[type="button"]:hover {
         text-align: center;
     }
 
-    .form-group {
+    .formGroup {
         grid-column: 1 / -1;
     }
 
-    .form-buttons {
+    .formButtons {
         flex-direction: column;
-        padding: 0 8%;
-        margin-top: 20px;
-        margin-bottom: 1.2rem;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
     }
 
-    .form-buttons:has(button:only-child) {
-        margin-bottom: 4.1rem;
+    .formButtons:has(button:only-child) {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
     }
 
-    .form-buttons button[type="submit"],
-    .form-buttons button[type="button"] {
-        width: 100%;
-        margin-bottom: 1.3rem;
-        padding: 20px 15px;
-    }
-
-    input {
+    .optionalButton, .sendButton, .sendButtonEnd {
         width: 100%;
     }
 

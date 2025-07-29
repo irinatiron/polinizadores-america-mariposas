@@ -105,25 +105,12 @@ h1 {
 }
 
 h2 {
-<<<<<<< HEAD
     font-size: 2rem;
     color: #BF6734;
     padding: 1rem;
     text-align: center;
     margin-top: 50px;
-=======
-  font-size: 2rem;
-  color: #BF6734;
-  padding: 1rem;
-  text-align: center;
-  margin-top: 50px;
-
-  /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
-  font-family: "Aladin", system-ui;
-  font-weight: 400;
-  font-style: normal;
->>>>>>> 3104f097a29b7e764aef87d0f02a339b181a4c53
-
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;
     font-weight: 400;
@@ -142,7 +129,6 @@ main div p {
 
 /* Map container - Mobile */
 .map-container {
-    border: 3px dotted blueviolet;
     height: 300px;
     /* Smaller for mobile */
     width: 100%;

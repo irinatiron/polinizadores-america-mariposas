@@ -11,7 +11,10 @@ const CardsButterflies = () => {// define un componente funcional (CardButterfli
         const fetchData = async () => {//Se define una función asíncrona (porque va a hacer una llamada a una API)
             try {
                 const data = await getAllButterflies()//Intenta obtener los datos de las mariposas usando la función getAllButterflies
-                setButterflies(data)//Cuando recibe los datos, los guarda en el estado 'butterflies
+                const sortedData = data.sort((a, b) => a.name.localeCompare(b.name))/**AÑADIDO  a.name.localCompare(b.name) compara dos strings en orden alfab respetando acentos y may/min según el idioma*/
+
+                setButterflies(sortedData)
+                //setButterflies(data)//Cuando recibe los datos, los guarda en el estado 'butterflies
             } catch (error) {//Si ocurre un error al pedir los datos, lo muestra en la consola
                 console.error('Error al cargar mariposas: ', error);
             } finally {//Cuando termina (haya salido bien o mal), pone 'loading' en 'false', indicando que ya no está cargando.
@@ -29,7 +32,7 @@ const CardsButterflies = () => {// define un componente funcional (CardButterfli
             {butterflies.map((butterfly) => (
             <article key={butterfly.id} className="cards-butterflies">
                 <div className="corner-ribbon">
-                    <h4><span>{butterfly.name}</span></h4>
+                    <h4 className='name-butterfly'><span>{butterfly.name}</span></h4>
                 </div>
                 <div className="corner-order">
                     <p className='order-butterfly'><span>Order:</span> {butterfly.order}</p>
@@ -42,14 +45,11 @@ const CardsButterflies = () => {// define un componente funcional (CardButterfli
                     <p><span>Ciclo vital: </span> {butterfly.cycle}</p>
                 </div>
                 <div className="btns">
-                    {/* <a className="btn btn-ver-detalle" href="card.html">Ver detalle</a> */}
-                    {/* <a className="btn btn-update" href="#">Editar</a> */}
                     <Link className="btn btn-ver-detalle" to={`/detalle-mariposa/${butterfly.id}`}>Ver detalle</Link>
                     <Link className="btn btn-update" to={`/editar-mariposa/${butterfly.id}`}>Editar</Link>
                 </div>
             </article>
             ))}
-
         </div>
     )
 }

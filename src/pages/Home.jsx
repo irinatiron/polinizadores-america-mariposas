@@ -2,6 +2,7 @@
 import IntroPollinators from "../components/IntroPollinators";
 import IntroProject from "../components/IntroProject";
 import AmericanMap from "../components/AmericanMap";
+import AmericanMapLeaflet from "../components/AmericanMapLeaflet";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
     <IntroPollinators/>
     <IntroProject/>
     <AmericanMap/>
+    <AmericanMapLeaflet/>
     </>
   )
 }
