@@ -75,7 +75,7 @@ body {
 /*---MAIN---*/
 main {
     border: 3px dotted red;
-    margin: 5px;
+    /* margin: 5px; */
     /* Reduced margin for mobile */
     /*Compensates fixed menu, so it is not covered by it */
 }
@@ -175,14 +175,14 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 15px;
+        /* margin: 15px; */
     }
 
     .flex-container {
         flex-flow: row wrap;
         /* Back to row layout */
         gap: 2rem;
-        padding: 2rem;
+        /* padding: 2rem; */
     }
 
     /* Typography - Tablet */
@@ -234,13 +234,13 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 10px;
+        /* margin: 10px; */
         /* Original margin restored */
     }
 
     .flex-container {
         gap: 3rem;
-        padding: 3rem;
+        /* padding: 3rem; */
     }
 
     /* Typography - Laptop */
@@ -291,7 +291,7 @@ main div p {
 
     .flex-container {
         gap: 4rem;
-        padding: 4rem;
+        /* padding: 4rem; */
     }
 
     /* Typography - Desktop */
