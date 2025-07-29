@@ -110,7 +110,38 @@ const ContactForm = () => {
     <div className="contact-form-container">
       {submitMessage && !submitMessage.includes('Error') && (
         <div className="butterfly-animation">
-          <img src="/butterfly.svg" alt="Mariposa animada" />
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            {/* Cuerpo de la mariposa */}
+            <ellipse cx="50" cy="50" rx="2" ry="25" fill="#4a4a4a" />
+            
+            {/* Ala izquierda superior */}
+            <path className="wing-left" d="M30 35 Q15 25 20 45 Q25 55 35 45 Q40 40 30 35" 
+                  fill="#BF6734" opacity="0.9" />
+            
+            {/* Ala izquierda inferior */}
+            <path className="wing-left" d="M35 55 Q20 60 25 75 Q30 80 40 70 Q42 65 35 55" 
+                  fill="#565939" opacity="0.8" />
+            
+            {/* Ala derecha superior */}
+            <path className="wing-right" d="M70 35 Q85 25 80 45 Q75 55 65 45 Q60 40 70 35" 
+                  fill="#BF6734" opacity="0.9" />
+            
+            {/* Ala derecha inferior */}
+            <path className="wing-right" d="M65 55 Q80 60 75 75 Q70 80 60 70 Q58 65 65 55" 
+                  fill="#565939" opacity="0.8" />
+            
+            {/* Antenas */}
+            <line x1="47" y1="30" x2="45" y2="25" stroke="#4a4a4a" strokeWidth="1.5" />
+            <line x1="53" y1="30" x2="55" y2="25" stroke="#4a4a4a" strokeWidth="1.5" />
+            <circle cx="45" cy="25" r="1.5" fill="#4a4a4a" />
+            <circle cx="55" cy="25" r="1.5" fill="#4a4a4a" />
+            
+            {/* Detalles decorativos en las alas */}
+            <circle cx="25" cy="40" r="3" fill="#fff" opacity="0.6" />
+            <circle cx="75" cy="40" r="3" fill="#fff" opacity="0.6" />
+            <circle cx="30" cy="65" r="2" fill="#BF6734" opacity="0.7" />
+            <circle cx="70" cy="65" r="2" fill="#BF6734" opacity="0.7" />
+          </svg>
         </div>
       )}
 
