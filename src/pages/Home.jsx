@@ -9,7 +9,7 @@ const Home = () => {
     <>
     <IntroPollinators/>
     <IntroProject/>
-    <AmericanMap/>
+    {/*<AmericanMap/>*/}
     <AmericanMapLeaflet/>
     </>
   )
