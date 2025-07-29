@@ -10,7 +10,7 @@
 }
 
 .butterfly::before {
-  background: #695b2c; /* darken(#d6c18b, 55%) */
+  background: #695b2c; 
   border-radius: 50%;
   content: '';
   display: block;

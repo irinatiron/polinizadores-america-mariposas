@@ -71,67 +71,67 @@ form {
     padding-right: 1rem;
 }
 
-  .optionalFields {
+.optionalFields {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-} 
+}
 
-.optionalFields .imgGroup div > * {
-  margin-left: 0;
+.optionalFields .imgGroup div>* {
+    margin-left: 0;
 }
 
 .imgGroup {
-  grid-column: 1 / 2;
-  grid-row: span 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
+    grid-column: 1 / 2;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .imagePreviewContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .imagePreview {
-  max-width: 300px;
-  align-self: center;
+    max-width: 300px;
+    align-self: center;
 }
 
 .imageActions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  background-color: var(--color-sage-green);
-  opacity: 0.8;
-  box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background-color: var(--color-sage-green);
+    opacity: 0.8;
+    box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
 }
 
 .imageUrlLabel {
-  font-size: 0.9rem;
-  color: #ffff;
-  word-break: break-word;
-  flex: 1;
+    font-size: 0.9rem;
+    color: #ffff;
+    word-break: break-word;
+    flex: 1;
 }
 
 .changeImageButton {
-  margin-right: 5%;
-  border: none;
-  background-color: #eee;
-  color: #333;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    margin-right: 5%;
+    border: none;
+    background-color: #eee;
+    color: #333;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .changeImageButton:hover {
-  background-color: var(--color-brick-red);
+    background-color: var(--color-brick-red);
 }
 
 label {
@@ -220,13 +220,15 @@ select:focus,
 }
 
 .optionalButton {
-    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(51, 109, 37, 1) 100%);
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(51, 109, 37, 1) 100%);
     /* background-color: var(--color-forest-green); */
 }
 
-.sendButton, .sendButtonEnd {
+.sendButton,
+.sendButtonEnd {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
+
 .optionalButton:hover,
 .sendButton:hover,
 .sendButtonEnd:hover {
@@ -237,11 +239,12 @@ select:focus,
     justify-content: center;
 }
 
-.optionalButton:disabled, .sendButton:disabled {
+.optionalButton:disabled,
+.sendButton:disabled {
     background: #ccc;
-  color: #666;
-  cursor: not-allowed;
-  box-shadow: none;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .errorMessage {
@@ -275,16 +278,26 @@ select:focus,
     min-width: 100px !important;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.containerForm {
+  animation: fadeIn 0.5s ease-out;
+}
+
 @media screen and (max-width: 1200px) {
 
     .containerForm {
-    
-    padding: 2.5%;
-    
-}
-
-
-
+        padding: 2.5%;
+    }
 
     form {
         grid-template-columns: 1fr;
@@ -328,11 +341,13 @@ select:focus,
     }
 
     .formButtons:has(button:only-child) {
-    margin-top: 1rem;
-    margin-bottom: 6rem;
+        margin-top: 1rem;
+        margin-bottom: 6rem;
     }
 
-    .optionalButton, .sendButton, .sendButtonEnd {
+    .optionalButton,
+    .sendButton,
+    .sendButtonEnd {
         width: 100%;
     }
 
