@@ -19,8 +19,8 @@ const AmericanMapLeaflet = () => {
         fetch('/butterfliesmarkersdb.json')
             .then((res) => res.json())
             .then((data) => {
-                console.log(data); // <-- Verifica que tenga la clave butterflies
-                setButterflies(data.butterflies); // 👈 CORRECTO
+                console.log(data);
+                setButterflies(data.butterflies);
             })
             .catch((err) => console.error('Error al cargar mariposas:', err));
     }, []);
@@ -49,7 +49,7 @@ const AmericanMapLeaflet = () => {
                         />
                         <div><strong>Origen:</strong> {butterfly.origin}</div>
                         <div><strong>Hábitat:</strong> {butterfly.habitat}</div>
-                        <div><strong>Fenología:</strong> {butterfly.fenology}</div>
+                        <div><strong>Ubicación:</strong> {butterfly.location}</div>
                     </Popup>
                 </Marker>
             ))}
