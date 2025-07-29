@@ -11,9 +11,8 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 import Swal from 'sweetalert2' // Importa sweetalert
-import ImageUpload from './ImageUpload'; // Importamos el componente de Cloudinary
+import Input from './ImageUpload'; // Importamos el componente de Cloudinary
 import { useNavigate } from 'react-router-dom'; // Importa hook useNavigate para navegar a otra ruta dentro de la app
-
 
 const Form = ({ onSubmit }) => {
   const navigate = useNavigate();
@@ -73,90 +72,104 @@ const Form = ({ onSubmit }) => {
     setFormData(initialFormState); // Limpia los datos que se acabaron de enviar y pone los que vienen por defecto
   };
   return ( // Renderizado del formulario
-    <form onSubmit={handleSubmit}>
-      <div className={styles.requiredFields}>
-        <div className={`${styles.formGroup} ${styles.nameGroup}`}>
-          <label htmlFor="input-name">Nombre</label>
-          <input type="text" id="input-name" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)"
-            title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus className={formErrors.name ? styles.inputError : ''} />
-          {formErrors.name && <p className={styles.errorMessage}>{formErrors.name}</p>}
-        </div>
-        <div className={`${styles.formGroup} ${styles.orderGroup}`}>
-          <label htmlFor="input-order">Orden</label>
-          <input type="text" id="input-order" name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera." />
-        </div>
-        <div className={`${styles.formGroup} ${styles.familyGroup}`}>
-          <label htmlFor="input-family">Familia</label>
-          <select name="family" id="input-family" value={formData.family} onChange={handleChange} onBlur={handleBlur} title="Selecciona entre las familias existentes." required className={formErrors.family ? styles.inputError : ''} >
-            <option value="">Selecciona la familia</option>
-            {butterflyFamilies.map((family) => (
-              <option key={family} value={family}>{family}</option>
-            ))}
-          </select>
-          {formErrors.family && <p className={styles.errorMessage}>{formErrors.family}</p>}
-        </div>
-      </div>
-      {!showOptional && (
-        <div className={styles.formButtons}>
-          <button type="button" className={styles.optionalButton} onClick={() => setShowOptional(true)} disabled={!isRequiredValid()} title="Debes completar nombre y familia para añadir más información"><FaPlus /> Añadir información adicional</button>
-          <button type="submit" className={styles.sendButton} disabled={!isRequiredValid()}>Añadir mariposa <FaCheck /></button>
-        </div>
-      )}
-      {showOptional && (
-        <div className={styles.optionalFields}>
-          <div className={`${styles.formGroup} ${styles.imgGroup}`}>
-            <label htmlFor="input-img"><IoImageOutline /> Imagen</label>
-            <ImageUpload onUpload={(url) => setFormData({ ...formData, img: url })} img={formData.img} />
-            {formErrors.img && <p className={styles.errorMessage}>{formErrors.img}</p>}
+    <div className={styles.containerForm}>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.requiredFields}>
+          <div className={`${styles.formGroup} ${styles.nameGroup}`}>
+            <label htmlFor="input-name">Nombre</label>
+            <input type="text" id='input-name' className={styles.inputName} name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)"
+              title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus className={formErrors.name ? styles.inputError : ''} />
+            {formErrors.name && <p className={styles.errorMessage}>{formErrors.name}</p>}
           </div>
-          <div className={`${styles.formGroup} ${styles.originGroup}`}>
-            <label htmlFor="input-origin"><HiOutlineGlobeAmericas /> Origen</label>
-            <textarea id="input-origin" name="origin" value={formData.origin} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Originaria de América del Norte." title="¿De dónde procede esta mariposa?" />
-            {formErrors.origin && <p className={styles.errorMessage}>{formErrors.origin}</p>}
+          <div className={`${styles.formGroup} ${styles.orderGroup}`}>
+            <label htmlFor="input-order">Orden (por defecto)</label>
+            <input type="text" id='input-order' className={styles.inputOrder} name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera." />
           </div>
-          <div className={`${styles.formGroup} ${styles.locationGroup}`}>
-            <label htmlFor="input-location"><TbMapPin2 /> Localización</label>
-            <textarea id="input-location" name="location" value={formData.location} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Se distribuye desde Canadá hasta el norte de Sudamérica." title="¿Dónde podemos encontrar esta mariposa?" />
-            {formErrors.location && <p className={styles.errorMessage}>{formErrors.location}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="input-color"><MdOutlineColorLens /> Color</label>
-            <textarea id="input-color" name="color" value={formData.color} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Alas de color naranja con líneas negras." title="¿Cómo se identifica esta mariposa?" />
-            {formErrors.color && <p className={styles.errorMessage}>{formErrors.color}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="input-size"><LuRuler /> Tamaño</label>
-            <textarea id="input-size" name="size" value={formData.size} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Entre 8,9 y 10,2 cm." title="¿Qué medidas tiene?" />
-            {formErrors.size && <p className={styles.errorMessage}>{formErrors.size}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="input-fenology"><IoCalendarOutline /> Fenología</label>
-            <textarea id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Migración en otoño, reproducción en primavera y verano." title="¿En qué época del año la podemos encontrar?" />
-            {formErrors.fenology && <p className={styles.errorMessage}>{formErrors.fenology}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="input-cycle"><LuHourglass /> Ciclo de vida</label>
-            <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Huevo, oruga, crisálida y adulto." title="¿Cuál es su ciclo vital?" />
-            {formErrors.cycle && <p className={styles.errorMessage}>{formErrors.cycle}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="input-habitat"><HiOutlineHome /> Hábitat</label>
-            <textarea id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Hábitat diverso abarcando desde bosques a campos de algodoncillo." title="¿En qué condiciones se desarrolla?" />
-            {formErrors.habitat && <p className={styles.errorMessage}>{formErrors.habitat}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="input-plants"><LuFlower2 /> Plantas visitadas</label>
-            <textarea id="input-plants" name="plants" value={formData.plants} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Plantas del género Asclepias." title="¿Qué especies vegetales poliniza?" />
-            {formErrors.plants && <p className={styles.errorMessage}>{formErrors.plants}</p>}
+          <div className={`${styles.formGroup} ${styles.familyGroup}`}>
+            <label htmlFor="input-family">Familia</label>
+            <select name="family" id='input-family' className={styles.inputFamily} value={formData.family} onChange={handleChange} onBlur={handleBlur} title="Selecciona entre las familias existentes." required className={formErrors.family ? styles.inputError : ''} >
+              <option value="">Selecciona la familia</option>
+              {butterflyFamilies.map((family) => (
+                <option key={family} value={family}>{family}</option>
+              ))}
+            </select>
+            {formErrors.family && <p className={styles.errorMessage}>{formErrors.family}</p>}
           </div>
         </div>
-      )}
-      {showOptional && (
-        <div className={styles.formButtons}>
-          <button type="submit" className={`${styles.sendButton} ${styles.SendButtonEnd}`} disabled={!isRequiredValid()}>Añadir mariposa <FaCheck /></button>
-        </div>
-      )}
-    </form>
+        {!showOptional && (
+          <div className={styles.formButtons}>
+            <button type="button" className={styles.optionalButton} onClick={() => setShowOptional(true)} disabled={!isRequiredValid()} title="Debes completar nombre y familia para añadir más información"><FaPlus /> Añadir información adicional</button>
+            <button type="submit" className={styles.sendButton} disabled={!isRequiredValid()} title='Guardar la nueva mariposa en el catálogo'>Añadir mariposa <FaCheck /></button>
+          </div>
+        )}
+        {showOptional && (
+          <div className={styles.optionalFields}>
+            <div className={`${styles.formGroup} ${styles.imgGroup}`}>
+              <label htmlFor="input-img"><IoImageOutline /> Foto de la mariposa</label>
+              {formData.img ? (
+                <div className={styles.imagePreviewContainer}>
+                  <img src={formData.img} alt="Preview" className={styles.imagePreview} />
+                  <div className={styles.imageActions}>
+                    <p className={styles.imageUrlLabel}>{formData.img.split('/').pop()}</p>
+                    <button type="button" className={styles.changeImageButton} onClick={() => setFormData({ ...formData, img: '' })}>Borrar imagen</button>
+                  </div>
+                </div>
+              ) : (
+                <Input name="img" id="input-img" value={formData.img} onUpload={(url) => setFormData({ ...formData, img: url })} error={formErrors.img} />
+              )}
+              {formErrors.img && (
+                <p className={styles.errorMessage}>{formErrors.img}</p>
+              )}
+            </div>
+            <div className={`${styles.formGroup} ${styles.originGroup}`}>
+              <label htmlFor="input-origin"><HiOutlineGlobeAmericas /> Origen</label>
+              <textarea id="input-origin" name="origin" value={formData.origin} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Originaria de América del Norte." title="¿De dónde procede esta mariposa?" />
+              {formErrors.origin && <p className={styles.errorMessage}>{formErrors.origin}</p>}
+            </div>
+            <div className={`${styles.formGroup} ${styles.locationGroup}`}>
+              <label htmlFor="input-location"><TbMapPin2 /> Localización</label>
+              <textarea id="input-location" name="location" value={formData.location} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Se distribuye desde Canadá hasta el norte de Sudamérica." title="¿Dónde podemos encontrar esta mariposa?" />
+              {formErrors.location && <p className={styles.errorMessage}>{formErrors.location}</p>}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="input-color"><MdOutlineColorLens /> Color</label>
+              <textarea id="input-color" name="color" value={formData.color} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Alas de color naranja con líneas negras." title="¿Cómo se identifica esta mariposa?" />
+              {formErrors.color && <p className={styles.errorMessage}>{formErrors.color}</p>}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="input-size"><LuRuler /> Tamaño</label>
+              <textarea id="input-size" name="size" value={formData.size} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Entre 8,9 y 10,2 cm." title="¿Qué medidas tiene?" />
+              {formErrors.size && <p className={styles.errorMessage}>{formErrors.size}</p>}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="input-fenology"><IoCalendarOutline /> Fenología</label>
+              <textarea id="input-fenology" name="fenology" value={formData.fenology} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Migración en otoño, reproducción en primavera y verano." title="¿En qué época del año la podemos encontrar?" />
+              {formErrors.fenology && <p className={styles.errorMessage}>{formErrors.fenology}</p>}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="input-cycle"><LuHourglass /> Ciclo de vida</label>
+              <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Huevo, oruga, crisálida y adulto." title="¿Cuál es su ciclo vital?" />
+              {formErrors.cycle && <p className={styles.errorMessage}>{formErrors.cycle}</p>}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="input-habitat"><HiOutlineHome /> Hábitat</label>
+              <textarea id="input-habitat" name="habitat" value={formData.habitat} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Hábitat diverso abarcando desde bosques a campos de algodoncillo." title="¿En qué condiciones se desarrolla?" />
+              {formErrors.habitat && <p className={styles.errorMessage}>{formErrors.habitat}</p>}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="input-plants"><LuFlower2 /> Plantas visitadas</label>
+              <textarea id="input-plants" name="plants" value={formData.plants} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Plantas del género Asclepias." title="¿Qué especies vegetales poliniza?" />
+              {formErrors.plants && <p className={styles.errorMessage}>{formErrors.plants}</p>}
+            </div>
+          </div>
+        )}
+        {showOptional && (
+          <div className={styles.formButtons}>
+            <button type="submit" className={`${styles.sendButton} ${styles.SendButtonEnd}`} disabled={!isRequiredValid()} title='Guardar la nueva mariposa en el catálogo'>Añadir mariposa <FaCheck /></button>
+          </div>
+        )}
+
+      </form></div>
   );
 };
 

@@ -9,7 +9,7 @@ const AmericanMap = () => {
         <Link to="/fichas-mariposas">
           <img 
             className="america-map" 
-            src="/src/assets/images/115725998-america-map-old-paper-background-raster.jpg"
+            src="src\assets\images\Map_American_continent_Styled.svg"
             alt="map of america"
           />
         </Link>

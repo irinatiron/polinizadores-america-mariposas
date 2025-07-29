@@ -1,6 +1,7 @@
 {
   "butterflies": [
     {
+      "id": "3001",
       "name": "Mariposa monarca",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -13,7 +14,7 @@
       "cycle": "Huevo, oruga, crisálida y adulto",
       "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
       "fenology": "Migración en otoño, reproducción en primavera y verano",
-      "id": "3001"
+      "position": { "lat": 19.4326, "lng": -99.1332 }
     },
     {
       "id": "3002",
@@ -28,7 +29,8 @@
       "plants": "Frutas fermentadas, savia de árboles",
       "cycle": "Huevo, larva, pupa y adulto",
       "img": "https://palmitospark.es/wp-content/uploads/2023/04/butterfly-g31bc30040_1280.jpg",
-      "fenology": "Activa todo el año"
+      "fenology": "Activa todo el año",
+      "position": { "lat": -3.4653, "lng": -62.2159 }
     },
     {
       "id": "3003",
@@ -43,9 +45,11 @@
       "plants": "Passiflora",
       "cycle": "Completo en 4 semanas",
       "img": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Heliconius_charithonia%2C_Mariposario_de_Icod_de_los_Vinos%2C_Tenerife%2C_Espa%C3%B1a%2C_2012-12-13%2C_DD_04.jpg",
-      "fenology": "Todo el año en climas cálidos"
+      "fenology": "Todo el año en climas cálidos",
+      "position": { "lat": 14.6349, "lng": -90.5069 }
     },
     {
+      "id": "3004",
       "name": "Agraulis vanillae",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -58,9 +62,10 @@
       "cycle": "30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
       "fenology": "Primavera a otoño",
-      "id": "3004"
+      "position": { "lat": 29.7604, "lng": -95.3698 }
     },
     {
+      "id": "3005",
       "name": "Danaus gilippus",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -73,7 +78,7 @@
       "cycle": "Huevo, larva, crisálida, adulto",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/Danaus_gilippus_thersippus.jpg",
       "fenology": "Todo el año en zonas cálidas",
-      "id": "3005"
+      "position": { "lat": -8.7832, "lng": -55.4915 }
     },
     {
       "id": "3006",
@@ -88,7 +93,8 @@
       "plants": "Frutas, savia",
       "cycle": "Larva especializada en Ulmaceae",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/347373297/original.jpeg",
-      "fenology": "Activa todo el año"
+      "fenology": "Activa todo el año",
+      "position": { "lat": 4.5709, "lng": -74.2973 }
     },
     {
       "id": "3007",
@@ -103,7 +109,8 @@
       "plants": "Plátano, Heliconia",
       "cycle": "40 a 60 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/1/10/Caligo_memnon.jpg",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": -1.8312, "lng": -78.1834 }
     },
     {
       "id": "3009",
@@ -118,7 +125,8 @@
       "plants": "Senna, Cassia",
       "cycle": "3 semanas",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/158767272/original.jpg",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "position": { "lat": -14.2350, "lng": -51.9253 }
     },
     {
       "id": "3010",
@@ -133,7 +141,8 @@
       "plants": "Lantana, Bidens pilosa",
       "cycle": "20 a 30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Banded_Peacock.jpg",
-      "fenology": "Todo el año en zonas tropicales"
+      "fenology": "Todo el año en zonas tropicales",
+      "position": { "lat": 14.6349, "lng": -90.5069 }
     },
     {
       "id": "3011",
@@ -148,7 +157,8 @@
       "plants": "Ruellia, Justicia",
       "cycle": "28 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/194136689/original.jpeg",
-      "fenology": "Primavera y verano"
+      "fenology": "Primavera y verano",
+      "position": { "lat": -14.2350, "lng": -51.9253 }
     },
     {
       "id": "3012",
@@ -163,7 +173,8 @@
       "plants": "Frutas maduras",
       "cycle": "35 días",
       "img": "https://pictureinsect.com/wiki-image/1080/153826633160065048.jpeg",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": -14.2350, "lng": -51.9253 }
     },
     {
       "id": "3013",
@@ -178,7 +189,8 @@
       "plants": "Ruellia, Lantana",
       "cycle": "30 a 40 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Malachite_%28Siproeta_stelenes%29_dorsal_%281%29.jpg",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "position": { "lat": 15.5000, "lng": -90.2500 }
     },
     {
       "id": "3014",
@@ -193,7 +205,8 @@
       "plants": "Celtis, Lantana",
       "cycle": "3 semanas",
       "img": "https://www.butterfliesandmoths.org/sites/default/files/bamona_images/adelpha-fessonia-jen-sanders-1_1.jpg",
-      "fenology": "Verano y otoño"
+      "fenology": "Verano y otoño",
+      "position": { "lat": 23.6345, "lng": -102.5528 }
     },
     {
       "id": "3015",
@@ -208,7 +221,8 @@
       "plants": "Rutaceae",
       "cycle": "35 días",
       "img": "https://pictureinsect.com/wiki-image/1080/153936691697025028.jpeg",
-      "fenology": "Mayo a noviembre"
+      "fenology": "Mayo a noviembre",
+      "position": { "lat": 12.0000, "lng": -85.0000 }
     },
     {
       "id": "3016",
@@ -223,7 +237,8 @@
       "plants": "Asimina",
       "cycle": "25 días",
       "img": "https://lh4.googleusercontent.com/proxy/f_sjmAeVv0J3HybvXk5rlpWQstza03-2zyeeOJIRx-OwOXaaItkkC1byAsvaBa-nwMq4omncDZAhv184LlneurUPeCc_kx_B7uewPE3IrlXhtbJzZknM1g",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "position": { "lat": 39.0000, "lng": -98.0000 }
     },
     {
       "id": "3017",
@@ -238,7 +253,8 @@
       "plants": "Aristolochia",
       "cycle": "4 semanas",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/987966/original.jpg",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": 18.0000, "lng": -66.0000 }
     },
     {
       "id": "3018",
@@ -253,7 +269,8 @@
       "plants": "Croton, Frutas",
       "cycle": "3 a 5 semanas",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/alas_daga.jpg",
-      "fenology": "Todo el año en clima cálido"
+      "fenology": "Todo el año en clima cálido",
+      "position": { "lat": 12.0000, "lng": -85.0000 }
     },
     {
       "id": "3019",
@@ -268,7 +285,8 @@
       "plants": "Ortiga, Urticaceae",
       "cycle": "30 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/1070139/original.jpg",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": -15.0000, "lng": -60.0000 }
     },
     {
       "id": "3020",
@@ -283,7 +301,8 @@
       "plants": "Solanaceae",
       "cycle": "35 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Disturbed_Tigerwings%2C_Quito.jpg",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": -3.0000, "lng": -60.0000 }
     },
     {
       "id": "3021",
@@ -298,7 +317,8 @@
       "plants": "Asteraceae",
       "cycle": "28 días",
       "img": "https://www.ecoregistros.org/site/images/albumes/246/10145/Nymphalidae--Actinote-pyrrha--Perezosa-Grande.jpg",
-      "fenology": "Primavera y verano"
+      "fenology": "Primavera y verano",
+      "position": { "lat": -14.2350, "lng": -51.9253 }
     },
     {
       "id": "3022",
@@ -313,7 +333,8 @@
       "plants": "Frutas fermentadas",
       "cycle": "30 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/43089762/large.jpg",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": 0.0000, "lng": -75.0000 }
     },
     {
       "id": "3023",
@@ -328,7 +349,8 @@
       "plants": "Fabaceae",
       "cycle": "2 semanas",
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Ceraunus_Blue_%285076094341%29.jpg",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "position": { "lat": 45.0000, "lng": -100.0000 }
     },
     {
       "id": "3024",
@@ -343,7 +365,8 @@
       "plants": "Zamia (cícadas)",
       "cycle": "3 semanas",
       "img": "https://www.flawildflowers.org/wp-content/uploads/2021/06/Eumaeus-atala-Keim-banner.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "position": { "lat": 27.7663, "lng": -81.6868 }
     },
     {
       "id": "3025",
@@ -358,7 +381,8 @@
       "plants": "Leguminosas",
       "cycle": "2 a 3 semanas",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/250850/large.jpg",
-      "fenology": "Verano y otoño"
+      "fenology": "Verano y otoño",
+      "position": { "lat": 12.0000, "lng": -85.0000 }
     },
     {
       "id": "3026",
@@ -373,7 +397,8 @@
       "plants": "Cassia, Senna",
       "cycle": "1 mes",
       "img": "https://static.inaturalist.org/photos/2618368/large.JPG",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": -15.0000, "lng": -60.0000 }
     },
     {
       "id": "3027",
@@ -388,7 +413,8 @@
       "plants": "Jugos de frutas, savia",
       "cycle": "35 días",
       "img": "https://pictureinsect.com/wiki-image/1080/154003452668674064.jpeg",
-      "fenology": "Invierno y primavera"
+      "fenology": "Invierno y primavera",
+      "position": { "lat": 4.5709, "lng": -74.2973 }
     },
     {
       "id": "3028",
@@ -403,9 +429,11 @@
       "plants": "Platanus, Palmae",
       "cycle": "40 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/9/99/Nymphalidae_-_Opsiphanes_cassina.JPG",
-      "fenology": "Todo el año"
+      "fenology": "Todo el año",
+      "position": { "lat": -3.0000, "lng": -60.0000 }
     },
     {
+      "id": "3029",
       "name": "Zaretis itys",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -418,7 +446,7 @@
       "cycle": "30 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/24713160/large.jpeg",
       "fenology": "Estacional",
-      "id": "3029"
+      "position": { "lat": -14.2350, "lng": -51.9253 }
     },
     {
       "id": "3030",
@@ -433,181 +461,8 @@
       "plants": "Frutas fermentadas",
       "cycle": "1 mes",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/15559975/large.jpg",
-      "fenology": "Todo el año"
-    },
-    {
-      "id": "329f",
-      "name": "Prueba Cloudinary para borrar",
-      "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753349770/sj51hjek9pbflmwoqgvd.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "22f0",
-      "name": "cloudinary cloudinary",
-      "order": "Lepidoptera",
-      "family": "Riodinidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753349986/pza2us38e4roghie35s1.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "e5d3",
-      "name": "Mariposa de MariCarmen",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753351386/r3cvqidxfatb7tdyxx5z.jpg",
-      "fenology": ""
-    }
-  ],
-  "creators": [
-    {
-      "id": "1",
-      "name": "María Carmen Tajuelo",
-      "email": "carmen.tajuelo@example.com",
-      "role": "Frontend Developer - Navbar y Footer",
-      "specialization": "React, CSS, UI/UX",
-      "butterflySpecies": "Mariposa Monarca",
-      "butterflySpeciesLatin": "Danaus plexippus",
-      "profileImage": "src/assets/images/mc.png",
-      "butterflyImage": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
-      "github": "https://github.com/CarmenTajuelo",
-      "linkedin": "https://www.linkedin.com/in/carmentajuelo/",
-      "portfolio": "https://carmentajuelo.dev",
-      "bio": "Especialista en React y apasionada por la conservación de mariposas monarca. Me enfoco en crear interfaces intuitivas que conecten a los usuarios con la naturaleza.",
-      "skills": [
-        "React",
-        "JavaScript",
-        "CSS",
-        "Responsive Design",
-        "Accessibility"
-      ],
-      "location": "España",
-      "yearsExperience": 3,
-      "favoriteQuote": "El código limpio es como una mariposa: bello y funcional a la vez."
-    },
-    {
-      "id": "2",
-      "name": "Guissella Pérez",
-      "email": "guissella.perez@example.com",
-      "role": "Backend Developer - Método GET",
-      "specialization": "APIs, Node.js, Bases de datos",
-      "butterflySpecies": "Morpho Azul",
-      "butterflySpeciesLatin": "Morpho peleides",
-      "profileImage": "src/assets/images/gp.png",
-      "butterflyImage": "https://palmitospark.es/wp-content/uploads/2023/04/butterfly-g31bc30040_1280.jpg",
-      "github": "https://github.com/guiss26",
-      "linkedin": "https://www.linkedin.com/in/guissella-pérez/",
-      "portfolio": "https://guisselladev.com",
-      "bio": "Desarrolladora backend enfocada en crear APIs robustas y eficientes. Apasionada por la conservación de especies y el uso de tecnología para el bien común.",
-      "skills": [
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "PostgreSQL",
-        "RESTful APIs"
-      ],
-      "location": "Perú",
-      "yearsExperience": 4,
-      "favoriteQuote": "Los datos bien estructurados son la base de todo ecosistema digital."
-    },
-    {
-      "id": "3",
-      "name": "Irina Tiron",
-      "email": "irina.tiron@example.com",
-      "role": "Full Stack Developer - Formularios",
-      "specialization": "React, Node.js, Validaciones",
-      "butterflySpecies": "Cola de Golondrina",
-      "butterflySpeciesLatin": "Papilio machaon",
-      "profileImage": "src/assets/images/it.png",
-      "butterflyImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Heliconius_charithonia%2C_Mariposario_de_Icod_de_los_Vinos%2C_Tenerife%2C_Espa%C3%B1a%2C_2012-12-13%2C_DD_04.jpg",
-      "github": "https://github.com/irinatiron",
-      "linkedin": "https://www.linkedin.com/in/irinatiron/",
-      "portfolio": "https://irinatiron.dev",
-      "bio": "Desarrolladora full stack con experiencia en formularios complejos y validaciones. Me especializo en crear experiencias de usuario fluidas y accesibles.",
-      "skills": [
-        "React",
-        "Node.js",
-        "Form Validation",
-        "TypeScript",
-        "Testing"
-      ],
-      "location": "Rumania",
-      "yearsExperience": 5,
-      "favoriteQuote": "Un buen formulario es como una mariposa: debe ser ligero pero poderoso."
-    },
-    {
-      "id": "4",
-      "name": "Ingrid Martínez",
-      "email": "ingrid.martinez@example.com",
-      "role": "Full Stack Developer",
-      "specialization": "MERN Stack, DevOps, Testing",
-      "butterflySpecies": "Mariposa Cebra",
-      "butterflySpeciesLatin": "Heliconius charithonia",
-      "profileImage": "src/assets/images/im.png",
-      "butterflyImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Heliconius_charithonia%2C_Mariposario_de_Icod_de_los_Vinos%2C_Tenerife%2C_Espa%C3%B1a%2C_2012-12-13%2C_DD_04.jpg",
-      "github": "https://github.com/ingridD2707",
-      "linkedin": "https://www.linkedin.com/in/ingridmartinez/",
-      "portfolio": "https://ingridmartinez.dev",
-      "bio": "Desarrolladora full stack comprometida con proyectos de impacto ambiental y social. Especialista en arquitecturas escalables y metodologías ágiles.",
-      "skills": [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Docker",
-        "CI/CD",
-        "Jest"
-      ],
-      "location": "Colombia",
-      "yearsExperience": 6,
-      "favoriteQuote": "El código sostenible protege tanto el software como el planeta."
-    },
-    {
-      "id": "5",
-      "name": "Paloma Gómez",
-      "email": "paloma.gomez@example.com",
-      "role": "Frontend Developer - Formularios y Creadoras",
-      "specialization": "React, Data Visualization, UX Research",
-      "butterflySpecies": "Mariposa del Café",
-      "butterflySpeciesLatin": "Hypothyris euclea",
-      "profileImage": "src/assets/images/pg.png",
-      "butterflyImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Disturbed_Tigerwings%2C_Quito.jpg",
-      "github": "https://github.com/Pal-cloud",
-      "linkedin": "https://www.linkedin.com/in/palomagsal/",
-      "portfolio": "https://palomacloud.dev",
-      "bio": "Científica de datos especializada en análisis de biodiversidad y conservación. Combino mi pasión por los datos con el desarrollo frontend para crear visualizaciones impactantes.",
-      "skills": [
-        "React",
-        "D3.js",
-        "Python",
-        "Data Analysis",
-        "Machine Learning",
-        "Statistics"
-      ],
-      "location": "México",
-      "yearsExperience": 4,
-      "favoriteQuote": "Los datos cuentan historias, las mariposas cuentan la historia de nuestro ecosistema."
+      "fenology": "Todo el año",
+      "position": { "lat": 12.0000, "lng": -85.0000 }
     }
   ]
 }
