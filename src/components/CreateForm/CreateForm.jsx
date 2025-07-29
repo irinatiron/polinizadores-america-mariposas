@@ -71,6 +71,17 @@ const Form = ({ onSubmit }) => {
     setShowOptional(false); // Para que no muestre los campos opcionales abiertos al reiniciar el formulario
     setFormData(initialFormState); // Limpia los datos que se acabaron de enviar y pone los que vienen por defecto
   };
+    // Modal para mostrar imágenes expandidas
+    const [modalImage, setModalImage] = useState(null);
+    const [modalTitle, setModalTitle] = useState('');
+    const openModal = (imageSrc, title) => {
+        setModalImage(imageSrc);
+        setModalTitle(title);
+    };
+    const closeModal = () => {
+        setModalImage(null);
+        setModalTitle('');
+    };
   return ( // Renderizado del formulario
     <div className={styles.containerForm}>
       <form onSubmit={handleSubmit}>
@@ -108,7 +119,9 @@ const Form = ({ onSubmit }) => {
               <label htmlFor="input-img"><IoImageOutline /> Foto de la mariposa</label>
               {formData.img ? (
                 <div className={styles.imagePreviewContainer}>
-                  <img src={formData.img} alt="Preview" className={styles.imagePreview} />
+                  <img src={formData.img} alt="Preview" className={`${styles.imagePreview} ${styles.clickableImage}`}
+                  onClick={() => openModal(formData.img, formData.name)}
+                  />
                   <div className={styles.imageActions}>
                     <p className={styles.imageUrlLabel}>{formData.img.split('/').pop()}</p>
                     <button type="button" className={styles.changeImageButton} onClick={() => setFormData({ ...formData, img: '' })}>Borrar imagen</button>
@@ -169,7 +182,24 @@ const Form = ({ onSubmit }) => {
           </div>
         )}
 
-      </form></div>
+      </form>
+      
+       {/* Modal para mostrar imágenes expandidas */}
+      {modalImage && (
+        <div className="image-modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <svg viewBox="0 0 24 24" className="close-icon">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+            <img src={modalImage} alt={modalTitle} className="modal-image" />
+            <div className="modal-title">{modalTitle}</div>
+          </div>
+        </div>
+      )}
+
+      </div>
   );
 };
 
