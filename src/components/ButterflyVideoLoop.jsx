@@ -20,27 +20,31 @@ function ButterflyHeader() {
   const videoRef = useRef(null);
   const timeoutRef = useRef(null);
 
-  // Avanza al siguiente video
   const goToNextVideo = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % videoUrls.length);
   };
 
   useEffect(() => {
     const video = videoRef.current;
+
     if (video) {
-      video.load();
-      video.play();
+      const handleCanPlay = () => {
+        video.play().catch((error) => {
+          console.warn("Error al reproducir:", error);
+        });
+      };
 
-      // Limita duración a 3 segundos
-      timeoutRef.current = setTimeout(() => {
-        goToNextVideo();
-      }, 4000);
+      video.addEventListener("canplay", handleCanPlay);
+      video.load(); // esto lanza la carga del nuevo video
+
+      // Cambiar vídeo tras 4 segundos
+      timeoutRef.current = setTimeout(goToNextVideo, 4000);
+
+      return () => {
+        clearTimeout(timeoutRef.current);
+        video.removeEventListener("canplay", handleCanPlay);
+      };
     }
-
-    // Limpieza del timeout al cambiar de vídeo
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
   }, [currentIndex]);
 
   return (
@@ -48,7 +52,6 @@ function ButterflyHeader() {
       <video
         ref={videoRef}
         src={videoUrls[currentIndex]}
-        autoPlay
         muted
         playsInline
         className="butterfly-video"
