@@ -157,7 +157,7 @@ p {
   font-weight: bold;
   border: none;
   width: 50%;
-
+  cursor: pointer;
 }
 
 .my-swal-popup .my-cancel-btn {
@@ -170,6 +170,7 @@ p {
   border: none;
   margin: 1rem;
   width: 50%;
+  cursor: pointer;
 }
 
 /*responsive a partir de 615px*/
