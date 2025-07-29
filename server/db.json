@@ -8,7 +8,6 @@
       "color": "Naranja con negro",
       "size": "10 cm",
       "origin": "México",
-      "position": [19.446, -100.215],  // Santuario El Rosario, Michoacán
       "location": "América del Norte",
       "habitat": "Bosques de oyamel",
       "plants": "Asclepias",
@@ -24,7 +23,6 @@
       "color": "Azul metálico",
       "size": "15 cm",
       "origin": "Brasil",
-      "position": [-3.4653, -62.2159], // Zona central del Amazonas
       "location": "Selvas del Amazonas",
       "habitat": "Bosques tropicales",
       "plants": "Frutas fermentadas, savia de árboles",
@@ -40,7 +38,6 @@
       "color": "Negro con rayas amarillas",
       "size": "7.5 cm",
       "origin": "América Central",
-      "position": [17.252, -89.117], // Petén, Guatemala (Centroamérica)
       "location": "Desde México hasta Florida",
       "habitat": "Bosques húmedos y jardines",
       "plants": "Passiflora",
@@ -56,7 +53,6 @@
       "color": "Anaranjado brillante con manchas negras",
       "size": "7 cm",
       "origin": "Sur de EE. UU.",
-      "position": [29.6516, -82.3248], // Gainesville, Florida
       "location": "América Central y del Sur",
       "habitat": "Zonas abiertas, jardines",
       "plants": "Passiflora",
@@ -72,7 +68,6 @@
       "color": "Café rojizo con bordes negros",
       "size": "9 cm",
       "origin": "América del Sur",
-      "position": [-12.0464, -77.0428], // Lima, Perú (zona subtropical)
       "location": "Tropical y subtropical americano",
       "habitat": "Sabana y matorral",
       "plants": "Asclepias",
@@ -88,7 +83,6 @@
       "color": "Rojo, azul y blanco, con patrón 88",
       "size": "4 cm",
       "origin": "Colombia",
-      "position": [4.711, -74.0721], // Bogotá, Colombia
       "location": "América del Sur",
       "habitat": "Bosques lluviosos bajos",
       "plants": "Frutas, savia",

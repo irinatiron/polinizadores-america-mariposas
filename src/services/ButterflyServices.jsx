@@ -1,21 +1,8 @@
-// Sólo peticiones fetch en este archivo
 import Swal from 'sweetalert2';
-import { toast } from 'react-toastify';
-
 const URL_API = "http://localhost:3000/butterflies";
 
 // Método GET para el READ
 export async function getAllButterflies() {
-  // const response = await fetch(URL_API, {
-  //   method: "GET",
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // })
-  // const butterflyData = await response.json()
-  // console.log(butterflyData)
-  // return butterflyData
-
   const response = await fetch(URL_API)
   if (!response.ok) {
     throw new Error('Error al obtener las mariposas')
@@ -29,12 +16,7 @@ export async function getOneButterfly(id) {
   return response.json()
 }
 
-
-
-// ========================================
-//  CREATE <<>> POST
-// ========================================
-
+// Método POST para el CREATE
 export async function createButterfly(newButterfly) {
   try {
     const response = await fetch(URL_API, {
@@ -63,6 +45,7 @@ export async function createButterfly(newButterfly) {
     console.error('Error:', error);
   }
 }
+
 // Método PUT para el UPDATE
 export async function updateButterfly(id, updatedButterfly) {
   try {
@@ -139,7 +122,3 @@ const deleteButterfly = async (id) => {
   }
 };
 export { deleteButterfly };
-
-
-
-

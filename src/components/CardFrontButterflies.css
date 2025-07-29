@@ -16,6 +16,8 @@ span {
 
 .card-content p{
     padding: 0;
+
+    font-size: 15px;
 }
 
 p {
@@ -89,9 +91,13 @@ p {
 
 /*botones*/
 .btns {
-    margin: 15px 0 25px 0;
+    margin: 15px 0 15px 0;
     display: flex;
-    justify-content: space-around;
+    gap: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    justify-content: center;
 }
 
 .btn {
@@ -121,8 +127,86 @@ p {
     background-color: #ae8a3c;
 }
 
-@media only screen and (max-width: 415px){
-    .img-card {
-        width: 310px;
+@media only screen and (max-width:541px) {
+    .cards-butterflies {
+        height: 475px;
+    }
+    .order-butterfly {
+        margin-top: 12px;
+    } 
+
+    .card-content p {/*añadido*/
+        font-size: 15px;
+    }
+
+    .btns {
+        font-size: 14px;
+    }
+
+    @media only screen and (max-width: 415px){
+        .cards-butterflies {
+            width: 370px;
+        }
+
+        .img-card {
+            width: 330px;
+            margin: 13px 20px 0 20px;
+        }
+    
+        @media only screen and (max-width: 391px) {
+            .name-butterfly {
+                font-size: 14px;
+            }
+            .corner-ribbon {
+                width: 230px;
+                padding: 17px 0 17px 20px;
+            }
+        
+            .img-card {
+                width: 310px;
+                margin: 13px 25px 0 25px;
+            }
+        
+            @media only screen and (max-width: 376px) {
+                .corner-ribbon {
+                    width: 220px;
+                }
+                .img-card {
+                    width: 295px;
+                }
+            
+                .card-content p {
+                    font-size: 14px;
+                }
+            
+                @media only screen and (max-width: 361px) {
+                    .order-butterfly {
+                        margin-top: 10px;
+                        font-size: 11px;
+                    }
+                
+                    .img-card {
+                        width: 280px;
+                    }
+                
+                    .btns {
+                        font-size: 12px;
+                    }
+                
+                    @media screen and (max-width: 345px) {
+                        .corner-ribbon {
+                            width: 200px;
+                        }
+                        
+                        .img-card {
+                            width: 265px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+
+

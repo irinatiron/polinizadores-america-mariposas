@@ -15,7 +15,7 @@ const AmericanMapLeaflet = () => {
     const [butterflies, setButterflies] = useState([]);
 
     useEffect(() => {
-        fetch('/butterflies.json') // asegúrate que esté en public/
+        fetch('/butterfliesmarkersdb.json')
             .then((res) => res.json())
             .then((data) => {
                 console.log(data); // <-- Verifica que tenga la clave butterflies
