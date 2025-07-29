@@ -76,7 +76,7 @@ const Form = ({ onSubmit }) => {
       <form onSubmit={handleSubmit}>
         <div className={styles.requiredFields}>
           <div className={`${styles.formGroup} ${styles.nameGroup}`}>
-            <label htmlFor="input-name">Nombre</label>
+            <label htmlFor="input-name">Nombre *</label>
             <input type="text" id='input-name' className={styles.inputName} name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)"
               title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus className={formErrors.name ? styles.inputError : ''} />
             {formErrors.name && <p className={styles.errorMessage}>{formErrors.name}</p>}
@@ -86,7 +86,7 @@ const Form = ({ onSubmit }) => {
             <input type="text" id='input-order' className={styles.inputOrder} name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera." />
           </div>
           <div className={`${styles.formGroup} ${styles.familyGroup}`}>
-            <label htmlFor="input-family">Familia</label>
+            <label htmlFor="input-family">Familia *</label>
             <select name="family" id='input-family' className={styles.inputFamily} value={formData.family} onChange={handleChange} onBlur={handleBlur} title="Selecciona entre las familias existentes." required className={formErrors.family ? styles.inputError : ''} >
               <option value="">Selecciona la familia</option>
               {butterflyFamilies.map((family) => (
@@ -148,7 +148,7 @@ const Form = ({ onSubmit }) => {
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="input-cycle"><LuHourglass /> Ciclo de vida</label>
-              <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Huevo, oruga, crisálida y adulto." title="¿Cuál es su ciclo vital?" />
+              <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: 28 días." title="¿Cuánto dura su ciclo vital?" />
               {formErrors.cycle && <p className={styles.errorMessage}>{formErrors.cycle}</p>}
             </div>
             <div className={styles.formGroup}>
