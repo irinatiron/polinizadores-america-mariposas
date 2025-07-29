@@ -101,6 +101,19 @@ form {
     align-self: center;
 }
 
+/* Imágenes clickeables */
+.clickableImage {
+  cursor: zoom-in;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.clickableImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
 .imageActions {
     display: flex;
     justify-content: space-between;
