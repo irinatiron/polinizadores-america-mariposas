@@ -1,3 +1,10 @@
+.title-detail-butterfly {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .cards {
     display: flex;
     justify-content: center;
@@ -21,7 +28,9 @@
     left: 0;
     background: white;
     color: black;
-    padding: 12px 125px 12px 40px;
+    width: 370px;
+    /* padding: 12px 125px 12px 40px; */
+    padding: 11px 30px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
@@ -58,18 +67,16 @@ p {
     margin-bottom: 4px;
 }
 
-
-
 .img-card-one{
-    width: 485px;
+    /* width: 485px; */
+    width: 450px;
     height: 260px;
     background-color: white;
-    margin: 33px 30px 0 30px;
+    margin: 33px 50px 0 50px;
 }
 
 .img-card-one img {
     text-align: center;
-    /* margin: 10px 30px 0 30px; */
 }
 
 .img-butterfly-back {
@@ -77,22 +84,48 @@ p {
     height: 260px;
 }
 
-.card-content,
-.btns {
-    margin: 20px 40px;
+.card-content-back {
+    margin: 30px 50px 20px 50px;
+}
+.btns-back {
+    margin: 30px 0px 20px 0px;
 }
 
 .paragraph p{
     font-size: 16px;
+    padding: 0;
 }
 
-.btns {
+.btns-back {/*antes .btns   ---> copiar y pegar estilo de front .btns*/
     margin-bottom: 15px;
+
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
+.btn-back {
+    width: 25%;
+    text-decoration: none;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.btn-home {
+    background-color: var(--color-forest-green);
+    color: black;
+}
+
+.btn-home:hover {
+    background-color: #26531a;
+}
 .btn-delete {
     background-color: #942C24;
     color: black;
+    border: none;
+    font-size: 15px;
 }
 
 .btn-delete:hover {
@@ -136,5 +169,127 @@ p {
   border: none;
   margin: 1rem;
   width: 50%;
+}
+
+/*responsive a partir de 615px*/
+@media only screen and (max-width: 615px) {
+    .card-butterfly-back {
+        width: 500px;
+    }
+
+    .corner-ribbon-back {
+        width: 350px;
+    }
+
+    .img-card-one {
+        width: 440px;
+    }
+
+    .paragraph p {
+        font-size: 13px;
+    }
+
+    .btn-back {
+        font-size: 13px;
+    }
+
+    @media only screen and (max-width: 541px) {
+        .img-card-one {
+            width: 420px;
+            margin: 33px 40px 0 40px;
+        }
+
+        .card-content-back {
+            margin: 30px 40px 20px 40px;
+        }
+
+
+        @media only screen and (max-width: 431px) {
+            .corner-ribbon-back {
+                width: 250px;
+            }
+    
+            .corner-order-back {
+                padding: 15px 2px 15px 0px;
+            }
+        
+            .img-card-one {
+                margin-top: 50px;
+                width: 320px;
+            }
+            
+            @media only screen and (max-width: 415px) {
+                .img-card-one {
+                    margin: 51px 30px 0 30px;
+                    width: 325px;
+                }
+    
+                .corner-order-back {
+                    padding: 15px 0;
+                }
+
+                .card-content-back {
+                    margin: 30px 30px 20px 30px;
+                }
+    
+                @media only screen and (max-width: 391px) {
+                    .corner-ribbon-back {
+                        width: 220px;
+                    }
+    
+                    .img-card-one {
+                        width: 300px;
+                    }
+    
+                    @media only screen and (max-width:376px) {
+                        .corner-ribbon-back {
+                            width: 210px;
+                            padding: 11px 30px 0;
+                        }
+    
+                        .img-card-one {
+                            width: 285px;
+                            margin-top: 40px;
+                        }
+    
+                        .btn-back {
+                            padding: 10px;
+                        }
+    
+                        @media only screen and (max-width: 360px) {
+                            .corner-ribbon-back {
+                                width: 195px;
+                            }
+    
+                            h4 {
+                                font-size: 15px;
+                            }
+    
+                            .img-card-one {
+                                margin-top: 38px;
+                                width: 270px;
+                            }
+    
+                            @media only screen and (max-width: 345px) {
+                                .corner-ribbon-back {
+                                    width: 180px;
+                                }
+    
+                                .img-card-one, .img-butterfly-back {
+                                    width: 255px;
+                                    height: 240px;
+                                }
+    
+                                .btn-back {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 }

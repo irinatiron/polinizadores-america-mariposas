@@ -1,6 +1,6 @@
 .creators-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-light-beige) 0%, var(--color-light-beige) 70%, var(--color-sage-green) 100%);
+  /* background: linear-gradient(135deg, var(--color-light-beige) 0%, var(--color-light-beige) 70%, var(--color-sage-green) 100%); */
   padding: 2rem 1rem;
   margin: 0 auto;
   max-width: 1400px;

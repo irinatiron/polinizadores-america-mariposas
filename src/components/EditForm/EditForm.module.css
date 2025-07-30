@@ -1,0 +1,131 @@
+.edit-form-container {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
+.butterfly-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form-container input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  /* border-radius: 8px; */
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.edit-form-container input:focus {
+  outline: none;
+  border-color: #64b5f6;
+  box-shadow: 0 0 4px #64b5f6;
+}
+
+.image-preview img {
+  cursor: zoom-in;
+}
+
+.btn-submit {
+  display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 30px 25px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-transform: capitalize;
+    opacity: 0.8;
+    color: #ffff;
+    width: 37%;
+    grid-column: 1 / -1;
+    justify-self: center;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
+    transition: 1.5s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    opacity: 1;
+}
+
+.cancelButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cancelButton {
+    background-color: var(--color-brick-red);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.5s;
+    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* espacio entre icono y texto */
+}
+
+.cancelButton:hover {
+    opacity: 1;
+}
+
+.cancelButton svg {
+  display: inline-block;
+  vertical-align: middle; 
+  width: 1.8em; 
+  height: 2em;
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+h2 {
+  text-align: center;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .butterfly-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-buttons {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-cancel {
+    margin-left: 0;
+  }
+}

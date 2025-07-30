@@ -10,6 +10,7 @@ import { MdOutlineColorLens } from "react-icons/md";
 import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import Swal from 'sweetalert2' // Importa sweetalert
 import Input from './ImageUpload'; // Importamos el componente de Cloudinary
 import { useNavigate } from 'react-router-dom'; // Importa hook useNavigate para navegar a otra ruta dentro de la app
@@ -71,12 +72,23 @@ const Form = ({ onSubmit }) => {
     setShowOptional(false); // Para que no muestre los campos opcionales abiertos al reiniciar el formulario
     setFormData(initialFormState); // Limpia los datos que se acabaron de enviar y pone los que vienen por defecto
   };
+    // Modal para mostrar imágenes expandidas
+    const [modalImage, setModalImage] = useState(null);
+    const [modalTitle, setModalTitle] = useState('');
+    const openModal = (imageSrc, title) => {
+        setModalImage(imageSrc);
+        setModalTitle(title);
+    };
+    const closeModal = () => {
+        setModalImage(null);
+        setModalTitle('');
+    };
   return ( // Renderizado del formulario
     <div className={styles.containerForm}>
       <form onSubmit={handleSubmit}>
         <div className={styles.requiredFields}>
           <div className={`${styles.formGroup} ${styles.nameGroup}`}>
-            <label htmlFor="input-name">Nombre</label>
+            <label htmlFor="input-name">Nombre *</label>
             <input type="text" id='input-name' className={styles.inputName} name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Mariposa monarca (Danaus plexippus)"
               title="Nombre científico o nombre común con científico entre paréntesis." required autoFocus className={formErrors.name ? styles.inputError : ''} />
             {formErrors.name && <p className={styles.errorMessage}>{formErrors.name}</p>}
@@ -86,7 +98,7 @@ const Form = ({ onSubmit }) => {
             <input type="text" id='input-order' className={styles.inputOrder} name="order" value={formData.order} readOnly tabIndex={-1} onFocus={(e) => e.target.blur()} title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera." />
           </div>
           <div className={`${styles.formGroup} ${styles.familyGroup}`}>
-            <label htmlFor="input-family">Familia</label>
+            <label htmlFor="input-family">Familia *</label>
             <select name="family" id='input-family' className={styles.inputFamily} value={formData.family} onChange={handleChange} onBlur={handleBlur} title="Selecciona entre las familias existentes." required className={formErrors.family ? styles.inputError : ''} >
               <option value="">Selecciona la familia</option>
               {butterflyFamilies.map((family) => (
@@ -108,7 +120,9 @@ const Form = ({ onSubmit }) => {
               <label htmlFor="input-img"><IoImageOutline /> Foto de la mariposa</label>
               {formData.img ? (
                 <div className={styles.imagePreviewContainer}>
-                  <img src={formData.img} alt="Preview" className={styles.imagePreview} />
+                  <img src={formData.img} alt="Preview" className={`${styles.imagePreview} ${styles.clickableImage}`}
+                  onClick={() => openModal(formData.img, formData.name)}
+                  />
                   <div className={styles.imageActions}>
                     <p className={styles.imageUrlLabel}>{formData.img.split('/').pop()}</p>
                     <button type="button" className={styles.changeImageButton} onClick={() => setFormData({ ...formData, img: '' })}>Borrar imagen</button>
@@ -148,7 +162,7 @@ const Form = ({ onSubmit }) => {
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="input-cycle"><LuHourglass /> Ciclo de vida</label>
-              <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: Huevo, oruga, crisálida y adulto." title="¿Cuál es su ciclo vital?" />
+              <textarea id="input-cycle" name="cycle" value={formData.cycle} onChange={handleChange} onBlur={handleBlur} placeholder="Ej: 28 días." title="¿Cuánto dura su ciclo vital?" />
               {formErrors.cycle && <p className={styles.errorMessage}>{formErrors.cycle}</p>}
             </div>
             <div className={styles.formGroup}>
@@ -169,7 +183,28 @@ const Form = ({ onSubmit }) => {
           </div>
         )}
 
-      </form></div>
+      </form>
+
+      <div className={styles.cancelButtonContainer}>
+        <button type="button" className={`${styles.cancelButton}`} title='Cancelar y volver atrás'  onClick={() => window.history.back()}><IoIosArrowRoundBack /> Cancelar y regresar a las fichas</button>
+      </div>
+      
+      {/* Modal para mostrar imágenes expandidas */}
+      {modalImage && (
+        <div className="image-modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <svg viewBox="0 0 24 24" className="close-icon">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+            <img src={modalImage} alt={modalTitle} className="modal-image" />
+            <div className="modal-title">{modalTitle}</div>
+          </div>
+        </div>
+      )}
+
+      </div>
   );
 };
 

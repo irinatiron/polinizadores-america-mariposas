@@ -160,34 +160,36 @@ const ContactForm = () => {
       )}
 
       <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-group">
-          <label htmlFor="name">Nombre *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={errors.name ? 'error' : ''}
-            placeholder="Tu nombre completo"
-          />
-          {errors.name && <span className="error-icon">❗</span>}
-          {errors.name && <span className="error-text">{errors.name}</span>}
-        </div>
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="name">Nombre *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className={errors.name ? 'error' : ''}
+              placeholder="Tu nombre completo"
+            />
+            {errors.name && <span className="error-icon">❗</span>}
+            {errors.name && <span className="error-text">{errors.name}</span>}
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className={errors.email ? 'error' : ''}
-            placeholder="tu.email@ejemplo.com"
-          />
-          {errors.email && <span className="error-icon">❗</span>}
-          {errors.email && <span className="error-text">{errors.email}</span>}
+          <div className="form-group">
+            <label htmlFor="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className={errors.email ? 'error' : ''}
+              placeholder="tu.email@ejemplo.com"
+            />
+            {errors.email && <span className="error-icon">❗</span>}
+            {errors.email && <span className="error-text">{errors.email}</span>}
+          </div>
         </div>
 
         <div className="form-group">
@@ -224,6 +226,7 @@ const ContactForm = () => {
           {errors.message && <span className="error-icon">❗</span>}
           {errors.message && <span className="error-text">{errors.message}</span>}
         </div>
+       <div className="form-group-button">
 
         <button 
           type="submit" 
@@ -232,6 +235,7 @@ const ContactForm = () => {
         >
           {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
         </button>
+        </div>
       </form>
 
       <div className="contact-info">

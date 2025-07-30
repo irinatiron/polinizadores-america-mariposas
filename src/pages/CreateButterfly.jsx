@@ -6,7 +6,7 @@ import ButterflyWings from '../components/Animations/ButterflyWings';
 const CreateButterfly = () => {
   return (
     <>
-      <h2 className={styles['create-page-title']}>Añadir una nueva mariposa al catálogo.</h2>
+      <h2 className={styles['create-page-title']}>Añadir una nueva mariposa al catálogo</h2>
       <p className={styles['create-page-intro']}>
         ¿No encuentras la mariposa que buscas? Puedes contribuir completando el siguiente formulario con sus datos para incluirla en nuestro listado.
       </p>

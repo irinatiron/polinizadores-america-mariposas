@@ -1,7 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3001",
       "name": "Mariposa monarca",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -13,7 +12,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, oruga, crisálida y adulto",
       "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
-      "fenology": "Migración en otoño, reproducción en primavera y verano"
+      "fenology": "Migración en otoño, reproducción en primavera y verano",
+      "id": "3001"
     },
     {
       "id": "3002",
@@ -46,7 +46,6 @@
       "fenology": "Todo el año en climas cálidos"
     },
     {
-      "id": "3004",
       "name": "Agraulis vanillae",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -58,10 +57,10 @@
       "plants": "Passiflora",
       "cycle": "30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "id": "3004"
     },
     {
-      "id": "3005",
       "name": "Danaus gilippus",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -73,7 +72,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, larva, crisálida, adulto",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/Danaus_gilippus_thersippus.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "id": "3005"
     },
     {
       "id": "3006",
@@ -121,7 +121,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3010",
       "name": "Anartia fatima",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -133,7 +132,8 @@
       "plants": "Lantana, Bidens pilosa",
       "cycle": "20 a 30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Banded_Peacock.jpg",
-      "fenology": "Todo el año en zonas tropicales"
+      "fenology": "Todo el año en zonas tropicales",
+      "id": "3010"
     },
     {
       "id": "3011",
@@ -181,7 +181,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3014",
       "name": "Adelpha fessonia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -193,7 +192,8 @@
       "plants": "Celtis, Lantana",
       "cycle": "3 semanas",
       "img": "https://www.butterfliesandmoths.org/sites/default/files/bamona_images/adelpha-fessonia-jen-sanders-1_1.jpg",
-      "fenology": "Verano y otoño"
+      "fenology": "Verano y otoño",
+      "id": "3014"
     },
     {
       "id": "3015",
@@ -286,7 +286,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3021",
       "name": "Actinote thalia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -298,7 +297,8 @@
       "plants": "Asteraceae",
       "cycle": "28 días",
       "img": "https://www.ecoregistros.org/site/images/albumes/246/10145/Nymphalidae--Actinote-pyrrha--Perezosa-Grande.jpg",
-      "fenology": "Primavera y verano"
+      "fenology": "Primavera y verano",
+      "id": "3021"
     },
     {
       "id": "3022",
@@ -406,7 +406,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3029",
       "name": "Zaretis itys",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -418,7 +417,8 @@
       "plants": "Frutas caídas",
       "cycle": "30 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/24713160/large.jpeg",
-      "fenology": "Estacional"
+      "fenology": "Estacional",
+      "id": "3029"
     },
     {
       "id": "3030",
@@ -434,51 +434,6 @@
       "cycle": "1 mes",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/15559975/large.jpg",
       "fenology": "Todo el año"
-    },
-    {
-      "id": "329f",
-      "name": "Prueba Cloudinary para borrar",
-      "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753349770/sj51hjek9pbflmwoqgvd.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "22f0",
-      "name": "cloudinary cloudinary",
-      "order": "Lepidoptera",
-      "family": "Riodinidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753349986/pza2us38e4roghie35s1.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "e5d3",
-      "name": "Mariposa de MariCarmen",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753351386/r3cvqidxfatb7tdyxx5z.jpg",
-      "fenology": ""
     }
   ],
   "creators": [
