@@ -36,9 +36,9 @@ function ButterflyHeader() {
       };
 
       video.addEventListener("canplay", handleCanPlay);
-      video.load(); // esto lanza la carga del nuevo video
+      video.load();
 
-      // Cambiar vídeo tras 4 segundos
+      // Cambiar vídeo tras 4 segundos (4secs = 4000 milisecs)
       timeoutRef.current = setTimeout(goToNextVideo, 4000);
 
       return () => {

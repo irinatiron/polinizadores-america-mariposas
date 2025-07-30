@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './Navbar.css';
 import navLogo from '../assets/images/nav-logo.png';
 
 function Navbar() {
-    return (
-        
-        <nav className="navbar" style={{border: "5px dotted yellow"}}>
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    // Cerrar menú cuando se hace clic en un enlace
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    return (
+        <nav className="navbar" style={{border: "5px dotted yellow"}}>
             <div className="nav-container" style={{border: "3px dotted pink"}}>
                 {/*Logo */}
                 <Link to="/" className="nav-logo">
@@ -17,26 +27,28 @@ function Navbar() {
                     <p>Mariposas de América</p>
                 </Link>
 
-                <button className="menu-toggle">&#9776;</button>
+                <button className="menu-toggle" onClick={toggleMenu}>
+                    &#9776;
+                </button>
 
                 {/*Nav Links*/}
-                <ul className="nav-menu">
+                <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <li>
-                        <Link to="/" className="nav-link">Inicio</Link>
+                        <Link to="/" className="nav-link" onClick={closeMenu}>Inicio</Link>
                     </li>
                     <li>
-                        <Link to="/fichas-mariposas" className="nav-link">Fichas Mariposas</Link>
+                        <Link to="/fichas-mariposas" className="nav-link" onClick={closeMenu}>Fichas Mariposas</Link>
                     </li>
                     <li>
-                        <Link to="/creadoras" className="nav-link">Creadoras</Link>
+                        <Link to="/creadoras" className="nav-link" onClick={closeMenu}>Creadoras</Link>
                     </li>
                      <li>
-                        <Link to="/formulario" className="nav-link">Formulario</Link>
+                        <Link to="/formulario" className="nav-link" onClick={closeMenu}>Formulario</Link>
                     </li>
                 </ul>
             </div>
         </nav>
     )
-
 }
+
 export default Navbar;
