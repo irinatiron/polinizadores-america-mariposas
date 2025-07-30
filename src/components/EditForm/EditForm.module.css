@@ -1,4 +1,3 @@
-
 .edit-form-container {
   max-width: 950px;
   margin: 2rem auto;
@@ -24,7 +23,7 @@
   flex-direction: column;
 }
 
-input {
+.edit-form-container input {
   padding: 0.7rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -32,7 +31,7 @@ input {
   transition: border 0.3s ease;
 }
 
-input:focus {
+.edit-form-container input:focus {
   outline: none;
   border-color: #64b5f6;
   box-shadow: 0 0 4px #64b5f6;

@@ -1,7 +1,7 @@
 
 import { Routes,Route,Link,useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import EditForm from "../components/EditForm";
+import EditForm from "../components/EditForm/EditForm";
 import {getOneButterfly,updateButterfly} from "../services/ButterflyServices";
 
 const EditButterfly = () => {
