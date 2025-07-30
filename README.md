@@ -2,6 +2,7 @@
 
 Este proyecto forma parte de una iniciativa educativa basada en el **cuaderno de campo digital**: una aplicación web desarrollada para **documentar y conservar insectos polinizadores** en peligro de desaparición. Nuestro grupo ha trabajado específicamente en el continente 🌎 **América**, centrándonos en las **mariposas**, destacadas polinizadoras y excelentes bioindicadores del estado de los ecosistemas.
 
+
 ## 🌱 Contexto
 
 Los polinizadores están disminuyendo en todo el mundo debido a múltiples factores como el cambio climático, los pesticidas y la pérdida de hábitats. A través de esta herramienta, contribuimos al proceso de **digitalización del conocimiento natural**, tal como promueve la Unión Europea en su **Estrategia de Biodiversidad 2030**.
@@ -17,13 +18,34 @@ Los polinizadores están disminuyendo en todo el mundo debido a múltiples facto
 ## 📌 Navegación principal y rutas
 
 - `/` → Página de inicio con mapa interactivo.
+
+![Página de inicio en versión escritorio](./src/assets/images/foto-inicio.png)
+![Página de inicio en versión móvil](./src/assets/images/foto-responsive.png)
+![Página de inicio con mapa intercativo](./src/assets/images/foto-mapa.png)
+
 - `/fichas-mariposas` → Listado de todas las mariposas que tenemos en el catálogo.
+
+![Página de fichas de mariposas](./src/assets/images/foto-fichas.png)
+
 - `/detalle-mariposa/:id` → Ficha detallada de una mariposa.
+
+![Página de detalle de mariposa](./src/assets/images/foto-detalle.png)
+
 - `/editar-mariposa/:id` → Editar mariposa seleccionada.
+
+![Página de editar una mariposa](./src/assets/images/foto-edit.png)
+
 - `/nueva-mariposa` → Añadir nueva mariposa.
+
+![Página de añadir una mariposa](./src/assets/images/foto-create.png)
+
 - `/creadoras` → Equipo que ha realizado el proyecto.
+
+![Página de creadoras](./src/assets/images/foto-creadoras.png)
+
 - `/formulario` → Formulario de contacto.
 
+![Página de contacto](./src/assets/images/foto-contacto.png)
 
 ## 🚀 Funcionalidades
 
@@ -43,10 +65,6 @@ El diseño de la aplicación fue desarrollado de forma colaborativa a través de
 - Ofrecer al usuario una experiencia intuitiva y agradable.
 - Garantizar la accesibilidad.
 - Diseño responsive.
-
-![Página de inicio en versión escritorio](./src/assets/images/foto-inicio.png)
-
-
 
 ## 🗂️ Estructura del proyecto
 
