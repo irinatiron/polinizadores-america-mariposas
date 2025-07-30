@@ -80,6 +80,17 @@ export async function updateButterfly(id, updatedButterfly) {
 
 const deleteButterfly = async (id) => {
   try {
+    let butterflyName = '';
+
+    // Intentar obtener el nombre de la mariposa antes de eliminarla
+    try {
+      const butterfly = await getOneButterfly(id);
+      butterflyName = butterfly.name || '';
+    } catch (error) {
+      console.warn('No se pudo obtener el nombre de la mariposa:', error);
+      butterflyName = ''; // Si falla, dejamos vacío el nombre
+    }
+
     // Make the DELETE request to the server
     const response = await fetch(`${URL_API}/${id}`, {
       method: 'DELETE',
@@ -99,7 +110,9 @@ const deleteButterfly = async (id) => {
     Swal.fire({
       icon: 'success',
       title: '¡Eliminada!',
-      text: `La mariposa con ID ${id} fue eliminada correctamente.`,
+      text: butterflyName
+        ? `La mariposa "${butterflyName}" fue eliminada correctamente.`
+        : `La mariposa con ID ${id} fue eliminada correctamente.`,
       timer: 2000,
       showConfirmButton: false
     });
@@ -121,4 +134,5 @@ const deleteButterfly = async (id) => {
     throw error; // Re-throw so component can handle it if needed
   }
 };
+
 export { deleteButterfly };
