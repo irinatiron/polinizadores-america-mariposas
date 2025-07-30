@@ -10,6 +10,7 @@ import { MdOutlineColorLens } from "react-icons/md";
 import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import Swal from 'sweetalert2' // Importa sweetalert
 import Input from './ImageUpload'; // Importamos el componente de Cloudinary
 import { useNavigate } from 'react-router-dom'; // Importa hook useNavigate para navegar a otra ruta dentro de la app
@@ -183,6 +184,10 @@ const Form = ({ onSubmit }) => {
         )}
 
       </form>
+
+      <div className={styles.cancelButtonContainer}>
+        <button type="button" className={`${styles.cancelButton}`} title='Cancelar y volver atrás'  onClick={() => window.history.back()}><IoIosArrowRoundBack /> Cancelar y regresar a las fichas</button>
+      </div>
       
        {/* Modal para mostrar imágenes expandidas */}
       {modalImage && (
