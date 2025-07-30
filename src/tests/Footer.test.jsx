@@ -1,30 +1,45 @@
 import { beforeEach, expect, test } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import Footer from '../components/Footer'
+import { MemoryRouter } from 'react-router-dom'
+import '@testing-library/jest-dom'
 
 //testear footer 
 beforeEach(() => {//Antes de cada test haz esto
-    render(<Footer />)
+    render(
+        <MemoryRouter>
+            <Footer />
+        </MemoryRouter>
+    )
 })
 
-test('renders Footer component', () => {
-    //Busca el footer por su rol semántico
-    const footerElement = screen.getByRole('contentinfo')
-    // expect(footerElement).toHaveClass('footer')
-    expect(footerElement).toBeDefined()
-})
+test('render footer components', () => {
+    const footer = screen.getByTestId('main-footer')
+    expect(footer).toBeInTheDocument()
 
-test('contains the logo class .footer-logo', () => {
-    const pFooterLogo = screen.getByText(/Mariposas de América/i)
-    expect(pFooterLogo).toBeDefined()
-})
+    //H2 dentro del footer
+    const heading = within(footer).getByRole('heading', {
+        name: /Mariposas de América/i,
+        level: 2, //h2
+    })
+    expect(heading).toBeInTheDocument()
 
-test('contains text description with the class footer-text', () => {
-    const pFooterText = screen.getByText(/Proyecto desarrollado con /i)
-    expect(pFooterText).toBeDefined
-})
+    //Texto de descripción
+    const paragraph = within(footer).getByText(/Proyecto desarrollado como/i)
+    expect(paragraph).toBeInTheDocument()
 
-test('contains the link with class .footer-brand', () => {
-    const linkElemento = screen.getByText(/Factoría F5/i)
-    expect(linkElemento).toBeDefined()
+    //Enlace a Factoría F5
+    const factoriaLink = within(footer).getByRole('link', {
+        name: /Visitar sitio web de Factoría F5/i,
+    })
+    expect(factoriaLink).toHaveAttribute('href', 'https://factoriaf5.org/')
+    expect(factoriaLink).toHaveAttribute('target', '_blank')
+
+    //Logo de Factoriía F5
+    const logoFactoria = within(footer).getByAltText(/Logo de Factoría F5/i)
+    expect(logoFactoria).toBeInTheDocument()
+
+    //paragraph footer-copyright
+    const paragraphRights = within(footer).getByText(/Mariposas de América. Todos los derechos reservados./i)
+    expect(paragraph).toBeInTheDocument()
 })

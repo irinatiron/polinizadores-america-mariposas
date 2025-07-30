@@ -4,7 +4,7 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer">
+        <footer className="footer" data-testid="main-footer">
             <div className="footer-content">
                 <h2 className="footer-logo">Mariposas de América</h2>
 
