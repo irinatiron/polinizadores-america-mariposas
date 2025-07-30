@@ -121,7 +121,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3010",
       "name": "Anartia fatima",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -133,7 +132,8 @@
       "plants": "Lantana, Bidens pilosa",
       "cycle": "20 a 30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Banded_Peacock.jpg",
-      "fenology": "Todo el año en zonas tropicales"
+      "fenology": "Todo el año en zonas tropicales",
+      "id": "3010"
     },
     {
       "id": "3011",
