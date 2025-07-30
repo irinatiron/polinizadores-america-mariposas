@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import "../components/CreateForm/CreateForm.module.css";
+import Input from '../components/CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
+import './EditForm.css';
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
