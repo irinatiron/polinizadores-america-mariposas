@@ -1,5 +1,16 @@
 import { useState, useEffect } from 'react';
-import "../components/CreateForm/CreateForm.module.css"
+import Input from '../EditForm/ImageUploadEdit' // Importamos el componente de Cloudinary
+// Importaciones de iconos:
+import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
+import { HiOutlineGlobeAmericas } from "react-icons/hi2";
+import { TbMapPin2 } from "react-icons/tb";
+import { MdOutlineColorLens } from "react-icons/md";
+import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
+import { HiOutlineHome } from "react-icons/hi";
+import { FaPlus, FaCheck } from "react-icons/fa";
+import styles from './EditForm.module.css';
+import { initialFormState, butterflyFamilies, fieldLabels } from '../FormConstants'; // Importa el estado inicial del formulario, las familias existentes y labels traducidos
+
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -60,11 +71,11 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
   };
 
   return (
-    <div className="edit-form-container">
-      <form onSubmit={handleSubmit} className="butterfly-form">
+    <div className={styles["edit-form-container"]}>
+      <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`} >
         
-        <div className="form-group">
-          <label htmlFor="name">Nombre:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="name">Nombre *</label>
           <input
             type="text"
             id="name"
@@ -76,8 +87,8 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="order">Orden:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="order">Orden (por defecto)</label>
           <input
             type="text"
             id="order"
@@ -85,146 +96,145 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
             value={formData.order}
             onChange={handleChange}
             required
+            readOnly
             placeholder="Ej: Lepidoptera"
+            title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera."
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="family">Familia:</label>
-          <input
-            type="text"
-            id="family"
-            name="family"
-            value={formData.family}
-            onChange={handleChange}
-            required
-            placeholder="Ej: Nymphalidae"
-          />
+        <div className={styles["form-Group"]}>
+          <label htmlFor="family">Familia *</label>
+            <select id="family" name="family" value={formData.family} onChange={handleChange} title="Selecciona entre las familias existentes." required>
+              <option value="">Selecciona la familia</option>
+              {butterflyFamilies.map((family) => (
+                <option key={family} value={family}>{family}</option>
+              ))}
+            </select>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="color">Color:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="color"><MdOutlineColorLens /> Color</label>
           <input
             type="text"
             id="color"
             name="color"
             value={formData.color}
             onChange={handleChange}
-            required
             placeholder="Ej: Naranja y negro"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="size">Tamaño:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="size"><LuRuler /> Tamaño</label>
           <input
             type="text"
             id="size"
             name="size"
             value={formData.size}
             onChange={handleChange}
-            required
             placeholder="Ej: 8-12 cm"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="origin">Origen:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="origin"><HiOutlineGlobeAmericas /> Origen</label>
           <input
             type="text"
             id="origin"
             name="origin"
             value={formData.origin}
             onChange={handleChange}
-            required
             placeholder="Ej: América del Norte"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="location">Ubicación:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="location"><TbMapPin2 /> Ubicación</label>
           <input
             type="text"
             id="location"
             name="location"
             value={formData.location}
             onChange={handleChange}
-            required
             placeholder="Ej: México, EE.UU., Canadá"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="habitat">Hábitat:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="habitat"><HiOutlineHome /> Hábitat</label>
           <input
             type="text"
             id="habitat"
             name="habitat"
             value={formData.habitat}
             onChange={handleChange}
-            required
             placeholder="Ej: Bosques templados"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="plants">Plantas:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="plants"><LuFlower2 /> Plantas visitadas</label>
           <input
             type="text"
             id="plants"
             name="plants"
             value={formData.plants}
             onChange={handleChange}
-            required
             placeholder="Ej: Asclepias, algodoncillo"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="cycle">Ciclo:</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="cycle"><LuHourglass /> Ciclo de vida</label>
           <input
             type="text"
             id="cycle"
             name="cycle"
             value={formData.cycle}
             onChange={handleChange}
-            required
             placeholder="Ej: Huevo, larva, pupa, adulto"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="img">Imagen (URL):</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="img"><IoImageOutline /> Imagen</label>
           <input
             type="url"
             id="img"
             name="img"
             value={formData.img}
             onChange={handleChange}
-            required
             placeholder="https://ejemplo.com/imagen-mariposa.jpg"
-          />
+           />
+
+          {formData.img && (
+        <div className={styles["image-preview"]}>
+          <img src={formData.img} alt="Vista previa" style={{ maxWidth: "200px", marginTop: "10px" }} />
+        </div>
+         )}
+
+          <Input onUpload={(url) => setFormData(prev => ({ ...prev, img: url }))} />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="fenology">Fenología:</label>
+
+        <div className={styles["form-Group"]}>
+          <label htmlFor="fenology"><IoCalendarOutline /> Fenología</label>
           <input
             type="text"
             id="fenology"
             name="fenology"
             value={formData.fenology}
             onChange={handleChange}
-            required
             placeholder="Ej: Migración octubre-marzo"
           />
         </div>
 
-        <div className="form-buttons">
-          <button type="submit" className="btn-submit">
-            Actualizar Mariposa
-          </button>
-          <button type="button" className="btn-cancel" onClick={() => window.history.back()}>
+        <div className={styles["form-buttons"]}>
+          <button type="button" className={styles["btn-cancel"]} onClick={() => window.history.back()}>
             Cancelar
+          </button>
+          <button type="submit" className={styles["btn-submit"]}>
+            Actualizar Mariposa
           </button>
         </div>
         

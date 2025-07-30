@@ -5,9 +5,6 @@ import './IntroPollinators.css';
 const IntroPollinators = () => {
   return (
     <div className="intro-pollinators">
-      <h1 className="main-title">
-        Especies polinizadoras: La Mariposa
-      </h1>
       <h2 className="section-title">
         ¿Qué son las especies polinizadoras?
       </h2>

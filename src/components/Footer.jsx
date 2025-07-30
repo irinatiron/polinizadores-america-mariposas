@@ -1,18 +1,40 @@
 import './Footer.css';
+
 function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="footer">
+            <div className="footer-content">
+                <h2 className="footer-logo">Mariposas de América</h2>
 
-            <div className="footer-content" style={{border: "3px dotted red"}}>
-                <p className="footer-logo">Mariposas de América</p>
-                <p className="footer-text">Proyecto desarrollado con pasión por la naturaleza y la conservación</p>
-                <a href="" className="footer-brand">Factoría F5</a>
+                <hr className="footer-divider" />
+
+                <p className="footer-text">
+                    Proyecto desarrollado como forma colaborativa por Irina Tirón, Carmen Tajuelo, Guissella Pérez, Ingrid Martínez y Paloma Gómez dentro del marco de formación del Bootcamp de Desarrollo Web Fullstack de Factoría F5 en Julio de 2025. <br /><br />
+                    Hecho con mucho cariño, 💙 y pasión por la tecnología y la naturaleza.
+                </p>
+
+                <a
+                    href="https://factoriaf5.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-brand"
+                    aria-label="Visitar sitio web de Factoría F5"
+                >
+                    <img
+                        src="src\assets\images\logo-factoriaf5.png"
+                        alt="Logo de Factoría F5"
+                        className="h-8"
+                    />
+                </a>
+
+                <div className="footer-copyright">
+                    <p>&copy; {currentYear} Mariposas de América. Todos los derechos reservados.</p>
+                </div>
             </div>
-
         </footer>
     )
 }
+
 export default Footer;
-
-
-

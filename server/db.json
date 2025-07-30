@@ -1,7 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3001",
       "name": "Mariposa monarca",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -13,7 +12,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, oruga, crisálida y adulto",
       "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
-      "fenology": "Migración en otoño, reproducción en primavera y verano"
+      "fenology": "Migración en otoño, reproducción en primavera y verano",
+      "id": "3001"
     },
     {
       "id": "3002",
@@ -46,7 +46,6 @@
       "fenology": "Todo el año en climas cálidos"
     },
     {
-      "id": "3004",
       "name": "Agraulis vanillae",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -57,11 +56,11 @@
       "habitat": "Zonas abiertas, jardines",
       "plants": "Passiflora",
       "cycle": "30 días",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
-      "fenology": "Primavera a otoño"
+      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753879967/du3khrklrtdzgmd6bxue.png",
+      "fenology": "Primavera a otoño",
+      "id": "3004"
     },
     {
-      "id": "3005",
       "name": "Danaus gilippus",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -73,7 +72,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, larva, crisálida, adulto",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/Danaus_gilippus_thersippus.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "id": "3005"
     },
     {
       "id": "3006",
@@ -181,7 +181,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3014",
       "name": "Adelpha fessonia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -193,7 +192,8 @@
       "plants": "Celtis, Lantana",
       "cycle": "3 semanas",
       "img": "https://www.butterfliesandmoths.org/sites/default/files/bamona_images/adelpha-fessonia-jen-sanders-1_1.jpg",
-      "fenology": "Verano y otoño"
+      "fenology": "Verano y otoño",
+      "id": "3014"
     },
     {
       "id": "3015",
@@ -286,7 +286,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3021",
       "name": "Actinote thalia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -298,7 +297,8 @@
       "plants": "Asteraceae",
       "cycle": "28 días",
       "img": "https://www.ecoregistros.org/site/images/albumes/246/10145/Nymphalidae--Actinote-pyrrha--Perezosa-Grande.jpg",
-      "fenology": "Primavera y verano"
+      "fenology": "Primavera y verano",
+      "id": "3021"
     },
     {
       "id": "3022",
@@ -406,7 +406,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3029",
       "name": "Zaretis itys",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -418,7 +417,8 @@
       "plants": "Frutas caídas",
       "cycle": "30 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/24713160/large.jpeg",
-      "fenology": "Estacional"
+      "fenology": "Estacional",
+      "id": "3029"
     },
     {
       "id": "3030",
@@ -434,51 +434,6 @@
       "cycle": "1 mes",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/15559975/large.jpg",
       "fenology": "Todo el año"
-    },
-    {
-      "id": "329f",
-      "name": "Prueba Cloudinary para borrar",
-      "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753349770/sj51hjek9pbflmwoqgvd.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "22f0",
-      "name": "cloudinary cloudinary",
-      "order": "Lepidoptera",
-      "family": "Riodinidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753349986/pza2us38e4roghie35s1.jpg",
-      "fenology": ""
-    },
-    {
-      "id": "e5d3",
-      "name": "Mariposa de MariCarmen",
-      "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753351386/r3cvqidxfatb7tdyxx5z.jpg",
-      "fenology": ""
     }
   ],
   "creators": [
@@ -494,8 +449,7 @@
       "butterflyImage": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
       "github": "https://github.com/CarmenTajuelo",
       "linkedin": "https://www.linkedin.com/in/carmentajuelo/",
-      "portfolio": "https://carmentajuelo.dev",
-      "bio": "Especialista en React y apasionada por la conservación de mariposas monarca. Me enfoco en crear interfaces intuitivas que conecten a los usuarios con la naturaleza.",
+      "bio": "Especialista en React y apasionada por la conservación de mariposas monarca. Encargada de crear interfaces intuitivas que conecten a los usuarios con la naturaleza.",
       "skills": [
         "React",
         "JavaScript",
@@ -519,12 +473,10 @@
       "butterflyImage": "https://palmitospark.es/wp-content/uploads/2023/04/butterfly-g31bc30040_1280.jpg",
       "github": "https://github.com/guiss26",
       "linkedin": "https://www.linkedin.com/in/guissella-pérez/",
-      "portfolio": "https://guisselladev.com",
       "bio": "Desarrolladora backend enfocada en crear APIs robustas y eficientes. Apasionada por la conservación de especies y el uso de tecnología para el bien común.",
       "skills": [
         "Node.js",
         "Express",
-        "MongoDB",
         "PostgreSQL",
         "RESTful APIs"
       ],
@@ -538,14 +490,13 @@
       "email": "irina.tiron@example.com",
       "role": "Full Stack Developer - Formularios",
       "specialization": "React, Node.js, Validaciones",
-      "butterflySpecies": "Cola de Golondrina",
-      "butterflySpeciesLatin": "Papilio machaon",
+      "butterflySpecies": "Mariposa Tigre del Este",
+      "butterflySpeciesLatin": "Papilio glaucus",
       "profileImage": "src/assets/images/it.png",
-      "butterflyImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Heliconius_charithonia%2C_Mariposario_de_Icod_de_los_Vinos%2C_Tenerife%2C_Espa%C3%B1a%2C_2012-12-13%2C_DD_04.jpg",
+      "butterflyImage": "https://static.inaturalist.org/photos/2618368/large.JPG",
       "github": "https://github.com/irinatiron",
       "linkedin": "https://www.linkedin.com/in/irinatiron/",
-      "portfolio": "https://irinatiron.dev",
-      "bio": "Desarrolladora full stack con experiencia en formularios complejos y validaciones. Me especializo en crear experiencias de usuario fluidas y accesibles.",
+      "bio": "Desarrolladora full stack con experiencia en formularios complejos y validaciones. Encargada de crear experiencias de usuario fluidas y accesibles.",
       "skills": [
         "React",
         "Node.js",
@@ -569,15 +520,11 @@
       "butterflyImage": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Heliconius_charithonia%2C_Mariposario_de_Icod_de_los_Vinos%2C_Tenerife%2C_Espa%C3%B1a%2C_2012-12-13%2C_DD_04.jpg",
       "github": "https://github.com/ingridD2707",
       "linkedin": "https://www.linkedin.com/in/ingridmartinez/",
-      "portfolio": "https://ingridmartinez.dev",
       "bio": "Desarrolladora full stack comprometida con proyectos de impacto ambiental y social. Especialista en arquitecturas escalables y metodologías ágiles.",
       "skills": [
         "React",
         "Node.js",
-        "MongoDB",
-        "Docker",
-        "CI/CD",
-        "Jest"
+        "Express"
       ],
       "location": "Colombia",
       "yearsExperience": 6,
@@ -595,14 +542,11 @@
       "butterflyImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Disturbed_Tigerwings%2C_Quito.jpg",
       "github": "https://github.com/Pal-cloud",
       "linkedin": "https://www.linkedin.com/in/palomagsal/",
-      "portfolio": "https://palomacloud.dev",
-      "bio": "Científica de datos especializada en análisis de biodiversidad y conservación. Combino mi pasión por los datos con el desarrollo frontend para crear visualizaciones impactantes.",
+      "bio": "Científica de datos especializada en análisis de biodiversidad y conservación. Combina su pasión por los datos con el desarrollo frontend para crear visualizaciones impactantes.",
       "skills": [
         "React",
-        "D3.js",
-        "Python",
+        "JavaScript",
         "Data Analysis",
-        "Machine Learning",
         "Statistics"
       ],
       "location": "México",

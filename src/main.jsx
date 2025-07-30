@@ -4,6 +4,10 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import routerButterfly from './router/Router'
 
+
+
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={routerButterfly} />

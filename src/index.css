@@ -15,11 +15,23 @@
 
 /*---BASE STYLE---*/
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-text-dark);
     background-color: var(--color-light-beige);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -73,19 +85,10 @@ body {
    ================================================ */
 
 /*---MAIN---*/
-main {
-    border: 3px dotted red;
-    margin: 5px;
-    /* Reduced margin for mobile */
-    /*Compensates fixed menu, so it is not covered by it */
+
+#root {
+    background: linear-gradient(135deg, var(--color-light-beige) 0%, var(--color-light-beige) 70%, var(--color-sage-green) 100%);
 }
-
-/* .flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-} */
 
 .content-btn {
     /*botón añadir mariposa + h2 centralizados*/
@@ -95,21 +98,34 @@ main {
     align-items: center;
 }
 
+/* Unificación de los botones para que tengan la misma transición en toda la web */
+.btns a, .btn-back, .content-btn a{
+    transition: 1.5s ease;
+}
+
+/* Selection styles for text highlighting */
+::-moz-selection { /* Firefox */
+  background: rgba(242, 143, 22, 0.3);
+}
+
+::selection {
+  background: rgba(242, 143, 22, 0.3);
+}
+
 /* Typography - Mobile */
 h1 {
     font-size: 2rem;
     /* Smaller for mobile */
-    color: #565939;
+    color: var(--color-olive-green);
     text-align: center;
     padding: 0.5rem;
 }
 
 h2 {
     font-size: 2rem;
-    color: #BF6734;
-    padding: 1rem;
+    margin: 2rem 0;
+    color: var(--color-terracotta);
     text-align: center;
-    margin-top: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;
@@ -140,7 +156,6 @@ main div p {
     height: 100%;
     width: 100%;
     object-fit: contain;
-    /* Better for mobile */
     display: block;
     margin: 0 auto;
 }
@@ -175,14 +190,14 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 15px;
+        /* margin: 15px; */
     }
 
     .flex-container {
         flex-flow: row wrap;
         /* Back to row layout */
         gap: 2rem;
-        padding: 2rem;
+        /* padding: 2rem; */
     }
 
     /* Typography - Tablet */
@@ -193,7 +208,7 @@ main div p {
 
     h2 {
         font-size: 1.75rem;
-        padding: 1rem;
+        /* padding: 1rem; */
         text-align: left;
         /* Left align for larger screens */
     }
@@ -234,32 +249,28 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 10px;
-        /* Original margin restored */
+        /* margin: 10px; */
     }
 
     .flex-container {
         gap: 3rem;
-        padding: 3rem;
+        /* padding: 3rem; */
     }
 
     /* Typography - Laptop */
     h1 {
         font-size: 3rem;
-        /* Original size restored */
         padding: 1rem;
     }
 
     h2 {
         font-size: 2rem;
-        /* Original size restored */
-        padding: 1rem;
+        /* padding: 1rem; */
     }
 
     /* Map container - Laptop */
     .map-container {
         height: 500px;
-        /* Original size restored */
         width: 500px;
     }
 
@@ -291,7 +302,7 @@ main div p {
 
     .flex-container {
         gap: 4rem;
-        padding: 4rem;
+        /* padding: 4rem; */
     }
 
     /* Typography - Desktop */
@@ -302,7 +313,7 @@ main div p {
 
     h2 {
         font-size: 2.25rem;
-        padding: 1.5rem;
+        /* padding: 1.5rem; */
     }
 
     /* Map container - Desktop */
@@ -346,3 +357,8 @@ main div p {
         max-width: 1800px;
     }
 }
+
+
+
+
+
