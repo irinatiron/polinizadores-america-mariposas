@@ -68,7 +68,7 @@ const CardBackButterfly = () => {//Componente funcional
             <article className="card-butterfly-back">
                 <div className="corner-ribbon-back">
                     <h4><span>{butterfly.name}</span></h4>
-                    <p><span>Locación:</span> {butterfly.location}</p>
+                    <p><span>Localización:</span> {butterfly.location}</p>
                 </div>
                 <div className="corner-order-back">
                     <p><span>Order:</span> {butterfly.order}</p>
