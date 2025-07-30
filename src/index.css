@@ -116,7 +116,7 @@ body {
 h1 {
     font-size: 2rem;
     /* Smaller for mobile */
-    color: #565939;
+    color: var(--color-olive-green);
     text-align: center;
     padding: 0.5rem;
 }
@@ -124,7 +124,7 @@ h1 {
 h2 {
     font-size: 2rem;
     margin: 2rem 0;
-    color: #BF6734;
+    color: var(--color-terracotta);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
@@ -156,7 +156,6 @@ main div p {
     height: 100%;
     width: 100%;
     object-fit: contain;
-    /* Better for mobile */
     display: block;
     margin: 0 auto;
 }
@@ -251,7 +250,6 @@ main div p {
     /*---MAIN---*/
     main {
         /* margin: 10px; */
-        /* Original margin restored */
     }
 
     .flex-container {
@@ -262,20 +260,17 @@ main div p {
     /* Typography - Laptop */
     h1 {
         font-size: 3rem;
-        /* Original size restored */
         padding: 1rem;
     }
 
     h2 {
         font-size: 2rem;
-        /* Original size restored */
         /* padding: 1rem; */
     }
 
     /* Map container - Laptop */
     .map-container {
         height: 500px;
-        /* Original size restored */
         width: 500px;
     }
 

@@ -57,6 +57,7 @@ function ButterflyHeader() {
         playsInline
         className="butterfly-video"
       />
+      <h1 className="main-title-video">Especies polinizadoras: La Mariposa</h1>
     </div>
   );
 }

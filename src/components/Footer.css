@@ -1,6 +1,7 @@
 /*---FOOTER---*/
 .footer {
-  background-color: var(--color-olive-green);
+  /*background-color: var(--color-olive-green);*/
+  background: linear-gradient(-45deg, var(--color-olive-green), var(--color-forest-green), var(--color-sage-green), var(--color-card-background));
   color: var(--color-light-beige);
   text-align: center;
   padding: 2rem 1rem 1rem;
