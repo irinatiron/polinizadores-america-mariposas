@@ -1,5 +1,5 @@
 .contact-form-container {
-  max-width: 800px;
+  max-width: 900px; /* Ampliado de 800px a 900px para más espacio */
   margin: 0 auto;
   padding: 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -7,6 +7,9 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar todos los elementos hijos */
 }
 
 .contact-header {
@@ -32,6 +35,10 @@
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 0 auto; /* Centrar el formulario */
+  max-width: 100%; /* Asegurar que no se desborde */
+  width: 100%; /* Ocupar todo el ancho disponible */
+  box-sizing: border-box;
 }
 
 .form-group {
@@ -57,6 +64,7 @@
   transition: all 0.3s ease;
   font-family: inherit;
   box-sizing: border-box;
+  min-height: 44px; /* Altura mínima estándar para mejor usabilidad */
 }
 
 .form-group input:focus,
@@ -140,12 +148,19 @@
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   text-align: center;
+  width: 100%; /* Asegurar que ocupe todo el ancho */
+  box-sizing: border-box;
 }
 
 .contact-info h3 {
-  color: #2c3e50;
+  color: #BF6734; /* Mismo color que en "Nuestras Creadoras" */
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Mismo tamaño que en "Nuestras Creadoras" */
+  text-align: center;
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .contact-info p {
@@ -153,6 +168,56 @@
   margin-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.6;
+  text-align: center;
+}
+
+/* Estilos para el header del formulario (igual que contact-info) */
+.form-header-box {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  text-align: center;
+  width: 100%; /* Asegurar que ocupe todo el ancho */
+  box-sizing: border-box;
+}
+
+.form-header-box h2 {
+  color: #BF6734; /* Mismo color que en "Nuestras Creadoras" */
+  margin-bottom: 1rem;
+  font-size: 2rem; /* Mismo tamaño que en "Nuestras Creadoras" */
+  text-align: center;
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-header-box p {
+  color: #565939; /* Mismo color que en "Nuestras Creadoras" */
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Estilos específicos para las opciones del select de asunto */
+.form-group select option {
+  padding: 0.75rem 0.5rem;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.4;
+  min-height: auto;
+  font-size: 1rem;
+}
+
+/* Estilos específicos para el select de asunto */
+.form-group select[name="subject"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 3rem 0.75rem 0.75rem;
+  line-height: 1.4;
 }
 
 /* Responsive design */
@@ -160,6 +225,7 @@
   .contact-form-container {
     margin: 1rem;
     padding: 1.5rem;
+    max-width: calc(100vw - 2rem); /* Asegurar que no se desborde */
   }
   
   .contact-header h2 {
@@ -168,17 +234,33 @@
   
   .contact-form {
     padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .form-group input,
   .form-group select,
   .form-group textarea {
-    padding: 0.625rem;
+    padding: 0.75rem;
+    font-size: 1rem; /* Mantener tamaño legible */
+    min-height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Asegurar que el select del asunto se vea bien en móvil */
+  .form-group select {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 3rem; /* Espacio para la flecha */
+    box-sizing: border-box;
   }
   
   .submit-button {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -186,6 +268,7 @@
   .contact-form-container {
     margin: 0.5rem;
     padding: 1rem;
+    max-width: calc(100vw - 1rem);
   }
   
   .contact-header h2 {
@@ -194,6 +277,16 @@
   
   .contact-form {
     padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
   }
 }
 
@@ -224,9 +317,91 @@
 .form-group select {
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.5rem center;
+  background-position: right 0.75rem center;
   background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
+  background-size: 1.25em 1.25em;
+  padding-right: 3rem; /* Más espacio para la flecha */
   appearance: none;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
+
+/* Animación de mariposa para envío exitoso */
+.butterfly-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: butterflySuccess 4s ease-in-out forwards;
+  pointer-events: none;
+}
+
+.butterfly-animation svg {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 4px 12px rgba(191, 103, 52, 0.3));
+}
+
+@keyframes butterflySuccess {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(-15deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8) rotate(5deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.3) rotate(-3deg);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1) rotate(-1deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.9) rotate(1deg) translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg) translateY(-150px);
+  }
+}
+
+/* Animación de aleteo para la mariposa */
+@keyframes butterflyFlutter {
+  0%, 100% { 
+    transform: scaleY(1) rotate(0deg);
+  }
+  25% { 
+    transform: scaleY(0.7) rotate(3deg);
+  }
+  50% { 
+    transform: scaleY(1.2) rotate(-2deg);
+  }
+  75% { 
+    transform: scaleY(0.8) rotate(2deg);
+  }
+}
+
+.butterfly-animation .wing-left,
+.butterfly-animation .wing-right {
+  animation: butterflyFlutter 0.4s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.butterfly-animation .wing-right {
+  animation-delay: 0.2s;
+}
+

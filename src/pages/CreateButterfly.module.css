@@ -1,12 +1,10 @@
 .create-page-title,
 .create-page-intro {
     text-align: center;
-    padding: 0;
 }
 
 .create-page-intro {
     font-size: 1.2rem;
-    opacity: 0.9;
     margin: 5px 0 15px;
 }
 

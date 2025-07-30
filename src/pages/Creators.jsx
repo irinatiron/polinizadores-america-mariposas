@@ -6,6 +6,18 @@ const Creators = () => {
   const [creators, setCreators] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [modalImage, setModalImage] = useState(null);
+  const [modalTitle, setModalTitle] = useState('');
+
+  const openModal = (imageSrc, title) => {
+    setModalImage(imageSrc);
+    setModalTitle(title);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    setModalTitle('');
+  };
 
   useEffect(() => {
     const fetchCreators = async () => {
@@ -62,7 +74,8 @@ const Creators = () => {
                 <img 
                   src={creator.profileImage} 
                   alt={creator.name}
-                  className="profile-image"
+                  className="profile-image clickable-image"
+                  onClick={() => openModal(creator.profileImage, creator.name)}
                 />
                 <div className="creator-info">
                   <h3>{creator.name}</h3>
@@ -83,7 +96,8 @@ const Creators = () => {
                 <img 
                   src={creator.butterflyImage} 
                   alt={creator.butterflySpecies}
-                  className="butterfly-image"
+                  className="butterfly-image clickable-image"
+                  onClick={() => openModal(creator.butterflyImage, `${creator.butterflySpecies} (${creator.butterflySpeciesLatin})`)}
                 />
               )}
             </div>
@@ -96,12 +110,9 @@ const Creators = () => {
               <div className="skills-section">
                 <h4>Habilidades</h4>
                 <div className="skills-tags">
-                  {creator.skills.slice(0, 4).map((skill, index) => (
+                  {creator.skills.map((skill, index) => (
                     <span key={index} className="skill-tag">{skill}</span>
                   ))}
-                  {creator.skills.length > 4 && (
-                    <span className="skill-tag more">+{creator.skills.length - 4}</span>
-                  )}
                 </div>
               </div>
             )}
@@ -133,23 +144,25 @@ const Creators = () => {
                   LinkedIn
                 </a>
               )}
-              {creator.portfolio && (
-                <a 
-                  href={creator.portfolio} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-link portfolio"
-                >
-                  <svg viewBox="0 0 24 24" className="social-icon">
-                    <path d="M20 6h-2V4c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM8 4h8v2H8V4zm12 15H4V8h16v11z"/>
-                  </svg>
-                  Portfolio
-                </a>
-              )}
             </div>
           </div>
         ))}
       </div>
+
+      {/* Modal para mostrar imágenes expandidas */}
+      {modalImage && (
+        <div className="image-modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <svg viewBox="0 0 24 24" className="close-icon">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+            <img src={modalImage} alt={modalTitle} className="modal-image" />
+            <div className="modal-title">{modalTitle}</div>
+          </div>
+        </div>
+      )}
 
       <div className="team-message">
         <div className="message-content">

@@ -22,6 +22,18 @@ body {
     background-color: var(--color-light-beige);
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* ================================================
    COLOUR DESIGN VARIABLES
@@ -73,19 +85,10 @@ body {
    ================================================ */
 
 /*---MAIN---*/
-main {
-    border: 3px dotted red;
-    margin: 5px;
-    /* Reduced margin for mobile */
-    /*Compensates fixed menu, so it is not covered by it */
+
+#root {
+    background: linear-gradient(135deg, var(--color-light-beige) 0%, var(--color-light-beige) 70%, var(--color-sage-green) 100%);
 }
-
-/* .flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-} */
 
 .content-btn {
     /*botón añadir mariposa + h2 centralizados*/
@@ -106,10 +109,9 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    margin: 2rem 0;
     color: #BF6734;
-    padding: 1rem;
     text-align: center;
-    margin-top: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     /*TODO: FONT TO BE REPLACED WHEN FINAL FONT IS CHOSEN */
     font-family: "Aladin", system-ui;
@@ -175,14 +177,14 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 15px;
+        /* margin: 15px; */
     }
 
     .flex-container {
         flex-flow: row wrap;
         /* Back to row layout */
         gap: 2rem;
-        padding: 2rem;
+        /* padding: 2rem; */
     }
 
     /* Typography - Tablet */
@@ -193,7 +195,7 @@ main div p {
 
     h2 {
         font-size: 1.75rem;
-        padding: 1rem;
+        /* padding: 1rem; */
         text-align: left;
         /* Left align for larger screens */
     }
@@ -234,13 +236,13 @@ main div p {
 
     /*---MAIN---*/
     main {
-        margin: 10px;
+        /* margin: 10px; */
         /* Original margin restored */
     }
 
     .flex-container {
         gap: 3rem;
-        padding: 3rem;
+        /* padding: 3rem; */
     }
 
     /* Typography - Laptop */
@@ -253,7 +255,7 @@ main div p {
     h2 {
         font-size: 2rem;
         /* Original size restored */
-        padding: 1rem;
+        /* padding: 1rem; */
     }
 
     /* Map container - Laptop */
@@ -291,7 +293,7 @@ main div p {
 
     .flex-container {
         gap: 4rem;
-        padding: 4rem;
+        /* padding: 4rem; */
     }
 
     /* Typography - Desktop */
@@ -302,7 +304,7 @@ main div p {
 
     h2 {
         font-size: 2.25rem;
-        padding: 1.5rem;
+        /* padding: 1.5rem; */
     }
 
     /* Map container - Desktop */
