@@ -39,10 +39,27 @@
   max-width: 100%; /* Asegurar que no se desborde */
   width: 100%; /* Ocupar todo el ancho disponible */
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem; /* Espaciado consistente entre elementos */
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Contenedor para campos en la misma línea */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin: 0;
 }
 
 .form-group label {
@@ -95,9 +112,15 @@
   display: block;
   font-weight: 500;
 }
+.form-group-button {
+  display: flex;
+  margin-top: 1.5rem;
+justify-content: center; /* Centrar el botón */
+  text-align: center; /* Asegurar que el texto del botón esté centrado */
+}
 
 .submit-button {
-  width: 100%;
+  width: 50%;
   padding: 1rem 2rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -109,6 +132,8 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center; /* Centrar el texto del botón */
 }
 
 .submit-button:hover:not(:disabled) {
@@ -238,6 +263,16 @@
     box-sizing: border-box;
   }
   
+  /* En móvil, los campos vuelven a estar en columna */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .form-row .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -279,6 +314,16 @@
     padding: 1rem;
     width: 100%;
     box-sizing: border-box;
+  }
+  
+  /* Asegurar que en pantallas muy pequeñas estén en columna */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .form-row .form-group {
+    margin-bottom: 1.5rem;
   }
   
   .form-group input,
