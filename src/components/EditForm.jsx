@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import "../components/CreateForm/CreateForm.module.css";
+import Input from '../components/CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -204,6 +205,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
             required
             placeholder="https://ejemplo.com/imagen-mariposa.jpg"
           />
+          <Input />
         </div>
 
         <div className="form-group">
