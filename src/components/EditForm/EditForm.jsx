@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 import Input from '../CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
-// import './EditForm.css';
+// Importaciones de iconos:
+import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
+import { HiOutlineGlobeAmericas } from "react-icons/hi2";
+import { TbMapPin2 } from "react-icons/tb";
+import { MdOutlineColorLens } from "react-icons/md";
+import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
+import { HiOutlineHome } from "react-icons/hi";
+import { FaPlus, FaCheck } from "react-icons/fa";
 import styles from './EditForm.module.css';
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
@@ -66,7 +73,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
       <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`} >
         
         <div className={styles["form-Group"]}>
-          <label htmlFor="name">Nombre:</label>
+          <label htmlFor="name">Nombre *</label>
           <input
             type="text"
             id="name"
@@ -79,7 +86,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="order">Orden:</label>
+          <label htmlFor="order">Orden</label>
           <input
             type="text"
             id="order"
@@ -92,7 +99,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="family">Familia:</label>
+          <label htmlFor="family">Familia *</label>
           <input
             type="text"
             id="family"
@@ -105,119 +112,110 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="color">Color:</label>
+          <label htmlFor="color"><MdOutlineColorLens /> Color</label>
           <input
             type="text"
             id="color"
             name="color"
             value={formData.color}
             onChange={handleChange}
-            required
             placeholder="Ej: Naranja y negro"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="size">Tamaño:</label>
+          <label htmlFor="size"><LuRuler /> Tamaño</label>
           <input
             type="text"
             id="size"
             name="size"
             value={formData.size}
             onChange={handleChange}
-            required
             placeholder="Ej: 8-12 cm"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="origin">Origen:</label>
+          <label htmlFor="origin"><HiOutlineGlobeAmericas /> Origen</label>
           <input
             type="text"
             id="origin"
             name="origin"
             value={formData.origin}
             onChange={handleChange}
-            required
             placeholder="Ej: América del Norte"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="location">Ubicación:</label>
+          <label htmlFor="location"><TbMapPin2 /> Ubicación</label>
           <input
             type="text"
             id="location"
             name="location"
             value={formData.location}
             onChange={handleChange}
-            required
             placeholder="Ej: México, EE.UU., Canadá"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="habitat">Hábitat:</label>
+          <label htmlFor="habitat"><HiOutlineHome /> Hábitat</label>
           <input
             type="text"
             id="habitat"
             name="habitat"
             value={formData.habitat}
             onChange={handleChange}
-            required
             placeholder="Ej: Bosques templados"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="plants">Plantas:</label>
+          <label htmlFor="plants"><LuFlower2 /> Plantas visitadas</label>
           <input
             type="text"
             id="plants"
             name="plants"
             value={formData.plants}
             onChange={handleChange}
-            required
             placeholder="Ej: Asclepias, algodoncillo"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="cycle">Ciclo:</label>
+          <label htmlFor="cycle"><LuHourglass /> Ciclo de vida</label>
           <input
             type="text"
             id="cycle"
             name="cycle"
             value={formData.cycle}
             onChange={handleChange}
-            required
             placeholder="Ej: Huevo, larva, pupa, adulto"
           />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="img">Imagen ():</label>
+          <label htmlFor="img"><IoImageOutline /> Imagen</label>
           <input
             type="url"
             id="img"
             name="img"
             value={formData.img}
             onChange={handleChange}
-            required
             placeholder="https://ejemplo.com/imagen-mariposa.jpg"
           />
           <Input />
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="fenology">Fenología:</label>
+          <label htmlFor="fenology"><IoCalendarOutline /> Fenología</label>
           <input
             type="text"
             id="fenology"
             name="fenology"
             value={formData.fenology}
             onChange={handleChange}
-            required
             placeholder="Ej: Migración octubre-marzo"
           />
         </div>
