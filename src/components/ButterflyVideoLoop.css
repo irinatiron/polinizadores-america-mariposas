@@ -29,4 +29,22 @@
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  z-index: 1; /* el vídeo queda debajo */
+}
+
+/* 🟡 Posicionamos el texto encima */
+.main-title-video {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* para legibilidad */
 }
