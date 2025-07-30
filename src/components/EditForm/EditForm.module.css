@@ -38,10 +38,6 @@
   box-shadow: 0 0 4px #64b5f6;
 }
 
-.image-preview img {
-  cursor: zoom-in;
-}
-
 .btn-submit {
   display: inline-flex;
     align-items: center;
@@ -112,6 +108,89 @@ h2 {
   text-align: center;
   color: var(--color-terracotta);
   margin-bottom: 1.5rem;
+}
+
+.inputFamily {
+    cursor: pointer;
+    text-align: center;
+}
+
+.inputFamily {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--color-sage-green);
+    border-radius: 0;
+    cursor: pointer;
+    /* Flecha desplegable */
+    background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 6.75rem center;
+    background-size: 2rem;
+    padding-right: 1rem;
+}
+
+.imagePreviewContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.imagePreview {
+  cursor: zoom-in;
+  max-width: 300px;
+  align-self: center;
+}
+
+.imageActions {
+  margin-top: 1rem; /* separa el botón de la imagen de arriba */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--color-sage-green);
+  opacity: 0.8;
+  box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+}
+
+
+.imageUrlLabel {
+    font-size: 0.9rem;
+    color: #ffff;
+    word-break: break-word;
+    flex: 1;
+}
+
+.changeImageButton {
+    margin-right: 5%;
+    border: none;
+    background-color: #eee;
+    color: #333;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.changeImageButton:hover {
+    background-color: var(--color-brick-red);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.edit-form-container {
+    animation: fadeIn 0.5s ease-out;
 }
 
 @media screen and (max-width: 768px) {

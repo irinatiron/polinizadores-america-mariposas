@@ -83,183 +83,192 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
   };
 
   return (
-     <>
-    <div className={styles["edit-form-container"]}>
-      <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`}>
+    <>
+      <div className={styles["edit-form-container"]}>
+        <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`}>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="name">Nombre *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Ej: Mariposa Monarca"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="name">Nombre *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Ej: Mariposa Monarca"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="order">Orden (por defecto)</label>
-          <input
-            type="text"
-            id="order"
-            name="order"
-            value={formData.order}
-            onChange={handleChange}
-            required
-            readOnly
-            placeholder="Ej: Lepidoptera"
-            title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera."
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="order">Orden (por defecto)</label>
+            <input
+              type="text"
+              id="order"
+              name="order"
+              value={formData.order}
+              onChange={handleChange}
+              required
+              readOnly
+              placeholder="Ej: Lepidoptera"
+              title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera."
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="family">Familia *</label>
-          <select id="family" name="family" value={formData.family} onChange={handleChange} title="Selecciona entre las familias existentes." required>
-            <option value="">Selecciona la familia</option>
-            {butterflyFamilies.map((family) => (
-              <option key={family} value={family}>{family}</option>
-            ))}
-          </select>
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="family">Familia *</label>
+            <select id="family" className={styles.inputFamily} name="family" value={formData.family} onChange={handleChange} title="Selecciona entre las familias existentes." required>
+              <option value="">Selecciona la familia</option>
+              {butterflyFamilies.map((family) => (
+                <option key={family} value={family}>{family}</option>
+              ))}
+            </select>
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="color"><MdOutlineColorLens /> Color</label>
-          <input
-            type="text"
-            id="color"
-            name="color"
-            value={formData.color}
-            onChange={handleChange}
-            placeholder="Ej: Naranja y negro"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="color"><MdOutlineColorLens /> Color</label>
+            <textarea
+              type="text"
+              id="color"
+              name="color"
+              value={formData.color}
+              onChange={handleChange}
+              placeholder="Ej: Naranja y negro"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="size"><LuRuler /> Tamaño</label>
-          <input
-            type="text"
-            id="size"
-            name="size"
-            value={formData.size}
-            onChange={handleChange}
-            placeholder="Ej: 8-12 cm"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="size"><LuRuler /> Tamaño</label>
+            <textarea
+              type="text"
+              id="size"
+              name="size"
+              value={formData.size}
+              onChange={handleChange}
+              placeholder="Ej: 8-12 cm"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="origin"><HiOutlineGlobeAmericas /> Origen</label>
-          <input
-            type="text"
-            id="origin"
-            name="origin"
-            value={formData.origin}
-            onChange={handleChange}
-            placeholder="Ej: América del Norte"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="origin"><HiOutlineGlobeAmericas /> Origen</label>
+            <textarea
+              type="text"
+              id="origin"
+              name="origin"
+              value={formData.origin}
+              onChange={handleChange}
+              placeholder="Ej: América del Norte"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="location"><TbMapPin2 /> Ubicación</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder="Ej: México, EE.UU., Canadá"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="location"><TbMapPin2 /> Ubicación</label>
+            <textarea
+              type="text"
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="Ej: México, EE.UU., Canadá"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="habitat"><HiOutlineHome /> Hábitat</label>
-          <input
-            type="text"
-            id="habitat"
-            name="habitat"
-            value={formData.habitat}
-            onChange={handleChange}
-            placeholder="Ej: Bosques templados"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="habitat"><HiOutlineHome /> Hábitat</label>
+            <textarea
+              type="text"
+              id="habitat"
+              name="habitat"
+              value={formData.habitat}
+              onChange={handleChange}
+              placeholder="Ej: Bosques templados"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="plants"><LuFlower2 /> Plantas visitadas</label>
-          <input
-            type="text"
-            id="plants"
-            name="plants"
-            value={formData.plants}
-            onChange={handleChange}
-            placeholder="Ej: Asclepias, algodoncillo"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="plants"><LuFlower2 /> Plantas visitadas</label>
+            <textarea
+              type="text"
+              id="plants"
+              name="plants"
+              value={formData.plants}
+              onChange={handleChange}
+              placeholder="Ej: Asclepias, algodoncillo"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="cycle"><LuHourglass /> Ciclo de vida</label>
-          <input
-            type="text"
-            id="cycle"
-            name="cycle"
-            value={formData.cycle}
-            onChange={handleChange}
-            placeholder="Ej: Huevo, larva, pupa, adulto"
-          />
-        </div>
+          <div className={styles["form-Group"]}>
+            <label htmlFor="cycle"><LuHourglass /> Ciclo de vida</label>
+            <textarea
+              type="text"
+              id="cycle"
+              name="cycle"
+              value={formData.cycle}
+              onChange={handleChange}
+              placeholder="Ej: Huevo, larva, pupa, adulto"
+            />
+          </div>
 
-        <div className={styles["form-Group"]}>
-          <label htmlFor="img"><IoImageOutline /> Imagen</label>
-          <input
-            type="url"
-            id="img"
-            name="img"
-            value={formData.img}
-            onChange={handleChange}
-            placeholder="https://ejemplo.com/imagen-mariposa.jpg"
-          />
-
-          {formData.img && (
-            <div className={styles["image-preview"]}>
-              <img
-                src={formData.img}
-                alt="Vista previa"
-                style={{ maxWidth: "200px", marginTop: "10px" }}
-                onClick={() => openModal(formData.img, formData.name)}
+          <div className={styles["form-Group"]}>
+            <label htmlFor="img"><IoImageOutline /> Imagen</label>
+            {/* Si ya hay una imagen, muestra la vista previa y el botón de borrar: */}
+            {formData.img && (
+              <div className={styles.imagePreviewContainer}>
+                <img
+                  src={formData.img}
+                  alt="Vista previa"
+                  className={styles["imagePreview"]}
+                  onClick={() => openModal(formData.img, formData.name)}
+                />
+              </div>
+            )}
+            {/* Si no hay imagen, muestra el componente de carga de imagen: */}
+            {!formData.img && (
+              <Input
+                name="img"
+                id="input-img"
+                value={formData.img}
+                onUpload={(url) => setFormData({ ...formData, img: url })}
               />
-            </div>
-          )}
+            )}
+            {/* Muestra el botón de borrar imagen si ya hay una imagen cargada: */}
+            {formData.img && (
+              <div className={styles.imageActions}>
+                <p className={styles.imageUrlLabel}>{formData.img.split('/').pop()}</p>
+                <button type="button" className={styles.changeImageButton} onClick={() => setFormData({ ...formData, img: '' })}>Borrar imagen</button>
+              </div>
+            )}
 
-          <Input onUpload={(url) => setFormData(prev => ({ ...prev, img: url }))} />
+
+
+          </div>
+
+          <div className={styles["form-Group"]}>
+            <label htmlFor="fenology"><IoCalendarOutline /> Fenología</label>
+            <input
+              type="text"
+              id="fenology"
+              name="fenology"
+              value={formData.fenology}
+              onChange={handleChange}
+              placeholder="Ej: Migración octubre-marzo"
+            />
+          </div>
+
+          <div className={styles["form-buttons"]}>
+
+            <button type="submit" className={styles["btn-submit"]}>
+              Actualizar Mariposa <FaCheck />
+            </button>
+          </div>
+
+        </form>
+        <div className={styles.cancelButtonContainer}>
+          <button type="button" className={`${styles.cancelButton}`} title='Cancelar y volver atrás' onClick={() => window.history.back()}><IoIosArrowRoundBack /> Cancelar y regresar a las fichas</button>
         </div>
-
-        <div className={styles["form-Group"]}>
-          <label htmlFor="fenology"><IoCalendarOutline /> Fenología</label>
-          <input
-            type="text"
-            id="fenology"
-            name="fenology"
-            value={formData.fenology}
-            onChange={handleChange}
-            placeholder="Ej: Migración octubre-marzo"
-          />
-        </div>
-
-        <div className={styles["form-buttons"]}>
-          
-          <button type="submit" className={styles["btn-submit"]}>
-            Actualizar Mariposa <FaCheck />
-          </button>
-        </div>
-
-      </form>
-      <div className={styles.cancelButtonContainer}>
-              <button type="button" className={`${styles.cancelButton}`} title='Cancelar y volver atrás'  onClick={() => window.history.back()}><IoIosArrowRoundBack /> Cancelar y regresar a las fichas</button>
       </div>
-    </div>
-     
-    {/* Modal para mostrar imágenes expandidas */}
+
+      {/* Modal para mostrar imágenes expandidas */}
       {modalImage && (
         <div className="image-modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -273,8 +282,8 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           </div>
         </div>
       )}
-     </>
- );
+    </>
+  );
 };
 
 export default EditForm;
