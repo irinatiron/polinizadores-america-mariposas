@@ -1,31 +1,148 @@
 /*---FOOTER---*/
 .footer {
-  border: 3px dotted red;
   background-color: var(--color-olive-green);
   color: var(--color-light-beige);
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 1rem 1rem;
   width: 100%;
-  bottom: 0;
+  margin-top: auto; /* Para sticky footer si usas flexbox en el body */
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-logo {
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-light-beige);
 }
 
 .footer-text {
-  margin-bottom: 1rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
 }
 
 .footer-brand {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-accent-orange);
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.footer-brand:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.footer-brand:focus {
+  outline: 2px solid var(--color-accent-orange);
+  outline-offset: 2px;
+}
+
+/* Logo styling dentro del footer-brand */
+.footer-brand img {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s ease;
+  filter: brightness(1.1);
+}
+
+.footer-brand:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Separador visual */
+.footer-divider {
+  width: 60%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  margin: 0.5rem 0;
+}
+
+/* Copyright section */
+.footer-copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  width: 100%;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0.5rem 1rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.3rem;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+  
+  .footer-brand img {
+    height: 35px;
+  }
+  
+  .footer-divider {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .footer-content {
+    gap: 0.8rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.2rem;
+  }
+  
+  .footer-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .footer-brand img {
+    height: 30px;
+  }
+  
+  .footer-copyright {
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  
+  .footer-brand img {
+    height: 25px;
+  }
 }
