@@ -30,7 +30,11 @@ const AmericanMapLeaflet = () => {
             center={[-10, -60]} // Centro general de América del Sur
             zoom={4}
             scrollWheelZoom={true}
-            style={{ height: '100vh', width: '100%' }}
+            style={{ height: '100vh', width: '90%', maxWidth: '1200px', margin: '50pxgit a auto',}}
+
+
+
+
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
