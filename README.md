@@ -19,33 +19,40 @@ Los polinizadores están disminuyendo en todo el mundo debido a múltiples facto
 
 - `/` → Página de inicio con mapa interactivo.
 
-![Página de inicio en versión escritorio](./src/assets/images/foto-inicio.png)
-![Página de inicio en versión móvil](./src/assets/images/foto-responsive.png)
-![Página de inicio con mapa intercativo](./src/assets/images/foto-mapa.png)
+<img src="./src/assets/images/foto-inicio.png" alt="Página de inicio en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+<img src="./src/assets/images/foto-responsive.png" alt="Página de inicio en versión móvil" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+<img src="./src/assets/images/foto-mapa.png" alt="Página de inicio con mapa interactivo" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 - `/fichas-mariposas` → Listado de todas las mariposas que tenemos en el catálogo.
 
-![Página de fichas de mariposas](./src/assets/images/foto-fichas.png)
+<img src="./src/assets/images/foto-fichas.png" alt="Página de fichas de mariposas" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 - `/detalle-mariposa/:id` → Ficha detallada de una mariposa.
 
-![Página de detalle de mariposa](./src/assets/images/foto-detalle.png)
+<img src="./src/assets/images/foto-detalle.png" alt="Página de detalle de mariposa" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 - `/editar-mariposa/:id` → Editar mariposa seleccionada.
 
-![Página de editar una mariposa](./src/assets/images/foto-edit.png)
+<img src="./src/assets/images/foto-edit.png" alt="Página de editar una mariposa" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 - `/nueva-mariposa` → Añadir nueva mariposa.
 
-![Página de añadir una mariposa](./src/assets/images/foto-create.png)
+<img src="./src/assets/images/foto-create.png" alt="Página de añadir una mariposa" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 - `/creadoras` → Equipo que ha realizado el proyecto.
 
-![Página de creadoras](./src/assets/images/foto-creadoras.png)
+<img src="./src/assets/images/foto-creadoras.png" alt="Página de creadoras" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 - `/formulario` → Formulario de contacto.
 
-![Página de contacto](./src/assets/images/foto-contacto.png)
+<img src="./src/assets/images/foto-contacto.png" alt="Página de contacto" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 
 ## 🚀 Funcionalidades
 
