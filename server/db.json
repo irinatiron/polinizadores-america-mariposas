@@ -331,7 +331,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3024",
       "name": "Eumaeus atala",
       "order": "Lepidoptera",
       "family": "Lycaenidae",
@@ -343,7 +342,8 @@
       "plants": "Zamia (cícadas)",
       "cycle": "3 semanas",
       "img": "https://www.flawildflowers.org/wp-content/uploads/2021/06/Eumaeus-atala-Keim-banner.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "id": "3024"
     },
     {
       "id": "3025",
@@ -446,7 +446,7 @@
       "habitat": "",
       "plants": "",
       "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753901070/uqrkboofemkbr0fdaur8.png",
+      "img": "",
       "fenology": "",
       "id": "aa87"
     }
@@ -465,7 +465,13 @@
       "github": "https://github.com/CarmenTajuelo",
       "linkedin": "https://www.linkedin.com/in/carmentajuelo/",
       "bio": "Especialista en React y apasionada por la conservación de mariposas monarca. Encargada de crear interfaces intuitivas que conecten a los usuarios con la naturaleza.",
-      "skills": ["React", "JavaScript", "CSS", "Responsive Design", "Accessibility"],
+      "skills": [
+        "React",
+        "JavaScript",
+        "CSS",
+        "Responsive Design",
+        "Accessibility"
+      ],
       "location": "España",
       "yearsExperience": 3,
       "favoriteQuote": "El código limpio es como una mariposa: bello y funcional a la vez."
@@ -483,7 +489,12 @@
       "github": "https://github.com/guiss26",
       "linkedin": "https://www.linkedin.com/in/guissella-pérez/",
       "bio": "Desarrolladora backend enfocada en crear APIs robustas y eficientes. Apasionada por la conservación de especies y el uso de tecnología para el bien común.",
-      "skills": ["Node.js", "Express", "PostgreSQL", "RESTful APIs"],
+      "skills": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "RESTful APIs"
+      ],
       "location": "Perú",
       "yearsExperience": 4,
       "favoriteQuote": "Los datos bien estructurados son la base de todo ecosistema digital."
@@ -501,7 +512,13 @@
       "github": "https://github.com/irinatiron",
       "linkedin": "https://www.linkedin.com/in/irinatiron/",
       "bio": "Desarrolladora full stack con experiencia en formularios complejos y validaciones. Encargada de crear experiencias de usuario fluidas y accesibles.",
-      "skills": ["React", "Node.js", "Form Validation", "TypeScript", "Testing"],
+      "skills": [
+        "React",
+        "Node.js",
+        "Form Validation",
+        "TypeScript",
+        "Testing"
+      ],
       "location": "Rumania",
       "yearsExperience": 5,
       "favoriteQuote": "Un buen formulario es como una mariposa: debe ser ligero pero poderoso."
@@ -519,7 +536,11 @@
       "github": "https://github.com/ingridD2707",
       "linkedin": "https://www.linkedin.com/in/ingridmartinez/",
       "bio": "Desarrolladora full stack comprometida con proyectos de impacto ambiental y social. Especialista en arquitecturas escalables y metodologías ágiles.",
-      "skills": ["React", "Node.js", "Express"],
+      "skills": [
+        "React",
+        "Node.js",
+        "Express"
+      ],
       "location": "Colombia",
       "yearsExperience": 6,
       "favoriteQuote": "El código sostenible protege tanto el software como el planeta."
@@ -537,7 +558,12 @@
       "github": "https://github.com/Pal-cloud",
       "linkedin": "https://www.linkedin.com/in/palomagsal/",
       "bio": "Científica de datos especializada en análisis de biodiversidad y conservación. Combina su pasión por los datos con el desarrollo frontend para crear visualizaciones impactantes.",
-      "skills": ["React", "JavaScript", "Data Analysis", "Statistics"],
+      "skills": [
+        "React",
+        "JavaScript",
+        "Data Analysis",
+        "Statistics"
+      ],
       "location": "México",
       "yearsExperience": 4,
       "favoriteQuote": "Los datos cuentan historias, las mariposas cuentan la historia de nuestro ecosistema."
