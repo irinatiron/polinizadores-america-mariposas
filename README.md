@@ -14,12 +14,38 @@ Los polinizadores están disminuyendo en todo el mundo debido a múltiples facto
 - Fomentar la educación ambiental y el acceso libre a la información biológica.
 - Contribuir a la preservación del conocimiento sobre especies nativas del continente americano.
 
+## 📌 Navegación principal y rutas
+
+- `/` → Página de inicio con mapa interactivo.
+- `/fichas-mariposas` → Listado de todas las mariposas que tenemos en el catálogo.
+- `/detalle-mariposa/:id` → Ficha detallada de una mariposa.
+- `/editar-mariposa/:id` → Editar mariposa seleccionada.
+- `/nueva-mariposa` → Añadir nueva mariposa.
+- `/creadoras` → Equipo que ha realizado el proyecto.
+- `/formulario` → Formulario de contacto.
+
+
 ## 🚀 Funcionalidades
 
 - 📋 **Visualización**: Muestra un listado completo de mariposas con información detallada.
 - ➕ **Creación**: Permite añadir nuevas especies al cuaderno de campo.
 - ✏️ **Edición**: Actualiza los registros existentes.
 - 🗑️ **Eliminación**: Elimina registros de forma permanente.
+- 🧪 **Testing**: Para verificar el correcto funcionamiento de la web.
+
+## 🎨 Diseño
+
+El diseño de la aplicación fue desarrollado de forma colaborativa a través de un prototipo en Figma. 
+
+### Objetivos del diseño:
+- Representar visualmente el concepto de cuaderno de campo digital donde se muestra un catálogo de mariposas polinizadoras de América.
+- Emplear una paleta cromática inspirada en la naturaleza (tonos verdes, tierras, rosados y azules similares a las mariposas).
+- Ofrecer al usuario una experiencia intuitiva y agradable.
+- Garantizar la accesibilidad.
+- Diseño responsive.
+
+![Página de inicio en versión escritorio](./src/assets/images/foto-inicio.png)
+
 
 
 ## 🗂️ Estructura del proyecto
@@ -31,7 +57,7 @@ polinizadores-mariposas-america/
 ├── package-lock.json                 ← Registra las versiones exactas de las dependencias instaladas.
 ├── vite.config.js                    ← Configuración del blunder Vite 
 ├── eslint.config.js                  ← Define reglas de estilo y calidad de código 
-├── READ.md                           ← Documentación del proyecto
+├── README.md                           ← Documentación del proyecto
 ├── .gitignore                        ← Archivos que no se deben subir a GitHub
 ├── /server                           ← Lógica del backend (servidor, API, etc.) 
 │   └── db.json                       ← Simula una API, contiene las mariposas
@@ -106,3 +132,13 @@ polinizadores-mariposas-america/
 4. Ejecutar la aplicación React:
    ```bash
    npm run dev
+
+## 👩🏻‍💻 Creadoras 
+
+Este proyecto ha sido creado por el siguiente equipo:
+
+- Scrum Master + Developer: [Irina Tiron](https://github.com/irinatiron)
+- Product Owner + Developer: [María del Carmen Tajuelo](https://github.com/CarmenTajuelo)
+- Developer: [Guissella Pérez](https://github.com/guiss26)
+- Developer: [Ingrid Martínez](https://github.com/ingridD2707)
+- Developer: [Paloma Gómez](https://github.com/Pal-cloud)
