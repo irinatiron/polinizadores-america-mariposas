@@ -1,0 +1,96 @@
+
+.edit-form-container {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
+.butterfly-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #64b5f6;
+  box-shadow: 0 0 4px #64b5f6;
+}
+
+.btn-submit,
+.btn-cancel {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit {
+  background-color: var(--color-forest-green);
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #942C24;
+  color: white;
+}
+
+.btn-submit:hover,
+.btn-cancel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+h2 {
+  text-align: center;
+  color: var(--color-terracotta);
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .butterfly-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-buttons {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-cancel {
+    margin-left: 0;
+  }
+}

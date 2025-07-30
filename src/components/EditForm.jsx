@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import "../components/CreateForm/CreateForm.module.css";
+import Input from '../components/CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
+import './EditForm.css';
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -61,9 +63,9 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
 
   return (
     <div className="edit-form-container">
-      <form onSubmit={handleSubmit} className="butterfly-form">
+      <form onSubmit={handleSubmit} className="butterfly-form form-style" >
         
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="name">Nombre:</label>
           <input
             type="text"
@@ -76,7 +78,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="order">Orden:</label>
           <input
             type="text"
@@ -89,7 +91,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="family">Familia:</label>
           <input
             type="text"
@@ -102,7 +104,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="color">Color:</label>
           <input
             type="text"
@@ -115,7 +117,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="size">Tamaño:</label>
           <input
             type="text"
@@ -128,7 +130,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="origin">Origen:</label>
           <input
             type="text"
@@ -141,7 +143,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="location">Ubicación:</label>
           <input
             type="text"
@@ -154,7 +156,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="habitat">Hábitat:</label>
           <input
             type="text"
@@ -167,7 +169,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="plants">Plantas:</label>
           <input
             type="text"
@@ -180,7 +182,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="cycle">Ciclo:</label>
           <input
             type="text"
@@ -193,8 +195,8 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="img">Imagen (URL):</label>
+        <div className="form-Group">
+          <label htmlFor="img">Imagen ():</label>
           <input
             type="url"
             id="img"
@@ -204,9 +206,10 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
             required
             placeholder="https://ejemplo.com/imagen-mariposa.jpg"
           />
+          <Input />
         </div>
 
-        <div className="form-group">
+        <div className="form-Group">
           <label htmlFor="fenology">Fenología:</label>
           <input
             type="text"
