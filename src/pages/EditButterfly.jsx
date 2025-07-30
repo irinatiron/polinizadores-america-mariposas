@@ -1,9 +1,8 @@
-
-import { Routes,Route,Link,useParams, useNavigate } from "react-router-dom";
+import { Routes, Route, Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditForm from "../components/EditForm/EditForm";
-import {getOneButterfly,updateButterfly} from "../services/ButterflyServices";
-import Swal from 'sweetalert2' // Importa sweetalert
+import { getOneButterfly, updateButterfly } from "../services/ButterflyServices";
+import Swal from 'sweetalert2'; // Importa sweetalert
 
 const EditButterfly = () => {
   const { id } = useParams(); // Obtiene el ID de la mariposa desde la URL
@@ -30,17 +29,16 @@ const EditButterfly = () => {
   const handleUpdateButterfly = async (updatedData) => {
     try {
       const result = await updateButterfly(id, updatedData);
-      
       Swal.fire({
-            icon: 'success',
-            title: 'Mariposa actualizada correctamente',
-            text: 'Gracias por contribuir al catálogo.',
-            confirmButtonText: 'Volver a las fichas de mariposas',
-            customClass: { confirmButton: 'swal2-confirm-success' }
-          }).then(() => {
-            navigate('/fichas-mariposas'); // Cuando el usuario pulsa el botón de confirmación le llevamos de vuelta a las fichas
-          });
-      
+        icon: 'success',
+        title: 'Mariposa actualizada correctamente',
+        text: 'Gracias por contribuir al catálogo.',
+        confirmButtonText: 'Volver a las fichas de mariposas',
+        customClass: { confirmButton: 'swal2-confirm-success' }
+      }).then(() => {
+        navigate('/fichas-mariposas'); // Cuando el usuario pulsa el botón de confirmación le llevamos de vuelta a las fichas
+      });
+
     } catch (err) {
       setError(err.message);
       alert('Error al actualizar la mariposa: ' + err.message);
@@ -65,7 +63,7 @@ const EditButterfly = () => {
   // Mostrar formulario de edición
   return (
     <div>
-      <h2>Editar Mariposa</h2>
+      <h2>Editando la mariposa <i>{butterflyData.name}</i> </h2>
       {butterflyData && (
         <EditForm 
           onSubmit={handleUpdateButterfly}
