@@ -9,6 +9,8 @@ import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
 import { FaPlus, FaCheck } from "react-icons/fa";
 import styles from './EditForm.module.css';
+import { initialFormState, butterflyFamilies, fieldLabels } from '../FormConstants'; // Importa el estado inicial del formulario, las familias existentes y labels traducidos
+
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -86,7 +88,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className={styles["form-Group"]}>
-          <label htmlFor="order">Orden</label>
+          <label htmlFor="order">Orden (por defecto)</label>
           <input
             type="text"
             id="order"
@@ -94,21 +96,20 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
             value={formData.order}
             onChange={handleChange}
             required
+            readOnly
             placeholder="Ej: Lepidoptera"
+            title="Campo no editable. Todas las mariposas pertenecen al orden Lepidoptera."
           />
         </div>
 
         <div className={styles["form-Group"]}>
           <label htmlFor="family">Familia *</label>
-          <input
-            type="text"
-            id="family"
-            name="family"
-            value={formData.family}
-            onChange={handleChange}
-            required
-            placeholder="Ej: Nymphalidae"
-          />
+            <select id="family" name="family" value={formData.family} onChange={handleChange} title="Selecciona entre las familias existentes." required>
+              <option value="">Selecciona la familia</option>
+              {butterflyFamilies.map((family) => (
+                <option key={family} value={family}>{family}</option>
+              ))}
+            </select>
         </div>
 
         <div className={styles["form-Group"]}>
@@ -221,11 +222,11 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className={styles["form-buttons"]}>
-          <button type="submit" className={styles["btn-submit"]}>
-            Actualizar Mariposa
-          </button>
           <button type="button" className={styles["btn-cancel"]} onClick={() => window.history.back()}>
             Cancelar
+          </button>
+          <button type="submit" className={styles["btn-submit"]}>
+            Actualizar Mariposa
           </button>
         </div>
         

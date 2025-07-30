@@ -181,7 +181,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3014",
       "name": "Adelpha fessonia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -193,7 +192,8 @@
       "plants": "Celtis, Lantana",
       "cycle": "3 semanas",
       "img": "https://www.butterfliesandmoths.org/sites/default/files/bamona_images/adelpha-fessonia-jen-sanders-1_1.jpg",
-      "fenology": "Verano y otoño"
+      "fenology": "Verano y otoño",
+      "id": "3014"
     },
     {
       "id": "3015",
@@ -286,7 +286,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3021",
       "name": "Actinote thalia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -298,7 +297,8 @@
       "plants": "Asteraceae",
       "cycle": "28 días",
       "img": "https://www.ecoregistros.org/site/images/albumes/246/10145/Nymphalidae--Actinote-pyrrha--Perezosa-Grande.jpg",
-      "fenology": "Primavera y verano"
+      "fenology": "Primavera y verano",
+      "id": "3021"
     },
     {
       "id": "3022",
