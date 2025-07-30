@@ -16,15 +16,15 @@ function Navbar() {
     };
 
     return (
-        <nav className="navbar" style={{border: "5px dotted yellow"}}>
-            <div className="nav-container" style={{border: "3px dotted pink"}}>
+        <nav className="navbar">
+            <div className="nav-container">
                 {/*Logo */}
                 <Link to="/" className="nav-logo">
                     <img src={navLogo} alt="blue butterfly with america map on the left side" />
                 </Link>
                 {/*Title*/}
                 <Link to="/" className="nav-title">
-                    <p>Mariposas de América</p>
+                    <h2>Mariposas de América</h2>
                 </Link>
 
                 <button className="menu-toggle" onClick={toggleMenu}>
@@ -33,16 +33,16 @@ function Navbar() {
 
                 {/*Nav Links*/}
                 <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-                    <li>
+                    <li style={{'--i': 0.42}}>
                         <Link to="/" className="nav-link" onClick={closeMenu}>Inicio</Link>
                     </li>
-                    <li>
+                    <li style={{'--i': 0.42}}>
                         <Link to="/fichas-mariposas" className="nav-link" onClick={closeMenu}>Fichas Mariposas</Link>
                     </li>
-                    <li>
+                    <li style={{'--i': 0.42}}>
                         <Link to="/creadoras" className="nav-link" onClick={closeMenu}>Creadoras</Link>
                     </li>
-                     <li>
+                     <li style={{'--i': 0.42}}>
                         <Link to="/formulario" className="nav-link" onClick={closeMenu}>Formulario</Link>
                     </li>
                 </ul>
