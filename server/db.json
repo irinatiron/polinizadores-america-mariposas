@@ -1,7 +1,6 @@
 {
   "butterflies": [
     {
-      "id": "3001",
       "name": "Mariposa monarca",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -13,7 +12,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, oruga, crisálida y adulto",
       "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1600",
-      "fenology": "Migración en otoño, reproducción en primavera y verano"
+      "fenology": "Migración en otoño, reproducción en primavera y verano",
+      "id": "3001"
     },
     {
       "id": "3002",
@@ -46,7 +46,6 @@
       "fenology": "Todo el año en climas cálidos"
     },
     {
-      "id": "3004",
       "name": "Agraulis vanillae",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -58,10 +57,10 @@
       "plants": "Passiflora",
       "cycle": "30 días",
       "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
-      "fenology": "Primavera a otoño"
+      "fenology": "Primavera a otoño",
+      "id": "3004"
     },
     {
-      "id": "3005",
       "name": "Danaus gilippus",
       "order": "Lepidoptera",
       "family": "Danaidae",
@@ -73,7 +72,8 @@
       "plants": "Asclepias",
       "cycle": "Huevo, larva, crisálida, adulto",
       "img": "https://jardin.inecol.mx/images/MARIPOSA_MES/Danaus_gilippus_thersippus.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "id": "3005"
     },
     {
       "id": "3006",
@@ -406,7 +406,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3029",
       "name": "Zaretis itys",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -418,7 +417,8 @@
       "plants": "Frutas caídas",
       "cycle": "30 días",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/24713160/large.jpeg",
-      "fenology": "Estacional"
+      "fenology": "Estacional",
+      "id": "3029"
     },
     {
       "id": "3030",

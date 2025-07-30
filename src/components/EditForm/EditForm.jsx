@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import "../components/CreateForm/CreateForm.module.css";
-import Input from '../components/CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
+import Input from '../CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
+// import './EditForm.css';
+import styles from './EditForm.module.css';
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -61,10 +62,10 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
   };
 
   return (
-    <div className="edit-form-container">
-      <form onSubmit={handleSubmit} className="butterfly-form">
+    <div className={styles["edit-form-container"]}>
+      <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`} >
         
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="name">Nombre:</label>
           <input
             type="text"
@@ -77,7 +78,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="order">Orden:</label>
           <input
             type="text"
@@ -90,7 +91,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="family">Familia:</label>
           <input
             type="text"
@@ -103,7 +104,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="color">Color:</label>
           <input
             type="text"
@@ -116,7 +117,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="size">Tamaño:</label>
           <input
             type="text"
@@ -129,7 +130,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="origin">Origen:</label>
           <input
             type="text"
@@ -142,7 +143,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="location">Ubicación:</label>
           <input
             type="text"
@@ -155,7 +156,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="habitat">Hábitat:</label>
           <input
             type="text"
@@ -168,7 +169,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="plants">Plantas:</label>
           <input
             type="text"
@@ -181,7 +182,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="cycle">Ciclo:</label>
           <input
             type="text"
@@ -194,8 +195,8 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="img">Imagen (URL):</label>
+        <div className={styles["form-Group"]}>
+          <label htmlFor="img">Imagen ():</label>
           <input
             type="url"
             id="img"
@@ -208,7 +209,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           <Input />
         </div>
 
-        <div className="form-group">
+        <div className={styles["form-Group"]}>
           <label htmlFor="fenology">Fenología:</label>
           <input
             type="text"
@@ -221,11 +222,11 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
           />
         </div>
 
-        <div className="form-buttons">
-          <button type="submit" className="btn-submit">
+        <div className={styles["form-buttons"]}>
+          <button type="submit" className={styles["btn-submit"]}>
             Actualizar Mariposa
           </button>
-          <button type="button" className="btn-cancel" onClick={() => window.history.back()}>
+          <button type="button" className={styles["btn-cancel"]} onClick={() => window.history.back()}>
             Cancelar
           </button>
         </div>
