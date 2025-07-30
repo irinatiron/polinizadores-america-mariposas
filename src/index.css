@@ -98,6 +98,20 @@ body {
     align-items: center;
 }
 
+/* Unificación de los botones para que tengan la misma transición en toda la web */
+.btns a, .btn-back, .content-btn a{
+    transition: 1.5s ease;
+}
+
+/* Selection styles for text highlighting */
+::-moz-selection { /* Firefox */
+  background: rgba(242, 143, 22, 0.3);
+}
+
+::selection {
+  background: rgba(242, 143, 22, 0.3);
+}
+
 /* Typography - Mobile */
 h1 {
     font-size: 2rem;
