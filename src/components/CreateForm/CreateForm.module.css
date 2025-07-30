@@ -227,7 +227,6 @@ select:focus,
     width: 37%;
     grid-column: 1 / -1;
     justify-self: center;
-    transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px, rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 4px 8px, rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.2) 0px 16px 32px, rgba(0, 0, 0, 0.2) 0px 32px 64px;
     transition: 1.5s ease;
 }
@@ -258,6 +257,39 @@ select:focus,
     color: #666;
     cursor: not-allowed;
     box-shadow: none;
+}
+
+.cancelButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cancelButton {
+    background-color: var(--color-brick-red);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.5s;
+    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* espacio entre icono y texto */
+}
+
+.cancelButton:hover {
+    opacity: 1;
+}
+
+.cancelButton svg {
+  display: inline-block;
+  vertical-align: middle; 
+  width: 1.8em; 
+  height: 2em;
 }
 
 .errorMessage {
