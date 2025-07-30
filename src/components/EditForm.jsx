@@ -196,7 +196,7 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className="form-Group">
-          <label htmlFor="img">Imagen (URL):</label>
+          <label htmlFor="img">Imagen ():</label>
           <input
             type="url"
             id="img"
