@@ -1,0 +1,11 @@
+.btn-pollinators-project {
+    text-decoration: none;
+    padding: 13px 20px;
+    background-color: var(--color-forest-green);
+    color: white;
+    border-radius: 15px;
+}
+
+.btn-pollinators-project:hover {
+    background-color: #26531a;
+}
