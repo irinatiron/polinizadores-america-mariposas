@@ -15,8 +15,8 @@
 
 /*---BASE STYLE---*/
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-text-dark);
     background-color: var(--color-light-beige);
