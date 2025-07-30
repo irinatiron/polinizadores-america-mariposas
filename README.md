@@ -20,7 +20,6 @@ Los polinizadores están disminuyendo en todo el mundo debido a múltiples facto
 - `/` → Página de inicio con mapa interactivo.
 
 <img src="./src/assets/images/foto-inicio.png" alt="Página de inicio en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
-<img src="./src/assets/images/foto-responsive.png" alt="Página de inicio en versión móvil" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
 <img src="./src/assets/images/foto-mapa.png" alt="Página de inicio con mapa interactivo" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
 
 
@@ -82,13 +81,15 @@ polinizadores-mariposas-america/
 ├── package-lock.json                 ← Registra las versiones exactas de las dependencias instaladas.
 ├── vite.config.js                    ← Configuración del blunder Vite 
 ├── eslint.config.js                  ← Define reglas de estilo y calidad de código 
-├── README.md                           ← Documentación del proyecto
+├── README.md                         ← Documentación del proyecto
+├── .env                              ← Credenciales de Cloudinary
 ├── .gitignore                        ← Archivos que no se deben subir a GitHub
 ├── /server                           ← Lógica del backend (servidor, API, etc.) 
 │   └── db.json                       ← Simula una API, contiene las mariposas
 └── /src                              ← Código fuente principal del frontend
      ├── /assets                      ← Imágenes y recursos estáticos
-     │   └── /images                                                             
+     │   └── /images
+     │   └── /favicon                                                                                                       
      ├── /components                  ← Componentes reutilizables de React
      ├── /layout                      ← Componentes de estructura (Nav, Footer, etc.)
      ├── /pages                       ← Páginas principales del sitio 
