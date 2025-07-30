@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Input from '../EditForm/ImageUploadEdit' // Importamos el componente de Cloudinary
+import Input from '../EditForm/ImageUploadEdit'; // Importamos el componente de Cloudinary
 // Importaciones de iconos:
 import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
 import { HiOutlineGlobeAmericas } from "react-icons/hi2";
@@ -7,10 +7,10 @@ import { TbMapPin2 } from "react-icons/tb";
 import { MdOutlineColorLens } from "react-icons/md";
 import { LuRuler, LuHourglass, LuFlower2 } from "react-icons/lu";
 import { HiOutlineHome } from "react-icons/hi";
-import { FaPlus, FaCheck } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import styles from './EditForm.module.css';
-import { initialFormState, butterflyFamilies, fieldLabels } from '../FormConstants'; // Importa el estado inicial del formulario, las familias existentes y labels traducidos
-
+import { butterflyFamilies } from '../FormConstants'; // Importa el estado inicial del formulario, las familias existentes y labels traducidos
 
 const EditForm = ({ onSubmit, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -59,21 +59,34 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
   // Manejo de envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Validación básica adicional
     if (!formData.name.trim()) {
       alert('El nombre es obligatorio');
       return;
     }
-    
+
     // Llama a la función desde el componente padre
     onSubmit(formData);
   };
 
+  // Modal para mostrar imágenes expandidas
+  const [modalImage, setModalImage] = useState(null);
+  const [modalTitle, setModalTitle] = useState('');
+  const openModal = (imageSrc, title) => {
+    setModalImage(imageSrc);
+    setModalTitle(title);
+  };
+  const closeModal = () => {
+    setModalImage(null);
+    setModalTitle('');
+  };
+
   return (
+     <>
     <div className={styles["edit-form-container"]}>
-      <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`} >
-        
+      <form onSubmit={handleSubmit} className={`${styles["butterfly-form"]} ${styles["form-style"]}`}>
+
         <div className={styles["form-Group"]}>
           <label htmlFor="name">Nombre *</label>
           <input
@@ -104,12 +117,12 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
 
         <div className={styles["form-Group"]}>
           <label htmlFor="family">Familia *</label>
-            <select id="family" name="family" value={formData.family} onChange={handleChange} title="Selecciona entre las familias existentes." required>
-              <option value="">Selecciona la familia</option>
-              {butterflyFamilies.map((family) => (
-                <option key={family} value={family}>{family}</option>
-              ))}
-            </select>
+          <select id="family" name="family" value={formData.family} onChange={handleChange} title="Selecciona entre las familias existentes." required>
+            <option value="">Selecciona la familia</option>
+            {butterflyFamilies.map((family) => (
+              <option key={family} value={family}>{family}</option>
+            ))}
+          </select>
         </div>
 
         <div className={styles["form-Group"]}>
@@ -205,17 +218,21 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
             value={formData.img}
             onChange={handleChange}
             placeholder="https://ejemplo.com/imagen-mariposa.jpg"
-           />
+          />
 
           {formData.img && (
-        <div className={styles["image-preview"]}>
-          <img src={formData.img} alt="Vista previa" style={{ maxWidth: "200px", marginTop: "10px" }} />
-        </div>
-         )}
+            <div className={styles["image-preview"]}>
+              <img
+                src={formData.img}
+                alt="Vista previa"
+                style={{ maxWidth: "200px", marginTop: "10px" }}
+                onClick={() => openModal(formData.img, formData.name)}
+              />
+            </div>
+          )}
 
           <Input onUpload={(url) => setFormData(prev => ({ ...prev, img: url }))} />
         </div>
-
 
         <div className={styles["form-Group"]}>
           <label htmlFor="fenology"><IoCalendarOutline /> Fenología</label>
@@ -230,17 +247,34 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
         </div>
 
         <div className={styles["form-buttons"]}>
-          <button type="button" className={styles["btn-cancel"]} onClick={() => window.history.back()}>
-            Cancelar
-          </button>
+          
           <button type="submit" className={styles["btn-submit"]}>
-            Actualizar Mariposa
+            Actualizar Mariposa <FaCheck />
           </button>
         </div>
-        
+
       </form>
+      <div className={styles.cancelButtonContainer}>
+              <button type="button" className={`${styles.cancelButton}`} title='Cancelar y volver atrás'  onClick={() => window.history.back()}><IoIosArrowRoundBack /> Cancelar y regresar a las fichas</button>
+      </div>
     </div>
-  );
+     
+    {/* Modal para mostrar imágenes expandidas */}
+      {modalImage && (
+        <div className="image-modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <svg viewBox="0 0 24 24" className="close-icon">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+              </svg>
+            </button>
+            <img src={modalImage} alt={modalTitle} className="modal-image" />
+            <div className="modal-title">{modalTitle}</div>
+          </div>
+        </div>
+      )}
+     </>
+ );
 };
 
 export default EditForm;

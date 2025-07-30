@@ -189,7 +189,7 @@ const Form = ({ onSubmit }) => {
         <button type="button" className={`${styles.cancelButton}`} title='Cancelar y volver atrás'  onClick={() => window.history.back()}><IoIosArrowRoundBack /> Cancelar y regresar a las fichas</button>
       </div>
       
-       {/* Modal para mostrar imágenes expandidas */}
+      {/* Modal para mostrar imágenes expandidas */}
       {modalImage && (
         <div className="image-modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
