@@ -56,7 +56,7 @@
       "habitat": "Zonas abiertas, jardines",
       "plants": "Passiflora",
       "cycle": "30 días",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Agraulis_vanillae_butterfly_from_above.JPG",
+      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753879967/du3khrklrtdzgmd6bxue.png",
       "fenology": "Primavera a otoño",
       "id": "3004"
     },
@@ -286,7 +286,6 @@
       "fenology": "Todo el año"
     },
     {
-      "id": "3021",
       "name": "Actinote thalia",
       "order": "Lepidoptera",
       "family": "Nymphalidae",
@@ -297,8 +296,9 @@
       "habitat": "Bosques húmedos",
       "plants": "Asteraceae",
       "cycle": "28 días",
-      "img": "https://www.ecoregistros.org/site/images/albumes/246/10145/Nymphalidae--Actinote-pyrrha--Perezosa-Grande.jpg",
-      "fenology": "Primavera y verano"
+      "img": "",
+      "fenology": "Primavera y verano",
+      "id": "3021"
     },
     {
       "id": "3022",

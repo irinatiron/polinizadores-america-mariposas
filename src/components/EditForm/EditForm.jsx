@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Input from '../CreateForm/ImageUpload'; // Importamos el componente de Cloudinary
+import Input from '../EditForm/ImageUploadEdit' // Importamos el componente de Cloudinary
 // Importaciones de iconos:
 import { IoImageOutline, IoCalendarOutline } from "react-icons/io5";
 import { HiOutlineGlobeAmericas } from "react-icons/hi2";
@@ -204,9 +204,17 @@ const EditForm = ({ onSubmit, initialData = {} }) => {
             value={formData.img}
             onChange={handleChange}
             placeholder="https://ejemplo.com/imagen-mariposa.jpg"
-          />
-          <Input />
+           />
+
+          {formData.img && (
+        <div className={styles["image-preview"]}>
+          <img src={formData.img} alt="Vista previa" style={{ maxWidth: "200px", marginTop: "10px" }} />
         </div>
+         )}
+
+          <Input onUpload={(url) => setFormData(prev => ({ ...prev, img: url }))} />
+        </div>
+
 
         <div className={styles["form-Group"]}>
           <label htmlFor="fenology"><IoCalendarOutline /> Fenología</label>
