@@ -434,21 +434,6 @@
       "cycle": "1 mes",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/15559975/large.jpg",
       "fenology": "Todo el año"
-    },
-    {
-      "name": "prueba edit photo",
-      "order": "Lepidoptera",
-      "family": "Papilionidae",
-      "color": "",
-      "size": "",
-      "origin": "",
-      "location": "",
-      "habitat": "",
-      "plants": "",
-      "cycle": "",
-      "img": "",
-      "fenology": "",
-      "id": "aa87"
     }
   ],
   "creators": [
