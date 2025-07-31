@@ -2,8 +2,6 @@ import { useRef, useState, useEffect } from 'react'; // Importa hooks de React p
 import styled from 'styled-components'; // Permite escribir estilos CSS dentro de JS
 import axios from 'axios'; // Para realizar solicitud HTTP al subir imagen a Cloudinary
 
-
-
 const Input = ({ name, value, onUpload, error }) => {
   // name: nombre del campo en el form
   // value: URL actual si hay imagen subida

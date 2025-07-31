@@ -434,13 +434,28 @@
       "cycle": "1 mes",
       "img": "https://inaturalist-open-data.s3.amazonaws.com/photos/15559975/large.jpg",
       "fenology": "Todo el año"
+    },
+    {
+      "id": "189a",
+      "name": "prueba b",
+      "order": "Lepidoptera",
+      "family": "Lycaenidae",
+      "color": "",
+      "size": "",
+      "origin": "",
+      "location": "",
+      "habitat": "",
+      "plants": "",
+      "cycle": "",
+      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753949961/kkye71fj0wceuf7kyyma.jpg",
+      "fenology": ""
     }
   ],
   "creators": [
     {
       "id": "1",
-      "name": "María Carmen",      
-      "role": "Product owner",      
+      "name": "María Carmen",
+      "role": "Product owner",
       "butterflySpecies": "Mariposa Monarca",
       "butterflySpeciesLatin": "Danaus plexippus",
       "profileImage": "src/assets/images/mc.png",
@@ -448,12 +463,16 @@
       "github": "https://github.com/CarmenTajuelo",
       "linkedin": "https://www.linkedin.com/in/carmentajuelo/",
       "bio": "Encargada en el proyecto de realizar navbar footer y método delete.",
-      "skills": ["React", "JavaScript", "CSS"]      
+      "skills": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ]
     },
     {
       "id": "2",
-      "name": "Guissella Pérez",      
-      "role": "Full Stack Developer",      
+      "name": "Guissella Pérez",
+      "role": "Full Stack Developer",
       "butterflySpecies": "Morpho Azul",
       "butterflySpeciesLatin": "Morpho peleides",
       "profileImage": "src/assets/images/gp.png",
@@ -461,12 +480,16 @@
       "github": "https://github.com/guiss26",
       "linkedin": "https://www.linkedin.com/in/guissella-pérez/",
       "bio": "Enfocada en el método Get y testing del proyecto.",
-      "skills": ["Node.js", "Express", "Testing react"]      
+      "skills": [
+        "Node.js",
+        "Express",
+        "Testing react"
+      ]
     },
     {
       "id": "3",
-      "name": "Irina Tiron",      
-      "role": "Scrum master",      
+      "name": "Irina Tiron",
+      "role": "Scrum master",
       "butterflySpecies": "Mariposa Tigre del Este",
       "butterflySpeciesLatin": "Papilio glaucus",
       "profileImage": "src/assets/images/it.png",
@@ -474,12 +497,16 @@
       "github": "https://github.com/irinatiron",
       "linkedin": "https://www.linkedin.com/in/irinatiron/",
       "bio": "Encargada de unificar el estilo y forma de trabajo del proyecto.",
-      "skills": ["Node.js", "Form Validation", "TypeScript"]
+      "skills": [
+        "Node.js",
+        "Form Validation",
+        "TypeScript"
+      ]
     },
     {
       "id": "4",
-      "name": "Ingrid Martínez",      
-      "role": "Full Stack Developer",      
+      "name": "Ingrid Martínez",
+      "role": "Full Stack Developer",
       "butterflySpecies": "Mariposa Cebra",
       "butterflySpeciesLatin": "Heliconius charithonia",
       "profileImage": "src/assets/images/im.png",
@@ -487,11 +514,15 @@
       "github": "https://github.com/ingridD2707",
       "linkedin": "https://www.linkedin.com/in/ingridmartinez/",
       "bio": "Desarrolladora encargada de formularios complejos y validaciones.",
-      "skills": ["React", "Node.js", "Express"]      
+      "skills": [
+        "React",
+        "Node.js",
+        "Express"
+      ]
     },
     {
       "id": "5",
-      "name": "Paloma Gómez",      
+      "name": "Paloma Gómez",
       "role": "Frontend Developer - Formularios y Creadoras",
       "specialization": "React, Data Visualization, UX Research",
       "butterflySpecies": "Mariposa del Café",
@@ -501,7 +532,11 @@
       "github": "https://github.com/Pal-cloud",
       "linkedin": "https://www.linkedin.com/in/palomagsal/",
       "bio": "Desarrolladora encargada de la sección de creadoras y el formulario de contacto.",
-      "skills": ["React", "JavaScript", "TypeScript"]      
+      "skills": [
+        "React",
+        "JavaScript",
+        "TypeScript"
+      ]
     }
   ]
 }
