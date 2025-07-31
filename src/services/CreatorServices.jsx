@@ -47,32 +47,32 @@ function getFallbackCreators() {
     {
       id: 1,
       name: "María Carmen Tajuelo",
-      role: "Frontend Developer - Navbar y Footer",
+      role: "Full Stack Developer y product owner",
       profileImage: "src/assets/images/mc.png",
       github: "https://github.com/CarmenTajuelo",
       linkedin: "https://www.linkedin.com/in/carmentajuelo/",
       butterflySpecies: "Mariposa Monarca",
-      bio: "Especialista en React y apasionada por la conservación de mariposas monarca."
+      bio: "Encargada en el proyecto de realizar navbar footer y método delete."
     },
     {
       id: 2,
       name: "Guissella Pérez",
-      role: "Backend Developer - Método GET",
+      role: "Full Stack Developer",
       profileImage: "src/assets/images/gp.png",
       github: "https://github.com/guiss26",
       linkedin: "https://www.linkedin.com/in/guissella-pérez/",
       butterflySpecies: "Morpho Azul",
-      bio: "Desarrolladora backend enfocada en crear APIs robustas y eficientes."
+      bio: "Enfocada en el método Get y testing del proyecto."
     },
     {
       id: 3,
       name: "Irina Tiron",
-      role: "Full Stack Developer - Formularios",
+      role: "Full Stack Developer y scrum master",
       profileImage: "src/assets/images/it.png",
       github: "https://github.com/irinatiron",
       linkedin: "https://www.linkedin.com/in/irinatiron/",
       butterflySpecies: "Cola de Golondrina",
-      bio: "Desarrolladora full stack con experiencia en formularios complejos y validaciones."
+      bio: "Scrum master del equipo además de formularios se ha encarga de anuar el estilo del proyecto"
     },
     {
       id: 4,
@@ -82,17 +82,17 @@ function getFallbackCreators() {
       github: "https://github.com/ingridD2707",
       linkedin: "https://www.linkedin.com/in/ingridmartinez/",
       butterflySpecies: "Mariposa Cebra",
-      bio: "Desarrolladora full stack comprometida con proyectos de impacto ambiental y social."
+      bio: "Desarrolladora encargada de formularios complejos y validaciones."
     },
     {
       id: 5,
       name: "Paloma Gómez",
-      role: "Frontend Developer - Formularios y Creadoras",
+      role: "Frontend Developer",
       profileImage: "src/assets/images/pg.png",
       github: "https://github.com/Pal-cloud",
       linkedin: "https://www.linkedin.com/in/palomagsal/",
       butterflySpecies: "Mariposa del Café",
-      bio: "Científica de datos especializada en análisis de biodiversidad y conservación."
+      bio: "Desarrolladora encargada de la sección de creadoras y el formulario de contacto."
     }
   ];
 }
