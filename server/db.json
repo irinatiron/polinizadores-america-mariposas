@@ -331,7 +331,6 @@
       "fenology": "Primavera a otoño"
     },
     {
-      "id": "3024",
       "name": "Eumaeus atala",
       "order": "Lepidoptera",
       "family": "Lycaenidae",
@@ -343,7 +342,8 @@
       "plants": "Zamia (cícadas)",
       "cycle": "3 semanas",
       "img": "https://www.flawildflowers.org/wp-content/uploads/2021/06/Eumaeus-atala-Keim-banner.jpg",
-      "fenology": "Todo el año en zonas cálidas"
+      "fenology": "Todo el año en zonas cálidas",
+      "id": "3024"
     },
     {
       "id": "3025",
@@ -446,7 +446,7 @@
       "habitat": "",
       "plants": "",
       "cycle": "",
-      "img": "https://res.cloudinary.com/dkm0ahny1/image/upload/v1753901070/uqrkboofemkbr0fdaur8.png",
+      "img": "",
       "fenology": "",
       "id": "aa87"
     }
