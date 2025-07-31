@@ -46,8 +46,8 @@ function getFallbackCreators() {
   return [
     {
       id: 1,
-      name: "María Carmen Tajuelo",
-      role: "Full Stack Developer y product owner",
+      name: "María Carmen",
+      role: "Product owner",
       profileImage: "src/assets/images/mc.png",
       github: "https://github.com/CarmenTajuelo",
       linkedin: "https://www.linkedin.com/in/carmentajuelo/",
@@ -67,12 +67,12 @@ function getFallbackCreators() {
     {
       id: 3,
       name: "Irina Tiron",
-      role: "Full Stack Developer y scrum master",
+      role: "Scrum master",
       profileImage: "src/assets/images/it.png",
       github: "https://github.com/irinatiron",
       linkedin: "https://www.linkedin.com/in/irinatiron/",
       butterflySpecies: "Cola de Golondrina",
-      bio: "Scrum master del equipo además de formularios se ha encarga de anuar el estilo del proyecto"
+      bio: "Encargada de unificar el estilo y forma de trabajo del proyecto."
     },
     {
       id: 4,
@@ -117,7 +117,7 @@ export async function getTeamStats() {
       totalMembers: 5,
       totalExperience: 22,
       specializations: ['Frontend', 'Backend', 'Full Stack'],
-      locations: ['España', 'Perú', 'Rumania', 'Colombia', 'México'],
+      locations: ['España', 'Perú', 'Colombia', 'México'],
       skills: ['React', 'Node.js', 'JavaScript', 'CSS']
     };
   }
