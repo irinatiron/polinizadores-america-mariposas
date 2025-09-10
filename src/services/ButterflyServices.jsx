@@ -68,7 +68,7 @@ export async function updateButterfly(id, updatedButterfly) {
 
   } catch (error) {
     console.error("Error al actualizar:", error.message);
-    //throw error;
+    throw error;
 
   }
 }
